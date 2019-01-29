@@ -1,0 +1,30 @@
+[user]
+    name    = vast
+    email   = keatingsmitht@gmail.com
+[core]
+    editor = nvim
+[pull]
+    rebase  = true
+[alias]
+    st      = status
+    stnu    = status --untracked-files=no
+    ci      = commit
+    br      = branch
+    co      = checkout
+    df      = diff
+    dc      = diff --cached
+    lg      = log --all --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative
+
+[color]
+    ui = true
+[color "diff"]
+    meta = yellow
+    frag = magenta bold
+    commit = yellow bold
+    old = red bold
+    new = green bold
+    whitespace = red reverse
+[http "https://github.com"]
+	# proxy = http://127.0.0.1:1087
+[https "https://github.com"]
+	# proxy = http://127.0.0.1:1087
