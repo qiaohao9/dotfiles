@@ -59,4 +59,3 @@ cask "snipaste"
 cask "ticktick"
 cask "wechat"
 mas "Magnet", id: 441258766
-mas "Xcode", id: 497799835
