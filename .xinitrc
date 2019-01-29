@@ -1,1 +1,2 @@
-/home/vast/.dotfiles/archlinux/xinitrc
+numlockx &
+exec i3
