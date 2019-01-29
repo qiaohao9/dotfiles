@@ -1,0 +1,17 @@
+separator_block_width=20
+markup=pango
+
+# 🌐
+# 🧠
+# 📅
+
+[memory]
+label=🧠
+command=free -m | awk '/Mem:/ { printf "%.2f\%", int($3)/int($2)*100 }'
+interval=1
+
+[clock]
+label=📅
+command=date '+%Y %b %d (%a) %H:%M'
+interval=30
+align=center
