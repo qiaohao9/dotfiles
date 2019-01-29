@@ -24,7 +24,3 @@
     old = red bold
     new = green bold
     whitespace = red reverse
-[http "https://github.com"]
-	# proxy = http://127.0.0.1:1087
-[https "https://github.com"]
-	# proxy = http://127.0.0.1:1087
