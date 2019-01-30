@@ -11,7 +11,6 @@ export LANG='en_US.UTF-8'
 # Golang
 # =================
 export GOPATH=$HOME/.go
-export GOROOT=$(go env GOROOT)
 
 # =================
 # Python
@@ -28,5 +27,5 @@ export HOMEBREW_BOTTLE_DOMAIN=https://mirrors.tuna.tsinghua.edu.cn/homebrew-bott
 # =================
 # Proxy
 # =================
-# export http_proxy=http://127.0.0.1:1087
-# export https_proxy=http://127.0.0.1:1087
+export http_proxy=http://127.0.0.1:1087
+export https_proxy=http://127.0.0.1:1087
