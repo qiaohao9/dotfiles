@@ -9,6 +9,14 @@ setopt NOTIFY         # Notify of background job changes as soon as they happen
 limit coredumpsize 0
 
 # ========================
+# Arrow keys Bind
+# ========================
+bindkey ';9D' backward-word
+bindkey ';9C' forward-word
+bindkey '^[A' beginning-of-line
+bindkey '^[E' end-of-line
+
+# ========================
 # X Display For Arch Linux
 # ========================
 if [[ "$OSTYPE" = "linux-gnu" && ! $DISPLAY && $XDG_VTNR -eq 1 ]]; then
@@ -45,7 +53,6 @@ zplug "zdharma/fast-syntax-highlighting"
 zplug "zsh-users/zsh-autosuggestions"
 zplug "changyuheng/fz", defer:1
 zplug "rupa/z", use:z.sh
-zplug "AlDanial/cloc", as:command
 zplug "dylanaraps/neofetch", as:command, use:"neofetch"
 zplug "felixonmars/ydcv", as:command, rename-to:ydcv, use:"src/ydcv.py"
 zplug "junegunn/fzf", as:command, use:"bin/fzf-tmux"
