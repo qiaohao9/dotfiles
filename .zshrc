@@ -1,36 +1,9 @@
-## ZSH-specific shell environment flags only relvant to interactive shells
-# Variable behaviors
-setopt NO_ALL_EXPORT  # Don't export all variables to environmento
-
-# Directory changing
-setopt AUTO_CD           # cd to a directory if it's given without a command
-setopt CDABLE_VARS       # Try to cd to variable value from ~ if no leading slash
-setopt NO_AUTO_PUSHD     # Prevent all directories from being automatically pushed onto the stack
-setopt PUSHD_IGNORE_DUPS # Directory only appears once on the stack
-setopt PUSHD_TO_HOME     # pushd with no arguments goes to ~
-
-# Completion
-setopt MENU_COMPLETE # Cycle through completions by completing in place
-setopt NO_LIST_BEEP  # Prevent beeping on ambiguous completion
-
-# Globbing
-setopt EXTENDED_GLOB # Allow globbing qualifiers and other extensions
-setopt COMPLETE_IN_WORD
-setopt GLOB_DOTS     # Patterns may match without leading periods
-setopt NOMATCH       # Throw error if a glob fails to match
-
 # Background jobs
 setopt AUTO_CONTINUE  # Ensure a stopped job is continued when disowned
 setopt NO_BG_NICE     # Don't lower priority of background jobs
 setopt CHECK_JOBS     # Report status of background jobs when exitting a shell
 setopt LONG_LIST_JOBS # More verbose listing of jobs
 setopt NOTIFY         # Notify of background job changes as soon as they happen
-
-# ========================
-# Key Map Binding
-# ========================
-bindkey '[D' backward-word
-bindkey '[C' forward-word
 
 # Disable core dumps
 limit coredumpsize 0
@@ -44,6 +17,19 @@ fi
 if [ "$TERM" = "xterm-termite" ]; then 
   export TERM=xterm-256color
 fi
+
+# ========================
+# Environments
+# ========================
+export ZPLUG_HOME=$HOME/.zplug
+export EDITOR="nvim"
+export LANG='en_US.UTF-8'
+export GOPATH=$HOME/.go
+export PIPENV_PYPI_MIRROR="https://pypi.douban.com/simple"
+export HOMEBREW_NO_ANALYTICS=1
+export HOMEBREW_NO_AUTO_UPDATE=true
+# export http_proxy=http://127.0.0.1:1087
+# export https_proxy=http://127.0.0.1:1087
 
 # ========================
 # Zplug
