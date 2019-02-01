@@ -7,14 +7,7 @@ setopt NOTIFY         # Notify of background job changes as soon as they happen
 
 # Disable core dumps
 limit coredumpsize 0
-
-# ========================
-# Arrow keys Bind
-# ========================
-bindkey ';9D' backward-word
-bindkey ';9C' forward-word
-bindkey '^[A' beginning-of-line
-bindkey '^[E' end-of-line
+bindkey -v
 
 # ========================
 # X Display For Arch Linux
