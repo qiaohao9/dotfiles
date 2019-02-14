@@ -35,6 +35,7 @@ set number
 set cursorline
 set termguicolors
 set noundofile
+set nowrap
 set nobackup
 set noswapfile
 set smartcase
