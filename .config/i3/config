@@ -56,8 +56,8 @@ bar {
 
 # #--- Basic Exec ---# #
 bindsym $mod+Return exec $terminal
-bindsym $mod+d      exec --no-startup-id rofi -show run -them config
-bindsym $mod+x      exec --no-startup-id i3lock-fancy -t 'Have a nice day!' -f 'Consolas' -p
+bindsym $mod+d      exec --no-startup-id rofi -show run
+bindsym $mod+x      exec --no-startup-id betterlockscreen -t "Have a nice day!" --lock blur
 
 # #--- Toggle ---# #
 bindsym $mod+e           layout     toggle split
