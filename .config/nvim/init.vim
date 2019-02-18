@@ -64,6 +64,12 @@ au BufNewFile,BufRead *.js, *.htm*, *.*css
   \| set expandtab
 
 
+" ====================
+" Markdown
+" ====================
+au BufNewFile,BufRead *.md set wrap
+
+
 " ================
 " Python Develop
 " ================
