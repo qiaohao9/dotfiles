@@ -57,17 +57,8 @@ function fssh () {
         ssh -C ${ssh_name}
     fi
 }
-# convert date to timestamp
-function ts () {
-  if [[ $# -ne 0 ]]; then
-    date -d $1 +%s --utc
-  else
-    date +%s
-  fi
-}
 
 
-#=================
 # Git Support
 #=================
 function __gi() {
