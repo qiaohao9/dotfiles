@@ -8,5 +8,5 @@ nnoremap <C-k> <C-w>k
 nnoremap <C-l> <C-w>l
 
 " Vim Easy Align
-xmap ga <Plug>(EeasyAlign)
-nmap ga <Plug>(EeasyAlign)
+xmap ga <Plug>(EasyAlign)
+nmap ga <Plug>(EasyAlign)
