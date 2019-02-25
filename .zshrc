@@ -22,16 +22,14 @@ fi
 # ========================
 # Environments
 # ========================
-export PATH=$PATH:$HOME/.node_modules/bin
+export HOMEBREW_NO_ANALYTICS=1
+export HOMEBREW_NO_AUTO_UPDATE=true
 export ZPLUG_HOME=$HOME/.zplug
 export EDITOR="nvim"
 export LANG='en_US.UTF-8'
 export GOPATH=$HOME/.go
 export PIPENV_PYPI_MIRROR="https://pypi.douban.com/simple"
-export HOMEBREW_NO_ANALYTICS=1
-export HOMEBREW_NO_AUTO_UPDATE=true
-# export http_proxy=http://127.0.0.1:1087
-# export https_proxy=http://127.0.0.1:1087
+export PATH=$PATH:$HOME/.node_modules/bin:$GOPATH/bin
 
 # ========================
 # Zplug
