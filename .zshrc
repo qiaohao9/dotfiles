@@ -9,6 +9,7 @@ setopt NOTIFY         # Notify of background job changes as soon as they happen
 limit coredumpsize 0
 bindkey -v
 
+
 # ========================
 # X Display For Arch Linux
 # ========================
@@ -19,17 +20,23 @@ if [ "$TERM" = "xterm-termite" ]; then
   export TERM=xterm-256color
 fi
 
+
 # ========================
 # Environments
 # ========================
 export HOMEBREW_NO_ANALYTICS=1
 export HOMEBREW_NO_AUTO_UPDATE=true
-export ZPLUG_HOME=$HOME/.zplug
+
 export EDITOR="nvim"
 export LANG='en_US.UTF-8'
+
+export ZPLUG_HOME=$HOME/.zplug
 export GOPATH=$HOME/.go
-export PIPENV_PYPI_MIRROR="https://pypi.douban.com/simple"
 export PATH=$PATH:$HOME/.node_modules/bin:$GOPATH/bin
+
+export PIPENV_PYPI_MIRROR="https://pypi.douban.com/simple"
+export HOMEBREW_BOTTLE_DOMAIN="https://mirrors.tuna.tsinghua.edu.cn/homebrew-bottles"
+
 
 # ========================
 # Zplug
@@ -55,6 +62,7 @@ if ! zplug check; then
   zplug install
 fi
 zplug load
+
 
 # ========================
 # Alias
