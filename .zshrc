@@ -22,6 +22,7 @@ fi
 # ========================
 # Environments
 # ========================
+export PATH=$PATH:$HOME/.node_modules/bin
 export ZPLUG_HOME=$HOME/.zplug
 export EDITOR="nvim"
 export LANG='en_US.UTF-8'
@@ -67,4 +68,4 @@ alias vi="nvim"
 alias vim="nvim"
 alias ping="prettyping --nolegend"
 alias du="ncdu --color dark -rr -x --exclude .git"
-alias yt="youtube-dl -f bestvideo+bestaudio -o \"%(title)s.%(ext)s\""
+alias dm="docker-machine"
