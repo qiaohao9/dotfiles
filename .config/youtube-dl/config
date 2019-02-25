@@ -1,0 +1,3 @@
+-f bestvideo+bestaudio
+-o %(title)s.%(ext)s
+--external-downloader aria2c
