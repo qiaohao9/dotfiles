@@ -1,12 +1,12 @@
-" NerdTree
-nnoremap <C-n> :NERDTreeToggle<CR>
+let mapleader=" "
+set timeoutlen=500
 
 " Move between windows
-nnoremap <C-h> <C-w>h
-nnoremap <C-j> <C-w>j
-nnoremap <C-k> <C-w>k
-nnoremap <C-l> <C-w>l
+nnoremap <Leader>h <C-w>h
+nnoremap <Leader>j <C-w>j
+nnoremap <Leader>k <C-w>k
+nnoremap <Leader>l <C-w>l
 
-" Vim Easy Align
-xmap ga <Plug>(EasyAlign)
-nmap ga <Plug>(EasyAlign)
+" Switch buffers
+nnoremap <Leader>bp :bprev<Return>
+nnoremap <Leader>bn :bnext<Return>
