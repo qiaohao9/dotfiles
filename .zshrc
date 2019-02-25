@@ -40,23 +40,23 @@ if [[ ! -d $ZPLUG_HOME ]]; then
   git clone https://github.com/zplug/zplug $ZPLUG_HOME
 fi
 source $ZPLUG_HOME/init.zsh
-zplug 'zplug/zplug', hook-build:'zplug --self-manage'
+zplug "zplug/zplug", hook-build:"zplug --self-manage"
 zplug "tonyseek/oh-my-zsh-seeker-theme", as:theme
 zplug "zsh-users/zsh-completions"
 zplug "zdharma/fast-syntax-highlighting"
 zplug "zsh-users/zsh-autosuggestions"
-zplug "changyuheng/fz", defer:1
-zplug "rupa/z", use:z.sh
 zplug "dylanaraps/neofetch", as:command, use:"neofetch"
 zplug "felixonmars/ydcv", as:command, rename-to:ydcv, use:"src/ydcv.py"
 zplug "junegunn/fzf", as:command, use:"bin/fzf-tmux"
 zplug "junegunn/fzf-bin", from:gh-r, as:command, rename-to:fzf, use:"*$(uname | tr '[:upper:]' '[:lower:]')*amd64*"
+zplug "vastpeng/fzf-tools"
 zplug "rgcr/m-cli", as:command, use:"m", if:"[[ $OSTYPE == *darwin*  ]]"
+zplug "changyuheng/fz", defer:1
+zplug "rupa/z", use:z.sh
 if ! zplug check; then
   zplug install
 fi
 zplug load
-[[ -f ~/.fzf.zsh ]] && source ~/.fzf.zsh
 
 # ========================
 # Alias
