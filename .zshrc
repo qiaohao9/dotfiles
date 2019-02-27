@@ -1,15 +1,3 @@
-# Background jobs
-setopt AUTO_CONTINUE  # Ensure a stopped job is continued when disowned
-setopt NO_BG_NICE     # Don't lower priority of background jobs
-setopt CHECK_JOBS     # Report status of background jobs when exitting a shell
-setopt LONG_LIST_JOBS # More verbose listing of jobs
-setopt NOTIFY         # Notify of background job changes as soon as they happen
-
-# Disable core dumps
-limit coredumpsize 0
-bindkey -v
-
-
 # ========================
 # X Display For Arch Linux
 # ========================
@@ -27,7 +15,6 @@ fi
 export HOMEBREW_NO_ANALYTICS=1
 export HOMEBREW_NO_AUTO_UPDATE=true
 
-export EDITOR="nvim"
 export LANG='en_US.UTF-8'
 
 export ZPLUG_HOME=$HOME/.zplug
