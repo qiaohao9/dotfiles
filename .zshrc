@@ -33,10 +33,10 @@ if [[ ! -d $ZPLUG_HOME ]]; then
 fi
 source $ZPLUG_HOME/init.zsh
 zplug "zplug/zplug", hook-build:"zplug --self-manage"
-zplug "tonyseek/oh-my-zsh-seeker-theme", as:theme
 zplug "zsh-users/zsh-completions"
 zplug "zdharma/fast-syntax-highlighting"
 zplug "zsh-users/zsh-autosuggestions"
+zplug "themes/ys", as:theme, from:oh-my-zsh
 zplug "dylanaraps/neofetch", as:command, use:"neofetch"
 zplug "felixonmars/ydcv", as:command, rename-to:ydcv, use:"src/ydcv.py"
 zplug "junegunn/fzf", as:command, use:"bin/fzf-tmux"
