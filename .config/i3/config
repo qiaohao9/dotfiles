@@ -56,7 +56,7 @@ bar {
 
 # #--- Basic Exec ---# #
 bindsym $mod+Return exec $terminal
-bindsym $mod+d      exec --no-startup-id rofi -show run
+bindsym $mod+d      exec --no-startup-id rofi -show run -theme solarized
 bindsym $mod+x      exec --no-startup-id betterlockscreen -t "Have a nice day!" --lock blur
 
 # #--- Toggle ---# #
