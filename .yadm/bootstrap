@@ -1,12 +1,5 @@
 #!/bin/bash
 
-ZPLUG_HOME="${HOME}/.zplug"
-if [[ ! -d ${ZPLUG_HOME} ]]; then
-    curl -sL --proto-redir -all,https https://raw.githubusercontent.com/zplug/installer/master/installer.zsh | zsh
-
-    zplug install
-fi
-
 PYPI_FILE="${HOME}/.config/pip/requirements.txt"
 if [[ -f ${PYPI_FILE} ]]; then
     python3 -m pip install -r ${PYPI_FILE}
@@ -27,7 +20,7 @@ function install_on_macOS() {
         brew bundle install --file=${BREWFILE}
     fi
 
-    m docker prune
+    m dock prune
 }
 
 case $(uname) in
