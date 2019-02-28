@@ -1,4 +1,5 @@
 pynvim
 mycli
+paramiko
 bpython
 jedi
