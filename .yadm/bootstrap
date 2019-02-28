@@ -7,6 +7,11 @@ if [[ ! -d ${ZPLUG_HOME} ]]; then
     zplug install
 fi
 
+PYPI_FILE="${HOME}/.config/pip/requirements.txt"
+if [[ -f ${PYPI_FILE} ]]; then
+    python3 -m pip install -r ${PYPI_FILE}
+fi
+
 NEOVIM_PLUG="$HOME/.local/share/nvim/site/autoload/plug.vim"
 if [[ ! -f ${NEOVIM_PLUG} ]]; then
     curl -fLo ~/.local/share/nvim/site/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
