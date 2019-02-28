@@ -4,7 +4,7 @@ set timeoutlen=500
 " NerdTree hook
 nnoremap <Leader>ft :NERDTreeToggle<CR>
 
-"" Move between windows
+" Move between windows
 nnoremap <Leader>h <C-w>h
 nnoremap <Leader>j <C-w>j
 nnoremap <Leader>k <C-w>k
@@ -18,3 +18,7 @@ nnoremap <Leader>bn :bnext<Return>
 xmap ga <Plug>(EasyAlign)
 nmap ga <Plug>(EasyAlign)
 
+" ncm2
+" Use tab to choose.
+inoremap <expr> <Tab> pumvisible() ? "\<C-n>" : "\<Tab>"
+inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
