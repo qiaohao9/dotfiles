@@ -1,0 +1,4 @@
+pynvim
+mycli
+bpython
+jedi
