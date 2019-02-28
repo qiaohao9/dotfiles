@@ -61,6 +61,10 @@ export PIPENV_PYPI_MIRROR="https://pypi.douban.com/simple"
 # ========================
 # Zplug
 # ========================
+# Check if zplug is installed
+if [[ ! -d ~/.zplug ]]; then
+  git clone https://github.com/zplug/zplug ~/.zplug
+fi
 source $HOME/.zplug/init.zsh
 zplug "zplug/zplug", hook-build:"zplug --self-manage"
 zplug "zsh-users/zsh-completions"
@@ -75,6 +79,9 @@ zplug "vastpeng/fzf-tools"
 zplug "rgcr/m-cli", as:command, use:"m", if:"[[ $OSTYPE == *darwin*  ]]"
 zplug "changyuheng/fz", defer:1
 zplug "rupa/z", use:z.sh
+if ! zplug check; then
+    zplug install
+fi
 zplug load
 
 
