@@ -78,6 +78,7 @@ zplug "junegunn/fzf", as:command, use:"bin/fzf-tmux"
 zplug "junegunn/fzf-bin", from:gh-r, as:command, rename-to:fzf, use:"*$(uname | tr '[:upper:]' '[:lower:]')*amd64*"
 zplug "vastpeng/fzf-tools"
 zplug "rgcr/m-cli", as:command, use:"m", if:"[[ $OSTYPE == *darwin*  ]]"
+zplug "lujiajing1126/redis-cli", as:command, use:bin/rdcli, rename-to:redis-cli, hook-build:"npm install"
 zplug "changyuheng/fz", defer:1
 zplug "rupa/z", use:z.sh
 if ! zplug check; then
