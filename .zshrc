@@ -68,20 +68,20 @@ fi
 source $HOME/.zplug/init.zsh
 zplug "rg3/youtube-dl"
 zplug "vastpeng/fzf-tools"
-zplug "zsh-users/zsh-completions"
 zplug "zdharma/fast-syntax-highlighting"
 zplug "zsh-users/zsh-autosuggestions"
-zplug "rupa/z",                  use:z.sh
-zplug "themes/ys",               as:theme,   from:oh-my-zsh
-zplug "dylanaraps/neofetch",     as:command, use:"neofetch"
-zplug "junegunn/fzf",            as:command, use:"bin/fzf-tmux"
-zplug "felixonmars/ydcv",        as:command, rename-to:ydcv, use:"src/ydcv.py"
-zplug "rgcr/m-cli",              as:command, use:"m",        if:"[[ $OSTYPE == *darwin* ]]"
-zplug "vastpeng/fx",             as:command, use:bin/fx,     hook-build:"npm install"
-zplug "lujiajing1126/redis-cli", as:command, use:bin/rdcli,  rename-to:redis-cli, hook-build:"npm install"
-zplug "junegunn/fzf-bin",        as:command, rename-to:fzf,  use:"*$(uname | tr '[:upper:]' '[:lower:]')*amd64*", from:gh-r
-zplug "changyuheng/fz",          defer:1
-zplug "zplug/zplug",             hook-build:"zplug --self-manage"
+zplug "rupa/z",                      use:z.sh
+zplug "themes/ys",                   as:theme,   from:oh-my-zsh
+zplug "dylanaraps/neofetch",         as:command, use:"neofetch"
+zplug "junegunn/fzf",                as:command, use:"bin/fzf-tmux"
+zplug "felixonmars/ydcv",            as:command, rename-to:ydcv, use:"src/ydcv.py"
+zplug "rgcr/m-cli",                  as:command, use:"m",        if:"[[ $OSTYPE == *darwin* ]]"
+zplug "vastpeng/fx",                 as:command, use:bin/fx,     hook-build:"npm install"
+zplug "tldr-pages/tldr-node-client", as:command, use:bin/tldr,   hook-build:"npm install"
+zplug "lujiajing1126/redis-cli",     as:command, use:bin/rdcli,  rename-to:redis-cli, hook-build:"npm install"
+zplug "junegunn/fzf-bin",            as:command, rename-to:fzf,  use:"*$(uname | tr '[:upper:]' '[:lower:]')*amd64*", from:gh-r
+zplug "changyuheng/fz",              defer:1
+zplug "zplug/zplug",                 hook-build:"zplug --self-manage"
 if ! zplug check; then
     zplug install
 fi
