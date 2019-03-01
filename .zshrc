@@ -1,3 +1,8 @@
+if [[ -f $HOME/.shrc ]]; then
+  source ~/.shrc
+fi
+alias zshconfig="source $HOME/.zshrc"
+
 # Variable behaviors
 setopt NO_ALL_EXPORT  # Don't export all variables to environment
 
@@ -32,33 +37,6 @@ limit coredumpsize 0
 
 
 # ========================
-# X Display For Arch Linux
-# ========================
-if [[ "$OSTYPE" = "linux-gnu" && ! $DISPLAY && $XDG_VTNR -eq 1 ]]; then
-  exec startx
-fi
-if [ "$TERM" = "xterm-termite" ]; then 
-  export TERM=xterm-256color
-fi
-
-
-# ========================
-# Environments
-# ========================
-export LANG='en_US.UTF-8'
-
-export HOMEBREW_NO_ANALYTICS=1
-export HOMEBREW_NO_AUTO_UPDATE=true
-export HOMEBREW_BOTTLE_DOMAIN="https://mirrors.tuna.tsinghua.edu.cn/homebrew-bottles"
-
-export GOPATH=$HOME/.go
-export GOROOT=$(go env GOROOT)
-export PATH=$PATH:$HOME/.node_modules/bin:$GOPATH/bin
-
-export PIPENV_PYPI_MIRROR="https://pypi.douban.com/simple"
-
-
-# ========================
 # Zplug
 # ========================
 # Check if zplug is installed
@@ -70,35 +48,17 @@ zplug "rg3/youtube-dl"
 zplug "vastpeng/fzf-tools"
 zplug "zdharma/fast-syntax-highlighting"
 zplug "zsh-users/zsh-autosuggestions"
-zplug "rupa/z",                      use:z.sh
 zplug "themes/ys",                   as:theme,   from:oh-my-zsh
-zplug "dylanaraps/neofetch",         as:command, use:"neofetch"
-zplug "junegunn/fzf",                as:command, use:"bin/fzf-tmux"
+zplug "rupa/z",                      as:plugin,  use:z.sh
+zplug "dylanaraps/neofetch",         as:command, use:neofetch
+zplug "junegunn/fzf",                as:command, use:bin/fzf-tmux
 zplug "felixonmars/ydcv",            as:command, rename-to:ydcv, use:"src/ydcv.py"
-zplug "rgcr/m-cli",                  as:command, use:"m",        if:"[[ $OSTYPE == *darwin* ]]"
+zplug "rgcr/m-cli",                  as:command, use:m,          if:"[[ $OSTYPE == *darwin* ]]"
 zplug "vastpeng/fx",                 as:command, use:bin/fx,     hook-build:"npm install"
 zplug "tldr-pages/tldr-node-client", as:command, use:bin/tldr,   hook-build:"npm install"
 zplug "lujiajing1126/redis-cli",     as:command, use:bin/rdcli,  rename-to:redis-cli, hook-build:"npm install"
-zplug "junegunn/fzf-bin",            as:command, rename-to:fzf,  use:"*$(uname | tr '[:upper:]' '[:lower:]')*amd64*", from:gh-r
-zplug "changyuheng/fz",              defer:1
-zplug "zplug/zplug",                 hook-build:"zplug --self-manage"
+zplug "junegunn/fzf-bin",            as:command, rename-to:fzf,  use:"*$(uname        | tr '[:upper:]' '[:lower:]')*amd64*", from:gh-r
 if ! zplug check; then
     zplug install
 fi
 zplug load
-
-# ========================
-# Alias
-# ========================
-alias zshconfig="source ~/.zshrc"
-
-alias l="ls -hlHG"
-alias la="ls -ahlHG"
-
-alias vi="nvim"
-alias vim="nvim"
-
-alias ping="prettyping --nolegend"
-alias du="ncdu --color dark -rr -x --exclude .git"
-
-alias dm="docker-machine"
