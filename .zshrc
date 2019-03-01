@@ -79,6 +79,7 @@ zplug "junegunn/fzf-bin", from:gh-r, as:command, rename-to:fzf, use:"*$(uname | 
 zplug "vastpeng/fzf-tools"
 zplug "rgcr/m-cli", as:command, use:"m", if:"[[ $OSTYPE == *darwin*  ]]"
 zplug "lujiajing1126/redis-cli", as:command, use:bin/rdcli, rename-to:redis-cli, hook-build:"npm install"
+zplug "rg3/youtube-dl"
 zplug "changyuheng/fz", defer:1
 zplug "rupa/z", use:z.sh
 if ! zplug check; then
