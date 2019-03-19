@@ -1,31 +1,12 @@
 #!/bin/bash
 
-PYPI_FILE="${HOME}/.config/pip/requirements.txt"
-if [[ -f ${PYPI_FILE} ]]; then
-    python3 -m pip install -r ${PYPI_FILE}
-fi
-
-NEOVIM_PLUG="$HOME/.local/share/nvim/site/autoload/plug.vim"
-if [[ ! -f ${NEOVIM_PLUG} ]]; then
-    curl -fLo ~/.local/share/nvim/site/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
-fi
-
-BREWFILE="$HOME/.Brewfile"
-function install_on_macOS() {
-    if [[ ! $(command -v brew) ]]; then
-        /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
-    fi
-
-    if [[ -f ${BREWFILE} ]]; then
-        brew bundle install --file=${BREWFILE}
-    fi
-
-    m dock prune
-}
-
+# replace node_modules
 case $(uname) in
-    'Darwin')
-        install_on_macOS
+    "Darwin")
+        sed -i "" -e "s#prefix=.*#prefix=${HOME}/.node_modules#" ${HOME}/.npmrc
+        ;;
+    "Linux")
+        sed -i -e "s#prefix=.*#prefix=${HOME}/.node_modules#" ${HOME}/.npmrc
         ;;
     *)
         ;;
