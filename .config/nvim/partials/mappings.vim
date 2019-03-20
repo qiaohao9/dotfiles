@@ -17,8 +17,3 @@ nnoremap <Leader>bn :bnext<Return>
 " Auto Align
 xmap ga <Plug>(EasyAlign)
 nmap ga <Plug>(EasyAlign)
-
-" ncm2
-" Use tab to choose.
-inoremap <expr> <Tab> pumvisible() ? "\<C-n>" : "\<Tab>"
-inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
