@@ -69,7 +69,6 @@ source $HOME/.zplug/init.zsh
 zplug "zplug/zplug",                 hook-build:"zplug --self-manage"
 
 zplug "rg3/youtube-dl"
-zplug "vastpeng/fzf-tools"
 zplug "zdharma/fast-syntax-highlighting"
 zplug "zsh-users/zsh-autosuggestions"
 zplug "rupa/z",                      use:z.sh
@@ -87,6 +86,7 @@ if ! zplug check; then
     zplug install
 fi
 zplug load
+[[ -f ~/.fzf-tools.zsh ]] && source ~/.fzf-tools.zsh
 
 # ========================
 # Alias
