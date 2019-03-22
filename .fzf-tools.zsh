@@ -86,3 +86,13 @@ function share() {
         echo "No specific fiels."
     fi
 }
+
+# Get my ip
+function ip() {
+    if [[ $1 -eq 6 ]]; then
+        curl -6 -s ifconfig.co/json | fx
+    else
+        curl -4 -s ifconfig.co/json | fx
+    fi
+
+}
