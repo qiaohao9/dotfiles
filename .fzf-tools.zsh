@@ -22,7 +22,7 @@ function rmtree() {
 
 function zap() {
 	local token
-	token=$(brew cask list | fzf-tmux --query="$1" +m --preview "brew cask info {}")
+	token=$(brew cask list | fzf +m)
 
 	if [[ x"$token" != "x" ]]; then
 		brew cask zap $token
