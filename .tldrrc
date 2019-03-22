@@ -1,0 +1,12 @@
+{
+    "themes": {
+        "ocean": {
+            "commandName": "bold, cyan",
+            "mainDescription": "",
+            "exampleDescription": "green",
+            "exampleCode": "cyan",
+            "exampleToken": "dim"
+        }
+    },
+    "theme": "ocean"
+}
