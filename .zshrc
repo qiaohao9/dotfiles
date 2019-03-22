@@ -71,11 +71,9 @@ fi
 source $HOME/.zplug/init.zsh
 # zplug "zplug/zplug",                 hook-build:"zplug --self-manage"
 
-# zplug "rg3/youtube-dl"
 zplug "zdharma/fast-syntax-highlighting"
 zplug "zsh-users/zsh-autosuggestions"
 zplug "themes/ys",                   as:theme,   from:oh-my-zsh
-zplug "lujiajing1126/redis-cli",     as:command, use:bin/rdcli,      hook-build:"npm install"
 zplug "iikira/BaiduPCS-Go",          as:command, rename-to:baidupan, use:"*$(uname | tr '[:upper:]' '[:lower:]')*amd64*", from:gh-r
 if ! zplug check; then
     zplug install
