@@ -11,24 +11,24 @@ set $reboot    sudo -A reboot
 set $mod       Mod4
 
 # #--- Starting External Scripts ---# #
-set               $transparent         #00000000
-# Set Xresources colors:
-set_from_resource $darkblack   color0  #000000
-set_from_resource $black       color8  #000000
-set_from_resource $darkred     color1  #000000
-set_from_resource $red         color9  #000000
-set_from_resource $darkgreen   color2  #000000
-set_from_resource $green       color10 #000000
-set_from_resource $darkyellow  color3  #000000
-set_from_resource $yellow      color11 #000000
-set_from_resource $darkblue    color4  #000000
-set_from_resource $blue        color12 #000000
-set_from_resource $darkmagenta color5  #000000
-set_from_resource $magenta     color13 #000000
-set_from_resource $darkcyan    color6  #000000
-set_from_resource $cyan        color14 #000000
-set_from_resource $darkwhite   color7  #000000
-set_from_resource $white       color15 #000000
+# Set colors:
+set $darkblack   #1d2021
+set $transparent #000000
+set $black       #928374
+set $darkred     #cc241d
+set $red         #fb4934
+set $darkgreen   #98971a
+set $green       #b8bb26
+set $darkyellow  #d79921
+set $yellow      #fabd2f
+set $darkblue    #458588
+set $blue        #83a598
+set $darkmagenta #b16286
+set $magenta     #d3869b
+set $darkcyan    #689d6a
+set $cyan        #8ec07c
+set $darkwhite   #a89984
+set $white       #ebdbb2
 
 #                       BORDER    BACKGROUND  TEXT    INDICATOR       CHILD_BORDER
 client.focused          $red         $red     $magenta $darkmagenta $darkblue
