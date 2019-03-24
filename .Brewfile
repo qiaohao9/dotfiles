@@ -64,3 +64,4 @@ cask "virtualbox"
 cask "visual-studio-code"
 mas "iMovie", id: 408981434
 mas "Magnet", id: 441258766
+mas "TakeABreak", id: 1457158844
