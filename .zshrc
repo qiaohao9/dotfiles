@@ -91,5 +91,3 @@ alias la="ls -ahlHG"
 
 alias ping="prettyping --nolegend"
 alias du="ncdu --color dark -rr -x --exclude .git"
-
-alias docker_ps='docker ps --format "table {{.ID}}\t{{.Names}}\t{{.Status}}\t{{.Ports}}"'
