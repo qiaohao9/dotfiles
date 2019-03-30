@@ -19,6 +19,4 @@ esac
 # TODO when using Arch Linux, where is binary stored.
 # install packages from pypi
 PYPI_PACKAGES="mycli paramiko bpython"
-if [[ -e ${PYPI_FILE_PATH} ]]; then
-    pip3 install ${PYPI_PACKAGES}
-fi
+pip3 install ${PYPI_PACKAGES}
