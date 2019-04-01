@@ -50,6 +50,7 @@ export LANG='en_US.UTF-8'
 
 export HOMEBREW_NO_ANALYTICS=1
 export HOMEBREW_NO_AUTO_UPDATE=true
+export HOMEBREW_EDITOR=nvim
 export HOMEBREW_BOTTLE_DOMAIN="https://mirrors.tuna.tsinghua.edu.cn/homebrew-bottles"
 
 export GOPATH=$HOME/.go
@@ -89,5 +90,4 @@ alias zshconfig="source ~/.zshrc"
 alias l="ls -hlHG"
 alias la="ls -ahlHG"
 
-alias ping="prettyping --nolegend"
 alias du="ncdu --color dark -rr -x --exclude .git"
