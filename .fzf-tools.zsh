@@ -78,14 +78,6 @@ function proxy() {
 	fi
 }
 
-# share files into file.io
-function share() {
-    if [ $# != 0 ]; then
-        curl -F "file=@$1" "https://file.io/?expires=1h"
-    else
-        echo "No specific fiels."
-    fi
-}
 
 # Get my ip
 function ip() {
