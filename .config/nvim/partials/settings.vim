@@ -27,6 +27,7 @@ set nowritebackup
 set breakindent
 set smartindent
 set autoindent
+set autowrite
 
 set fileformat=unix
 set fileencoding=utf-8
