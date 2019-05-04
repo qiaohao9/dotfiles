@@ -70,8 +70,6 @@ if [[ ! -d ~/.zplug ]]; then
   git clone https://github.com/zplug/zplug ~/.zplug
 fi
 source $HOME/.zplug/init.zsh
-# zplug "zplug/zplug",                 hook-build:"zplug --self-manage"
-
 zplug "zdharma/fast-syntax-highlighting"
 zplug "zsh-users/zsh-autosuggestions"
 zplug "themes/ys",                   as:theme,   from:oh-my-zsh
@@ -91,3 +89,5 @@ alias l="ls -hlHG"
 alias la="ls -ahlHG"
 
 alias du="ncdu --color dark -rr -x --exclude .git"
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
