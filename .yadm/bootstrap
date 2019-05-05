@@ -18,5 +18,5 @@ esac
 
 # TODO when using Arch Linux, where is binary stored.
 # install packages from pypi
-PYPI_PACKAGES="mycli paramiko bpython neovim"
+PYPI_PACKAGES="mycli paramiko bpython neovim jedi yarp"
 pip3 install ${PYPI_PACKAGES}
