@@ -5,6 +5,22 @@ endif
 
 call plug#begin('~/.vim/plugged')
 Plug 'dracula/vim', { 'as': 'dracula' }          " Theme for dracula
+Plug 'ncm2/ncm2'
+Plug 'Shougo/neco-syntax'
+Plug 'roxma/nvim-yarp'
+    set completeopt=noinsert,menuone,noselect
+    set shortmess+=c
+    autocmd BufEnter * call ncm2#enable_for_buffer()
+
+Plug 'ncm2/ncm2-ultisnips'
+Plug 'ncm2/ncm2-bufword'
+Plug 'ncm2/ncm2-path'
+Plug 'ncm2/ncm2-syntax'
+Plug 'ncm2/ncm2-jedi'
+Plug 'ncm2/ncm2-go'
+Plug 'ncm2/ncm2-cssomni'
+Plug 'ncm2/ncm2-tern',  {'do': 'npm install'}
+
 Plug 'vim-airline/vim-airline'                   " Nvim status line
     let g:airline#extensions#tabline#enabled = 1 " Show tab
 Plug 'yggdroot/indentline'
@@ -17,11 +33,12 @@ Plug 'lervag/vimtex'
     let g:vimtex_quickfix_mode = 0
     let g:tex_conceal          = 'abdmg'
 Plug 'sirver/ultisnips'
-    let g:UltiSnipsExpandTrigger       = '<tab>'
-    let g:UltiSnipsJumpForwardTrigger  = '<tab>'
-    let g:UltiSnipsJumpBackwardTrigger = '<s-tab>'
-    let g:UltiSnipsSnippetDirectories  = [$HOME.'/.config/nvim/UltiSnips']
-
+    inoremap <silent> <expr> <CR> ncm2_ultisnips#expand_or("\<CR>", 'n')
+    let g:UltiSnipsExpandTrigger            = "<Plug>(ultisnips_expand)"
+    let g:UltiSnipsJumpForwardTrigger       = '<c-k>'
+    let g:UltiSnipsJumpBackwardTrigger      = '<c-j>'
+    let g:UltiSnipsRemoveSelectModeMappings = 0
+    let g:UltiSnipsSnippetDirectories       = [$HOME.'/.config/nvim/UltiSnips']
 Plug 'fatih/vim-go', { 'do': ':GoInstallBinaries' } " Golang
     let g:go_list_type                = "quickfix"
     let g:go_fmt_command              = "goimports"
@@ -33,8 +50,7 @@ Plug 'fatih/vim-go', { 'do': ':GoInstallBinaries' } " Golang
     let g:go_highlight_fields         = 1
     let g:go_highlight_functions      = 1
     let g:go_highlight_function_calls = 1
-    autocmd BufNewFile,BufRead *.go setlocal noexpandtab tabstop=4 shiftwidth=4 
-
+    autocmd BufNewFile,BufRead *.go setlocal noexpandtab tabstop=4 shiftwidth=4
 Plug 'jiangmiao/auto-pairs'                        " Paris
 Plug 'junegunn/vim-easy-align'                     " Auto Align
 call plug#end()
