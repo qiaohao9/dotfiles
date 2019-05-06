@@ -1,0 +1,3 @@
+[submodule ".config/iterm2/colors/Nord"]
+	path = .config/iterm2/colors/Nord
+	url = https://github.com/arcticicestudio/nord-iterm2.git
