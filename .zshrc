@@ -54,6 +54,7 @@ export HOMEBREW_EDITOR=nvim
 export HOMEBREW_BOTTLE_DOMAIN="https://mirrors.tuna.tsinghua.edu.cn/homebrew-bottles"
 
 export GOPATH=$HOME/.go
+export GOBIN=$GOPATH/bin
 if [[ $(command -v go) ]]; then
     export GOROOT=$(go env GOROOT)
 fi
