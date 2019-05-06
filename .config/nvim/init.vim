@@ -91,6 +91,11 @@ Plug 'fatih/vim-go', { 'do': ':GoInstallBinaries' } " Golang
 Plug 'SirVer/ultisnips'
     let g:UltiSnipsRemoveSelectModeMappings = 0
     let g:UltiSnipsSnippetDirectories       = [$HOME.'/.config/nvim/UltiSnips']
+Plug 'lervag/vimtex'
+    set conceallevel=1
+    let g:tex_flavor           = 'latex'
+    let g:vimtex_quickfix_mode = 0
+    let g:tex_conceal          = 'abdmg'
 
 Plug 'dracula/vim', { 'as': 'dracula' }          " Theme for dracula
 Plug 'honza/vim-snippets'
