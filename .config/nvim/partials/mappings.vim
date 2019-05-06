@@ -1,6 +1,9 @@
 let mapleader=" "
 set timeoutlen=500
 
+" nerdtree
+map <C-n> :NERDTreeToggle<CR>
+
 " Move between windows
 nnoremap H <C-w>h
 nnoremap J <C-w>j
