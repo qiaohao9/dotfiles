@@ -45,8 +45,6 @@ Plug 'lervag/vimtex'
 Plug 'sirver/ultisnips'
     inoremap <silent> <expr> <CR> ncm2_ultisnips#expand_or("\<CR>", 'n')
     let g:UltiSnipsExpandTrigger            = "<Plug>(ultisnips_expand)"
-    let g:UltiSnipsJumpForwardTrigger       = '<c-k>'
-    let g:UltiSnipsJumpBackwardTrigger      = '<c-j>'
     let g:UltiSnipsRemoveSelectModeMappings = 0
     let g:UltiSnipsSnippetDirectories       = [$HOME.'/.config/nvim/UltiSnips']
 Plug 'fatih/vim-go', { 'do': ':GoInstallBinaries' } " Golang
