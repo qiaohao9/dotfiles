@@ -1,5 +1,4 @@
-![macOS](https://i.loli.net/2019/02/28/5c77b63415343.png)
-![Arch Linux](https://i.loli.net/2019/02/28/5c77b6ce669b6.png)
+![macOS](https://i.loli.net/2019/05/06/5cd02100b105d.png)
 
 ## How to use dotfiles?
 
