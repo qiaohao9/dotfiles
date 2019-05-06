@@ -59,6 +59,8 @@ Plug 'fatih/vim-go', { 'do': ':GoInstallBinaries' } " Golang
     let g:go_highlight_functions      = 1
     let g:go_highlight_function_calls = 1
     autocmd BufNewFile,BufRead *.go setlocal noexpandtab tabstop=4 shiftwidth=4
+
+Plug 'editorconfig/editorconfig-vim'
 Plug 'jiangmiao/auto-pairs'                        " Paris
 Plug 'junegunn/vim-easy-align'                     " Auto Align
 call plug#end()
