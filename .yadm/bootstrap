@@ -11,6 +11,8 @@ case $(uname) in
         ;;
     "Linux")
         sed -i -e "s#prefix=.*#prefix=${HOME}/.node_modules#" ${HOME}/.npmrc
+        # pacman -Qqen > $HOME/.Pacmanfile
+        yay -S - < $HOME/.Pacmanfile
         ;;
     *)
         ;;
