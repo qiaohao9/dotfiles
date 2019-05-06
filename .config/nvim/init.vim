@@ -9,7 +9,7 @@ endif
 " ========================
 " Vim Copy-Paste to System
 " ========================
-if has('clipboar')
+if has('clipboard')
     if has('unnamedplus')
         set clipboard=unnamed,unnamedplus
     else
@@ -71,6 +71,13 @@ Plug 'yggdroot/indentline'
     let g:indentLine_char_list    = ['|', '¦', '┆', '┊']
 Plug 'neoclide/coc.nvim', {'do': 'yarn install --frozen-lockfile'}
     autocmd CursorHold * silent call CocActionAsync('highlight')
+
+Plug 'neoclide/coc-json',      {'do': 'yarn install --frozen-lockfile'}
+Plug 'neoclide/coc-yaml',      {'do': 'yarn install --frozen-lockfile'}
+Plug 'neoclide/coc-python',    {'do': 'yarn install --frozen-lockfile'}
+Plug 'neoclide/coc-highlight', {'do': 'yarn install --frozen-lockfile'}
+Plug 'neoclide/coc-snippets', {'do': 'yarn install --frozen-lockfile'}
+
 Plug 'fatih/vim-go', { 'do': ':GoInstallBinaries' } " Golang
     let g:go_list_type                = 'quickfix'
     let g:go_fmt_command              = 'goimports'
@@ -88,28 +95,32 @@ Plug 'fatih/vim-go', { 'do': ':GoInstallBinaries' } " Golang
     let g:go_def_mapping_enabled      = 0
     let g:go_doc_keywordprg_enabled   = 0
     autocmd BufNewFile,BufRead *.go setlocal noexpandtab tabstop=4 shiftwidth=4
-Plug 'SirVer/ultisnips'
-    let g:UltiSnipsRemoveSelectModeMappings = 0
-    let g:UltiSnipsSnippetDirectories       = [$HOME.'/.config/nvim/UltiSnips']
+" Plug 'SirVer/ultisnips'
+"    let g:UltiSnipsRemoveSelectModeMappings = 0
+"    let g:UltiSnipsSnippetDirectories       = [$HOME.'/.config/nvim/UltiSnips']
 Plug 'lervag/vimtex'
     set conceallevel=1
     let g:tex_flavor           = 'latex'
     let g:vimtex_quickfix_mode = 0
     let g:tex_conceal          = 'abdmg'
+Plug 'arcticicestudio/nord-vim', {'as': 'nord'} " Theme for Nord
+    let g:nord_italic_comments = 1
+    let g:nord_uniform_status_lines = 1
+    let g:nord_bold_vertical_split_line = 1
 
-Plug 'dracula/vim', { 'as': 'dracula' }          " Theme for dracula
+Plug 'dracula/vim', { 'as': 'dracula' }         " Theme for dracula
 Plug 'honza/vim-snippets'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
 Plug 'editorconfig/editorconfig-vim'
-Plug 'jiangmiao/auto-pairs'                      " Paris
-Plug 'junegunn/vim-easy-align'                   " Auto Align
+Plug 'jiangmiao/auto-pairs'                     " Paris
+Plug 'junegunn/vim-easy-align'                  " Auto Align
 Plug 'thirtythreeforty/lessspace.vim'
 call plug#end()
 
 filetype on
 syntax on
-colorscheme dracula
+colorscheme nord
 
 " ====================
 " Mapping keys binding
@@ -143,6 +154,12 @@ nmap <silent> gd <Plug>(coc-definition)
 " Rename
 nmap <leader>rn <Plug>(coc-rename)
 
-let g:UltiSnipsExpandTrigger="<S-Tab>"
-let g:UltiSnipsJumpForwardTrigger="<C-K>"
-let g:UltiSnipsJumpBackwardTrigger="<C-J>"
+inoremap <silent><expr> <TAB>
+      \ pumvisible() ? coc#_select_confirm() :
+      \ coc#expandableOrJumpable() ? "\<C-r>=coc#rpc#request('doKeymap', ['snippets-expand-jump',''])\<CR>" :
+      \ <SID>check_back_space() ? "\<TAB>" :
+      \ coc#refresh()
+
+"let g:UltiSnipsExpandTrigger="<S-Tab>"
+"let g:UltiSnipsJumpForwardTrigger="<C-K>"
+"let g:UltiSnipsJumpBackwardTrigger="<C-J>"
