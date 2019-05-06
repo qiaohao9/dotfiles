@@ -104,6 +104,7 @@ Plug 'junegunn/fzf.vim'
 Plug 'editorconfig/editorconfig-vim'
 Plug 'jiangmiao/auto-pairs'                      " Paris
 Plug 'junegunn/vim-easy-align'                   " Auto Align
+Plug 'thirtythreeforty/lessspace.vim'
 call plug#end()
 
 filetype on
