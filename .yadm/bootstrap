@@ -4,21 +4,22 @@ NC='\033[0m'
 GREEN='\033[0;32m'
 RED='\033[0;31m'
 
+# install packages from pypi
+PYPI_PACKAGES="mycli paramiko bpython"
+
 # replace node_modules
 case $(uname) in
     "Darwin")
         sed -i "" -e "s#prefix=.*#prefix=${HOME}/.node_modules#" ${HOME}/.npmrc
+        pip3 install ${PYPI_PACKAGES}
         ;;
     "Linux")
         sed -i -e "s#prefix=.*#prefix=${HOME}/.node_modules#" ${HOME}/.npmrc
         # pacman -Qqen > $HOME/.Pacmanfile
         yay -S - < $HOME/.Pacmanfile
+        sudo pip3 install ${PYPI_PACKAGES}
         ;;
     *)
         ;;
 esac
 
-# TODO when using Arch Linux, where is binary stored.
-# install packages from pypi
-PYPI_PACKAGES="mycli paramiko bpython"
-pip3 install ${PYPI_PACKAGES}
