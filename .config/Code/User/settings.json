@@ -1,0 +1,9 @@
+{
+    "workbench.colorTheme": "Nord",
+    "workbench.startupEditor": "newUntitledFile",
+    "latex-preview.command": "xelatex",
+    "files.autoSave": "onFocusChange",
+    "editor.fontSize": 16,
+    "editor.fontFamily": "Consolas, 'Source Code Pro', Menlo, Monaco, 'Courier New', monospace",
+    "explorer.confirmDelete": false
+}
