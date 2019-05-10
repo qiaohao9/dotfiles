@@ -11,10 +11,12 @@ PYPI_PACKAGES="mycli paramiko bpython"
 case $(uname) in
     "Darwin")
         sed -i "" -e "s#prefix=.*#prefix=${HOME}/.node_modules#" ${HOME}/.npmrc
+        sed -i "" -e "s#/Users/vast/#${HOME}#" ${HOME}/.npmrc
         pip3 install ${PYPI_PACKAGES}
         ;;
     "Linux")
         sed -i -e "s#prefix=.*#prefix=${HOME}/.node_modules#" ${HOME}/.npmrc
+        sed -i -e "s#/Users/vast/#${HOME}#" ${HOME}/.npmrc
         # pacman -Qqen > $HOME/.Pacmanfile
         yay -S - < $HOME/.Pacmanfile
         sudo pip3 install ${PYPI_PACKAGES}
