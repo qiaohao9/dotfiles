@@ -3,7 +3,7 @@
 ## How to use dotfiles?
 
 1. Install [yadm](https://yadm.io/docs/install)
-2. ```yadm clone --recursive https://github.com/vastpeng/dotfiles.git```
+2. ```yadm clone https://github.com/vastpeng/dotfiles.git --recursive```
 3. ```yadm bootstrap```
 
 ## How to install Arch Linux?
