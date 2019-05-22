@@ -50,6 +50,7 @@ set expandtab
 
 set fileformat=unix
 set fileencoding=utf-8
+set termencoding=utf-8
 
 set shortmess+=c
 set signcolumn=yes
@@ -69,14 +70,6 @@ Plug 'vim-airline/vim-airline'                   " Nvim status line
 Plug 'yggdroot/indentline'
     let g:indentLine_conceallevel = 1
     let g:indentLine_char_list    = ['|', '¦', '┆', '┊']
-Plug 'neoclide/coc.nvim', {'do': 'yarn install --frozen-lockfile'}
-    autocmd CursorHold * silent call CocActionAsync('highlight')
-
-Plug 'neoclide/coc-json',      {'do': 'yarn install --frozen-lockfile'}
-Plug 'neoclide/coc-yaml',      {'do': 'yarn install --frozen-lockfile'}
-Plug 'neoclide/coc-python',    {'do': 'yarn install --frozen-lockfile'}
-Plug 'neoclide/coc-highlight', {'do': 'yarn install --frozen-lockfile'}
-Plug 'neoclide/coc-snippets', {'do': 'yarn install --frozen-lockfile'}
 
 Plug 'fatih/vim-go', { 'do': ':GoInstallBinaries' } " Golang
     let g:go_list_type                = 'quickfix'
@@ -95,9 +88,11 @@ Plug 'fatih/vim-go', { 'do': ':GoInstallBinaries' } " Golang
     let g:go_def_mapping_enabled      = 0
     let g:go_doc_keywordprg_enabled   = 0
     autocmd BufNewFile,BufRead *.go setlocal noexpandtab tabstop=4 shiftwidth=4
-" Plug 'SirVer/ultisnips'
-"    let g:UltiSnipsRemoveSelectModeMappings = 0
-"    let g:UltiSnipsSnippetDirectories       = [$HOME.'/.config/nvim/UltiSnips']
+Plug 'SirVer/ultisnips'
+   let g:UltiSnipsRemoveSelectModeMappings = 0
+   let g:UltiSnipsSnippetDirectories       = [$HOME.'/.config/nvim/UltiSnips']
+Plug 'honza/vim-snippets'
+
 Plug 'lervag/vimtex'
     set conceallevel=1
     let g:tex_flavor           = 'latex'
@@ -138,28 +133,6 @@ nnoremap L <C-w>l
 xmap ga <Plug>(EasyAlign)
 nmap ga <Plug>(EasyAlign)
 
-" Auto-Complete
-inoremap <silent><expr> <TAB> pumvisible() ? "\<C-n>" : <SID>check_back_space() ? "\<TAB>" : coc#refresh()
-inoremap <expr><S-TAB> pumvisible() ? "\<C-p>" : "\<C-h>"
-function! s:check_back_space() abort
-  let col = col('.') - 1
-  return !col || getline('.')[col - 1]  =~# '\s'
-endfunction
-" Use <c-space> to trigger completion.
-inoremap <silent><expr> <c-space> coc#refresh()
-
-" Remap keys for gotos
-nmap <silent> gd <Plug>(coc-definition)
-
-" Rename
-nmap <leader>rn <Plug>(coc-rename)
-
-inoremap <silent><expr> <TAB>
-      \ pumvisible() ? coc#_select_confirm() :
-      \ coc#expandableOrJumpable() ? "\<C-r>=coc#rpc#request('doKeymap', ['snippets-expand-jump',''])\<CR>" :
-      \ <SID>check_back_space() ? "\<TAB>" :
-      \ coc#refresh()
-
-"let g:UltiSnipsExpandTrigger="<S-Tab>"
-"let g:UltiSnipsJumpForwardTrigger="<C-K>"
-"let g:UltiSnipsJumpBackwardTrigger="<C-J>"
+let g:UltiSnipsExpandTrigger="<Tab>"
+let g:UltiSnipsJumpForwardTrigger="<Tab>"
+let g:UltiSnipsJumpBackwardTrigger="<S-Tab>"
