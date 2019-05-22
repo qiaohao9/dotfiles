@@ -5,7 +5,7 @@ GREEN='\033[0;32m'
 RED='\033[0;31m'
 
 # install packages from pypi
-PYPI_PACKAGES="mycli paramiko bpython"
+PYPI_PACKAGES="mycli paramiko bpython pynvim unidecode"
 
 # replace node_modules
 case $(uname) in
