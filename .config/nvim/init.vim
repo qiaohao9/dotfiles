@@ -82,6 +82,15 @@ Plug 'editorconfig/editorconfig-vim'
 Plug 'jiangmiao/auto-pairs'
 Plug 'junegunn/vim-easy-align'
 Plug 'thirtythreeforty/lessspace.vim'
+Plug 'scrooloose/nerdcommenter'
+    let g:NERDSpaceDelims = 1
+    let g:NERDCompactSexyComs = 1
+    let g:NERDDefaultAlign = 'left'
+    let g:NERDAltDelims_java = 1
+    let g:NERDCommentEmptyLines = 1
+    let g:NERDTrimTrailingWhitespace = 1
+    let g:NERDToggleCheckAllLines = 1
+
 call plug#end()
 
 filetype on
