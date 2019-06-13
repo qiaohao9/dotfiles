@@ -24,3 +24,7 @@
     old = red bold
     new = green bold
     whitespace = red reverse
+; [https]
+	; proxy = http://127.0.0.1:1087
+; [http]
+	; proxy = http://127.0.0.1:1087
