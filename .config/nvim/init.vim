@@ -76,12 +76,6 @@ Plug 'arcticicestudio/nord-vim', {'as': 'nord'} " Theme for Nord
     let g:nord_uniform_status_lines = 1
     let g:nord_bold_vertical_split_line = 1
 
-Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
-Plug 'junegunn/fzf.vim'
-Plug 'editorconfig/editorconfig-vim'
-Plug 'jiangmiao/auto-pairs'
-Plug 'junegunn/vim-easy-align'
-Plug 'thirtythreeforty/lessspace.vim'
 Plug 'scrooloose/nerdcommenter'
     let g:NERDSpaceDelims = 1
     let g:NERDCompactSexyComs = 1
@@ -90,6 +84,13 @@ Plug 'scrooloose/nerdcommenter'
     let g:NERDCommentEmptyLines = 1
     let g:NERDTrimTrailingWhitespace = 1
     let g:NERDToggleCheckAllLines = 1
+
+Plug 'editorconfig/editorconfig-vim'
+Plug 'jiangmiao/auto-pairs'
+Plug 'junegunn/vim-easy-align'
+Plug 'thirtythreeforty/lessspace.vim'
+Plug 'machakann/vim-highlightedyank'
+Plug 'tmhedberg/SimpylFold'
 
 call plug#end()
 
