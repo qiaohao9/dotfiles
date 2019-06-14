@@ -1,13 +1,6 @@
 # Variable behaviors
 setopt NO_ALL_EXPORT  # Don't export all variables to environment
 
-# Directory changing
-setopt auto_cd           # cd by typing directory name if it's not a command
-setopt CDABLE_VARS       # Try to cd to variable value from ~ if no leading slash
-setopt NO_AUTO_PUSHD     # Prevent all directories from being automatically pushed onto the stack
-setopt PUSHD_IGNORE_DUPS # Directory only appears once on the stack
-setopt PUSHD_TO_HOME     # pushd with no arguments goes to ~
-
 # completion
 setopt MENU_COMPLETE # Cycle through completions by completing in place
 setopt NO_LIST_BEEP  # Prevent beeping on ambiguous completion
@@ -38,7 +31,7 @@ if [[ "$OSTYPE" = "linux-gnu" && ! $DISPLAY && $XDG_VTNR -eq 1 ]]; then
   exec startx
 fi
 
-if [ "$TERM" = "xterm-termite" ]; then 
+if [ "$TERM" = "xterm-termite" ]; then
   export TERM=xterm-256color
 fi
 
