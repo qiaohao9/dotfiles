@@ -57,19 +57,22 @@ cask "docker"
 cask "font-consolas-for-powerline"
 cask "google-chrome"
 cask "iina"
-cask "istat-menus"
 cask "iterm2"
 cask "itsycal"
 cask "keycastr"
 cask "mactex-no-gui"
-cask "parallels"
+cask "nextcloud"
+cask "numi"
 cask "shadowsocksx-ng"
-cask "sketch"
 cask "snipaste"
+cask "squirrel"
 cask "ticktick"
+cask "typora"
+cask "upic"
 cask "visual-studio-code"
 cask "zoomus"
 mas "iMovie", id: 408981434
 mas "Magnet", id: 441258766
+mas "Reeder", id: 880001334
 mas "Telegram", id: 747648890
 mas "Xcode", id: 497799835
