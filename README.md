@@ -1,4 +1,4 @@
-![macOS](https://i.loli.net/2019/05/06/5cd02100b105d.png)
+![macOS](https://raw.githubusercontent.com/vastpeng/pic-storage/master/Snipaste_2019-08-01_10-48-01.png)
 
 ## How to use dotfiles?
 
