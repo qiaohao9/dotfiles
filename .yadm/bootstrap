@@ -1,29 +1,79 @@
 #!/bin/bash
+system_type=$(uname -s)
 
-NC='\033[0m'
-GREEN='\033[0;32m'
-RED='\033[0;31m'
+cd $HOME
+echo "Init submodules..."
+yadm submodule update --recursive --init
 
-# install packages from pypi
-PYPI_PACKAGES="mycli paramiko bpython pynvim unidecode"
 
-# replace node_modules
-case $(uname) in
+function custom_sed() {
+    case "$system_type" in
+        "Darwin")
+            sed -i "" $@
+            ;;
+        "Linux")
+            sed -i $@
+            ;;
+        *)
+            echo "Cannot detect the system ..."
+    esac
+}
+
+
+function install_on_common() {
+    custom_sed -e "s#prefix=.*#prefix=$HOME/.node_modules#" $HOME/.npmrc
+    custom_sed -e "s#/Users/vast/#$HOME/#" $HOME/.aria2/aria2.conf
+
+    # Install vim plugins managed with vim-plug
+    if command -v nvim > /dev/null 2>&1; then
+        echo "Bootstrapingn Neovim..."
+        nvim '+PlugInstall' '+PlugClean!' '+qall'
+    fi
+}
+
+
+function install_on_macOS() {
+    # install HomeBrew if it's missing.
+    if ! command -v brew > /dev/null 2>&1; then
+        echo "Installing HomeBrew..."
+        /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+    fi
+
+    if [ -f "$HOME/.Brewfile" ]; then
+        echo "Updateing HomeBrew bundle..."
+        brew bundle --global
+    fi
+
+    if [ -d "$HOME/.config/iterm2" ]; then
+        echo "Setting iTerm preference folder..."
+        defaults write com.googlecode.iterm2 "PrefsCustomFolder" -string "$HOME/.config/iterm2"
+        defaults write com.googlecode.iterm2 "LoadPrefsFromCustomFolder" -bool true
+    fi
+}
+
+
+function install_on_ArchLinux() {
+    echo "Install Yay..."
+    git clone https://aur.archlinux.org/yay.git /tmp/yay && cd /tmp/yay && makepkg -si
+
+    echo "Installing from .Pacmanfile..."
+    # pacman -Qqen > $HOME/.Pacmanfile
+    yay -S - < $HOME/.Pacmanfile
+
+    cd $HOME
+}
+
+
+case "$system_type" in
     "Darwin")
-        sed -i "" -e "s#prefix=.*#prefix=${HOME}/.node_modules#" ${HOME}/.npmrc
-        sed -i "" -e "s#/Users/vast/#${HOME}#" ${HOME}/.npmrc
-        sed -i "" -e "s#/Users/vastpeng/#${HOME}/#" ${HOME}/.aria2/aria2.conf
-        pip3 install ${PYPI_PACKAGES}
+        install_on_macOS
         ;;
     "Linux")
-        sed -i -e "s#prefix=.*#prefix=${HOME}/.node_modules#" ${HOME}/.npmrc
-        sed -i -e "s#/Users/vast/#${HOME}#" ${HOME}/.npmrc
-        sed -i "" -e "s#/Users/vastpeng/#${HOME}/#" ${HOME}/.aria2/aria2.conf
-        # pacman -Qqen > $HOME/.Pacmanfile
-        yay -S - < $HOME/.Pacmanfile
-        sudo pip3 install ${PYPI_PACKAGES}
+        install_on_ArchLinux
         ;;
     *)
+        echo "Cannot detect the system..."
         ;;
 esac
 
+install_on_common
