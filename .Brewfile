@@ -34,7 +34,6 @@ brew "ncdu"
 brew "neofetch"
 brew "neovim"
 brew "nmap"
-brew "pipenv"
 brew "prettyping"
 brew "ranger"
 brew "rename"
@@ -63,6 +62,7 @@ cask "keycastr"
 cask "mactex-no-gui"
 cask "nextcloud"
 cask "numi"
+cask "sampler"
 cask "shadowsocksx-ng"
 cask "snipaste"
 cask "squirrel"
@@ -73,6 +73,7 @@ cask "visual-studio-code"
 cask "zoomus"
 mas "iMovie", id: 408981434
 mas "Magnet", id: 441258766
+mas "Numbers", id: 409203825
 mas "Reeder", id: 880001334
 mas "Telegram", id: 747648890
 mas "Xcode", id: 497799835
