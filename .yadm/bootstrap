@@ -24,6 +24,8 @@ function install_on_common() {
     custom_sed -e "s#prefix=.*#prefix=$HOME/.node_modules#" $HOME/.npmrc
     custom_sed -e "s#/Users/vast/#$HOME/#" $HOME/.aria2/aria2.conf
 
+    npm install -g cnpm --registry=https://registry.npm.taobao.org
+
     # Install vim plugins managed with vim-plug
     if command -v nvim > /dev/null 2>&1; then
         echo "Bootstrapingn Neovim..."
