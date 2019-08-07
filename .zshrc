@@ -27,7 +27,7 @@ limit coredumpsize 0
 # ========================
 # X Display For Arch Linux
 # ========================
-if [[ "$OSTYPE" = "linux-gnu" && ! $DISPLAY && $XDG_VTNR -eq 1 ]]; then
+if [[ "$(uname -s)" = "Linux" && ! $DISPLAY && $XDG_VTNR -eq 1 ]]; then
   exec startx
 fi
 
@@ -85,4 +85,3 @@ alias la="ls -ahlHG"
 
 alias du="ncdu --color dark -rr -x --exclude .git"
 
-[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
