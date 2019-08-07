@@ -33,7 +33,7 @@ function zap() {
 # Command Support
 #=================
 function fh() {
-	eval $(cat ~/.history | fzf +s +x --tac --height 20% | sed 's/ *[0-9]* *//')
+    eval $( (fc -l 1 || history) | fzf +s +x --tac --height 20% | sed 's/ *[0-9]* *//')
 }
 
 function fssh() {

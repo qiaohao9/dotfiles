@@ -23,6 +23,21 @@ bindkey -v          # use vi mode to bind keys
 # Disable core dumps
 limit coredumpsize 0
 
+# History behavior
+setopt INC_APPEND_HISTORY
+setopt HIST_IGNORE_DUPS
+setopt HIST_FIND_NO_DUPS
+setopt NO_HIST_BEEP
+setopt HIST_IGNORE_SPACE
+setopt HIST_REDUCE_BLANKS
+setopt NO_HIST_VERIFY
+setopt BANG_HIST
+setopt INTERACTIVE_COMMENTS
+zshaddhistory() { whence ${${(z)1}[1]} >| /dev/null || return 1 } # Don't save failed commands
+export HISTFILE="$HOME/.zsh_history"
+export HISTSIZE=50000
+export SAVEHIST=10000
+
 
 # ========================
 # X Display For Arch Linux
