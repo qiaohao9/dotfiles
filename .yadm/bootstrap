@@ -31,6 +31,9 @@ function install_on_common() {
         echo "Bootstrapingn Neovim..."
         nvim '+PlugInstall' '+PlugClean!' '+qall'
     fi
+
+    # Installing BaiduPCS-Go
+    go get -u -v github.com/iikira/BaiduPCS-Go
 }
 
 

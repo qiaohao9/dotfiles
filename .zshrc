@@ -83,7 +83,6 @@ source $HOME/.zplug/init.zsh
 zplug "zdharma/fast-syntax-highlighting"
 zplug "zsh-users/zsh-autosuggestions"
 zplug "themes/ys",                   as:theme,   from:oh-my-zsh
-zplug "iikira/BaiduPCS-Go",          as:command, rename-to:baidupan, use:"*$(uname | tr '[:upper:]' '[:lower:]')*amd64*", from:gh-r
 if ! zplug check; then
     zplug install
 fi
