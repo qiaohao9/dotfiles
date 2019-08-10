@@ -90,7 +90,7 @@ Plug 'jiangmiao/auto-pairs'
 Plug 'junegunn/vim-easy-align'
 Plug 'thirtythreeforty/lessspace.vim'
 Plug 'machakann/vim-highlightedyank'
-Plug 'tmhedberg/SimpylFold'
+Plug 'tmhedberg/SimpylFold' " zc to close; zo to open
 
 call plug#end()
 
