@@ -25,6 +25,7 @@ function install_on_common() {
     custom_sed -e "s#/Users/vast/#$HOME/#" $HOME/.aria2/aria2.conf
 
     npm install -g cnpm --registry=https://registry.npm.taobao.org
+    cnpm install --global asciicast2gif
 
     # Install vim plugins managed with vim-plug
     if command -v nvim > /dev/null 2>&1; then

@@ -19,6 +19,7 @@ brew "node"
 brew "fx"
 brew "fzf"
 brew "ghc"
+brew "gifsicle"
 brew "gist"
 brew "git"
 brew "go"
@@ -64,13 +65,11 @@ cask "nextcloud"
 cask "numi"
 cask "snipaste"
 cask "squirrel"
-cask "stretchly"
 cask "typora"
 cask "upic"
 cask "visual-studio-code"
 cask "zoomus"
 mas "Magnet", id: 441258766
-mas "Numbers", id: 409203825
 mas "Reeder", id: 880001334
 mas "Telegram", id: 747648890
 mas "Xcode", id: 497799835
