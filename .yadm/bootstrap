@@ -55,6 +55,10 @@ function install_on_macOS() {
         defaults write com.googlecode.iterm2 "PrefsCustomFolder" -string "$HOME/.config/iterm2"
         defaults write com.googlecode.iterm2 "LoadPrefsFromCustomFolder" -bool true
     fi
+
+    if [ -d "$HOME/.fonts" ]; then
+        cp $HOME/.fonts/* $HOME/Library/Fonts
+    fi
 }
 
 
