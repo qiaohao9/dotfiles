@@ -64,11 +64,11 @@ function install_on_macOS() {
 
 function install_on_ArchLinux() {
     echo "Install Yay..."
-    git clone https://aur.archlinux.org/yay.git /tmp/yay && cd /tmp/yay && makepkg -si
+    git clone https://aur.archlinux.org/yay.git /tmp/yay && cd /tmp/yay && makepkg -si --noconfirm
 
     echo "Installing from .Pacmanfile..."
     # pacman -Qqen > $HOME/.Pacmanfile
-    yay -S - < $HOME/.Pacmanfile
+    yay -S --noconfirm - < $HOME/.Pacmanfile
 
     cd $HOME
 }
