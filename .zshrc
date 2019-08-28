@@ -98,4 +98,5 @@ alias l="ls -hlHG"
 alias la="ls -ahlHG"
 
 alias du="ncdu --color dark -rr -x --exclude .git"
+alias baidupan="BaiduPCS-Go"
 
