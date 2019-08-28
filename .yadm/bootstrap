@@ -68,7 +68,9 @@ function install_on_ArchLinux() {
 
     echo "Installing from .Pacmanfile..."
     # pacman -Qqen > $HOME/.Pacmanfile
-    yay -S --noconfirm - < $HOME/.Pacmanfile
+    yay -S --needed --noconfirm - < $HOME/.Pacmanfile
+
+    sed -i "s/#Color/Color/g" /etc/pacman.conf
 
     cd $HOME
 }

@@ -10,6 +10,7 @@ device-mapper
 dhcpcd
 diffutils
 docker
+docker-compose
 e2fsprogs
 efibootmgr
 fakeroot
@@ -17,6 +18,7 @@ file
 filesystem
 findutils
 flex
+fzf
 gawk
 gcc
 gcc-libs
@@ -47,18 +49,22 @@ mdadm
 nano
 neovim
 netctl
+npm
 openssh
 pacman
 patch
 pciutils
 perl
 pkgconf
+privoxy
 procps-ng
 psmisc
 reiserfsprogs
 s-nail
+samba
 sed
 shadow
+shadowsocks-libev
 sudo
 sysfsutils
 systemd
@@ -70,3 +76,4 @@ util-linux
 vi
 which
 xfsprogs
+zsh
