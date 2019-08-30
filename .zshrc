@@ -67,7 +67,7 @@ export GOBIN=$GOPATH/bin
 if [[ $(command -v go) ]]; then
     export GOROOT=$(go env GOROOT)
 fi
-export PATH=$PATH:$HOME/.node_modules/bin:$GOPATH/bin:$HOME/.local/bin
+export PATH=$PATH:/usr/local/sbin:$HOME/.node_modules/bin:$GOPATH/bin:$HOME/.local/bin
 
 export PIPENV_PYPI_MIRROR="https://pypi.douban.com/simple"
 
