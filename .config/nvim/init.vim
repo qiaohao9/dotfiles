@@ -91,6 +91,7 @@ Plug 'junegunn/vim-easy-align'
 Plug 'thirtythreeforty/lessspace.vim'
 Plug 'machakann/vim-highlightedyank'
 Plug 'tmhedberg/SimpylFold' " zc to close; zo to open
+Plug 'stephpy/vim-yaml'
 
 call plug#end()
 
