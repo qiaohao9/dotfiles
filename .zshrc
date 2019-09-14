@@ -62,6 +62,8 @@ export HOMEBREW_NO_AUTO_UPDATE=true
 export HOMEBREW_EDITOR=nvim
 export HOMEBREW_BOTTLE_DOMAIN="https://mirrors.tuna.tsinghua.edu.cn/homebrew-bottles"
 
+export GO111MODULE=on
+export GOPROXY=https://goproxy.io
 export GOPATH=$HOME/.go
 export GOBIN=$GOPATH/bin
 if [[ $(command -v go) ]]; then
