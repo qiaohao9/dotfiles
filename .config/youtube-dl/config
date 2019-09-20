@@ -1,3 +1,4 @@
 -f bestvideo+bestaudio
--o %(title)s.%(ext)s
---proxy http://127.0.0.1:1087
+-o ~/Downloads/%(title)s.%(ext)s
+--no-mtime
+--proxy 127.0.0.1:1087
