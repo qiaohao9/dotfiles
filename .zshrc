@@ -56,6 +56,7 @@ fi
 # ========================
 export LANG='en_US.UTF-8'
 export LC_ALL='en_US.UTF-8'
+export CLICOLOR=1
 
 export HOMEBREW_NO_ANALYTICS=1
 export HOMEBREW_NO_AUTO_UPDATE=true
@@ -72,6 +73,9 @@ fi
 export PATH=$PATH:/usr/local/sbin:$HOME/.node_modules/bin:$GOPATH/bin:$HOME/.local/bin
 
 export PIPENV_PYPI_MIRROR="https://pypi.douban.com/simple"
+
+# docker-machine
+export ENGINE_REGISTRY_MIRROR="https://docker.mirrors.ustc.edu.cn"
 
 
 # ========================
