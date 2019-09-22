@@ -43,7 +43,7 @@ export SAVEHIST=10000
 # X Display For Arch Linux
 # ========================
 if [[ "$(uname -s)" = "Linux" && ! $DISPLAY && $XDG_VTNR -eq 1 ]]; then
-  exec startx
+  command -v startx > /dev/null 2>&1 && exec startx
 fi
 
 if [ "$TERM" = "xterm-termite" ]; then
