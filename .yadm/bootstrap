@@ -66,8 +66,8 @@ function install_on_macOS() {
 function install_on_ArchLinux() {
     # Change aur mirrors
     sudo curl -o /etc/pacman.d/mirrorlist "https://www.archlinux.org/mirrorlist/?country=CN&country=HK&country=US&protocol=http&protocol=https&ip_version=4&ip_version=6"
-    sudo custom_sed -i 's/#Server/Server/g' /etc/pacman.d/mirrorlist && pacman -Syyu --noconfirm
-    sudo custom_sed -e "s/#Color/Color/g" /etc/pacman.conf
+    sudo sed -i 's/#Server/Server/g' /etc/pacman.d/mirrorlist && pacman -Syyu --noconfirm
+    sudo sed -i 's/#Color/Color/g' /etc/pacman.conf
 
     if ! command -v yay > /dev/null 2>&1; then
         # Installing yay
