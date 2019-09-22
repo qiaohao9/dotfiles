@@ -25,7 +25,6 @@ function install_on_common() {
     custom_sed -e "s#/Users/vast/#$HOME/#" $HOME/.aria2/aria2.conf
 
     npm install -g cnpm --registry=https://registry.npm.taobao.org
-    cnpm install --global asciicast2gif
 
     # Install vim plugins managed with vim-plug
     if command -v nvim > /dev/null 2>&1; then
@@ -46,12 +45,12 @@ function install_on_macOS() {
     fi
 
     if [ -f "$HOME/.Brewfile" ]; then
-        echo "Updateing HomeBrew bundle..."
+        echo "Installing apps from Brewfile..."
         brew bundle --global
     fi
 
     if [ -d "$HOME/.config/iterm2" ]; then
-        echo "Setting iTerm preference folder..."
+        echo "Setting iTerm2 preference..."
         defaults write com.googlecode.iterm2 "PrefsCustomFolder" -string "$HOME/.config/iterm2"
         defaults write com.googlecode.iterm2 "LoadPrefsFromCustomFolder" -bool true
     fi
@@ -63,29 +62,28 @@ function install_on_macOS() {
 
 
 function install_on_ArchLinux() {
+    # Change aur mirrors
+    curl -o /etc/pacman.d/mirrorlist "https://www.archlinux.org/mirrorlist/?country=CN&country=HK&country=US&protocol=http&protocol=https&ip_version=4&ip_version=6"
+    custom_sed -e 's/#Server/Server/g' /etc/pacman.d/mirrorlist && pacman -Syyu --noconfirm
+    sed -i "s/#Color/Color/g" /etc/pacman.conf
+
+    # Installing yay
     echo "Install Yay..."
     git clone https://aur.archlinux.org/yay.git /tmp/yay && cd /tmp/yay && makepkg -si --noconfirm
 
     echo "Installing from .Pacmanfile..."
     # pacman -Qqen > $HOME/.Pacmanfile
     yay -S --needed --noconfirm - < $HOME/.Pacmanfile
-
-    sed -i "s/#Color/Color/g" /etc/pacman.conf
-
-    cd $HOME
 }
 
 
 case "$system_type" in
     "Darwin")
-        install_on_macOS
-        ;;
+        install_on_macOS;;
     "Linux")
-        install_on_ArchLinux
-        ;;
+        install_on_ArchLinux;;
     *)
-        echo "Cannot detect the system..."
-        ;;
+        echo "Cannot detect the system...";;
 esac
 
 install_on_common
