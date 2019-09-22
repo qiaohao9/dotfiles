@@ -129,10 +129,10 @@ bindsym $mod+Escape workspace prev
 bindsym $mod+Shift+r restart
 bindsym $mod+Shift+c reload
 bindsym $mod+Shift+e exec --no-startup-id "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -B 'Yes, exit i3' 'i3-msg exit'"
-exec_always --no-startup-id feh --bg-scale ~/Pictures/wallpaper/GameofThrones.jpg
+exec_always --no-startup-id feh --bg-scale ~/Dropbox/Wallpaper/computer/Bicycle.jpg
 
 # #--- Media Keys ---# #
 # For screenshots and recording ---# #
 bindsym Print            exec --no-startup-id scrot '%Y-%m-%d %H:%M:%S_$wx%h_scrot.png' -e 'mv $f ~/Downloads/'
 bindsym Shift+Print      exec --no-startup-id scrot -q 100 -u '%Y-%m-%d %H:%M:%S_$wx%h_scrot.pn' -e 'mv $f ~/Downloads/'
-bindsym $mod+Scroll_Lock exec --no-startup-id "killall screenkey || screenkey -s small -p bottom --no-whitespace -f Consolas"
+bindsym $mod+Scroll_Lock exec --no-startup-id "killall screenkey || screenkey -s normal -p bottom --no-whitespace -f Cscadia"
