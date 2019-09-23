@@ -79,7 +79,7 @@ fi
 export PATH=$PATH:/usr/local/sbin:$HOME/.node_modules/bin:$GOPATH/bin:$HOME/.local/bin
 
 
-export ENGINE_REGISTRY_MIRROR="https://docker.mirrors.ustc.edu.cn"
+export ENGINE_REGISTRY_MIRROR="https://reg-mirror.qiniu.com"
 export PIPENV_PYPI_MIRROR="https://pypi.douban.com/simple"
 
 
