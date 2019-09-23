@@ -43,6 +43,7 @@ intel-ucode
 iproute2
 iputils
 jfsutils
+kde-gtk-config
 less
 libdmx
 libglade
@@ -66,6 +67,7 @@ neofetch
 neovim
 netctl
 noto-fonts
+noto-fonts-cjk
 npm
 nspr
 nss
@@ -76,6 +78,7 @@ patch
 pciutils
 perl
 pkgconf
+plasma-meta
 privoxy
 procps-ng
 psmisc
