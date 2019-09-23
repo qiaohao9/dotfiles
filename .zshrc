@@ -58,6 +58,12 @@ export LANG='en_US.UTF-8'
 export LC_ALL='en_US.UTF-8'
 export CLICOLOR=1
 
+if [[ $(command -v nvim) ]]; then
+    export EDITOR=nvim
+else
+    export EDITOR=vi
+fi
+
 export HOMEBREW_NO_ANALYTICS=1
 export HOMEBREW_NO_AUTO_UPDATE=true
 export HOMEBREW_EDITOR=nvim

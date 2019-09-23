@@ -1,17 +1,28 @@
-separator_block_width=20
-markup=pango
+# i3blocks configuration file
+#
+# The i3blocks man page describes the usage of the binary,
+# and its website describes the configuration:
+#
+#     https://vivien.github.io/i3blocks
 
-# 🌐
-# 🧠
-# 📅
 
-[memory]
-label=🧠
-command=free -m | awk '/Mem:/ { printf "%.2f\%", int($3)/int($2)*100 }'
-interval=1
-
-[clock]
-label=📅
-command=date '+%Y %b %d (%a) %H:%M'
-interval=30
+# Global properties
+separator=true
+separator_block_width=15
 align=center
+
+[ip]
+command=hostname -i
+interval=once
+color=#91E78B
+align=center
+
+[time]
+command=date '+%Y-%m-%d %H:%M'
+interval=1
+align=left
+
+[caps-lock]
+command=xset -q | grep Caps | awk '{ print $4 }'
+interval=once
+signal=10

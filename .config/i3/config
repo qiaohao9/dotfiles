@@ -136,3 +136,5 @@ exec_always --no-startup-id feh --bg-fill ~/Dropbox/Wallpaper/computer/Bicycle.j
 bindsym Print            exec --no-startup-id scrot '%Y-%m-%d %H:%M:%S_$wx%h_scrot.png' -e 'mv $f ~/Downloads/'
 bindsym Shift+Print      exec --no-startup-id scrot -q 100 -u '%Y-%m-%d %H:%M:%S_$wx%h_scrot.pn' -e 'mv $f ~/Downloads/'
 bindsym $mod+Scroll_Lock exec --no-startup-id "killall screenkey || screenkey -s normal -p bottom --no-whitespace -f Cscadia"
+
+bindsym --release Caps_Lock exec pkill -SIGRTMIN+10 i3blocks
