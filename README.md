@@ -1,4 +1,4 @@
-![macOS](https://raw.githubusercontent.com/vastpeng/pic-storage/master/Snipaste_2019-08-01_10-48-01.png)
+![Hyper Terminal](https://raw.githubusercontent.com/vastpeng/pic-storage/master/neofetch.png)
 
 ## How to use dotfiles?
 
