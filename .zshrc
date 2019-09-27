@@ -198,3 +198,8 @@ function fkill() {
         echo $pid | xargs kill -${1:-9}
     fi
 }
+
+# Backup Arch_Linux System
+function backup_arch() {
+    sudo rsync -aAXvP --delete --exclude=/dev/* --exclude=/proc/* --exclude=/sys/* --exclude=/tmp/* --exclude=/run/* --exclude=/mnt/* --exclude=/media/* --exclude=/lost+found --exclude=/home/.ecryptfs / /mnt/backupDestination/
+}
