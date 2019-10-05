@@ -1,6 +1,7 @@
 {
   "registry-mirrors" : [
-    "https://docker.mirrors.ustc.edu.cn"
+    "https://docker.mirrors.ustc.edu.cn",
+    "https://reg-mirror.qiniu.com"
   ],
   "experimental" : false
 }
