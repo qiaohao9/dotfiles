@@ -67,10 +67,8 @@ fi
 export HOMEBREW_NO_ANALYTICS=1
 export HOMEBREW_NO_AUTO_UPDATE=true
 export HOMEBREW_EDITOR=nvim
-export HOMEBREW_BOTTLE_DOMAIN="https://mirrors.tuna.tsinghua.edu.cn/homebrew-bottles"
 
 export GO111MODULE=on
-export GOPROXY=https://goproxy.io
 export GOPATH=$HOME/.go
 export GOBIN=$GOPATH/bin
 if [[ $(command -v go) ]]; then
@@ -78,9 +76,11 @@ if [[ $(command -v go) ]]; then
 fi
 export PATH=$PATH:/usr/local/sbin:$HOME/.node_modules/bin:$GOPATH/bin:$HOME/.local/bin
 
-
+# Mirrors
+export GOPROXY=https://goproxy.io
 export ENGINE_REGISTRY_MIRROR="https://reg-mirror.qiniu.com"
 export PIPENV_PYPI_MIRROR="https://pypi.douban.com/simple"
+export HOMEBREW_BOTTLE_DOMAIN="https://mirrors.tuna.tsinghua.edu.cn/homebrew-bottles"
 
 
 # ========================
