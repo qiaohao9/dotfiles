@@ -12,3 +12,5 @@ just following the guide.
 
 * [Installation Guide](https://wiki.archlinux.org/index.php/installation_guide)
 * [Grub](https://wiki.archlinux.org/index.php/GRUB)
+
+or, you can use the script [archlinux_install](https://github.com/vastpeng/archlinux_install).
