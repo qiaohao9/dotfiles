@@ -57,6 +57,7 @@ fi
 export LANG='en_US.UTF-8'
 export LC_ALL='en_US.UTF-8'
 export CLICOLOR=1
+export YADM_COMPATIBILITY=1
 
 if [[ $(command -v nvim) ]]; then
     export EDITOR=nvim
