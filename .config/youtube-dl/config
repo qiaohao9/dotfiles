@@ -2,3 +2,5 @@
 -o ~/Downloads/%(title)s.%(ext)s
 --no-mtime
 --proxy 127.0.0.1:1087
+--external-downloader aria2c 
+--external-downloader-args "--no-conf -x 16 -k 1M"
