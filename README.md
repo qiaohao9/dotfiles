@@ -1,4 +1,4 @@
-![Hyper Terminal](https://raw.githubusercontent.com/vastpeng/pic-storage/master/neofetch.png)
+![Neofetch](https://cdn.jsdelivr.net/gh/tinyRatP/storage4images@master/uPic/Qdh313.png)
 
 ## How to use dotfiles?
 
