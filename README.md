@@ -6,6 +6,15 @@
 2. ```yadm clone https://github.com/vastpeng/dotfiles.git```
 3. ```yadm bootstrap```
 
+## Notice!!!
+
+It's my git info in `.gitconfig`, so you should change it to your own.
+
+```bash
+git config --global user.name {{your username}}
+git config --global user.email {{your email}}
+```
+
 ## How to install Arch Linux?
 
 just following the guide.
