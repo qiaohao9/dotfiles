@@ -21,9 +21,12 @@ function custom_sed() {
 
 
 function install_on_common() {
+    # Nodejs
     custom_sed -e "s#prefix=.*#prefix=$HOME/.node_modules#" $HOME/.npmrc
+    # Aria2c
     custom_sed -e "s#/Users/vast/#$HOME/#" $HOME/.aria2/aria2.conf
 
+    # NPM mirror
     if ! command -v cnpm > /dev/null 2>&1; then
         npm install -g cnpm --registry=https://registry.npm.taobao.org
     fi
@@ -34,7 +37,10 @@ function install_on_common() {
         nvim '+PlugInstall' '+PlugClean!' '+qall'
     fi
 
-    # Installing BaiduPCS-Go
+    # Installing Apps with cnpm
+    awk '{ print }' $HOME/.Npmfile | xargs -I _ cnpm i -g _
+
+    # Installing Apps with Go
     go get -u -v github.com/iikira/BaiduPCS-Go
 }
 
