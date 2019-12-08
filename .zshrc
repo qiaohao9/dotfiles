@@ -145,7 +145,7 @@ function zap() {
 function fh() {
     eval $( (fc -l 1 || history) | fzf +s +x --tac --height 20% | sed 's/ *[0-9]* *//')
 }
-function fssh() {
+function sssh() {
 	local ssh_name=$(awk '/Host / { for(i=2;i<=NF;i++) printf "%s\n", $i }' $HOME/.ssh/config | fzf -m --height 20%)
 
     if [[ $ssh_name ]]; then
