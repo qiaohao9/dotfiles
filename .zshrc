@@ -93,7 +93,7 @@ fi
 source $HOME/.zplug/init.zsh
 zplug "zdharma/fast-syntax-highlighting"
 zplug "zsh-users/zsh-autosuggestions"
-zplug "vastpeng/ys", as:theme
+zplug "tinyRatP/ys", as:theme
 if ! zplug check; then
     zplug install
 fi
