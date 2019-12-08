@@ -10,6 +10,7 @@ tap "homebrew/cask-versions"
 tap "homebrew/core", "https://mirrors.tuna.tsinghua.edu.cn/git/homebrew/homebrew-core.git"
 tap "homebrew/services"
 tap "ringohub/redis-cli"
+tap "sass/sass"
 brew "aria2"
 brew "python"
 brew "asciinema"
@@ -58,9 +59,9 @@ brew "zsh"
 brew "cjbassi/gotop/gotop"
 brew "heroku/brew/heroku"
 brew "ringohub/redis-cli/redis-cli"
+brew "sass/sass/sass"
 cask "appcleaner"
 cask "bitwarden"
-cask "calibre"
 cask "clashx"
 cask "docker"
 cask "font-cascadia"
@@ -76,11 +77,8 @@ cask "numi"
 cask "snipaste"
 cask "ticktick"
 cask "upic"
-cask "virtualbox"
 cask "visual-studio-code"
-mas "iMovie", id: 408981434
 mas "Magnet", id: 441258766
 mas "Network & Battery", id: 1387780159
 mas "Reeder", id: 880001334
 mas "Telegram", id: 747648890
-mas "Xcode", id: 497799835
