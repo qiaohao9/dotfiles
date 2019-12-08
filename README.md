@@ -8,12 +8,18 @@
 
 ## Notice!!!
 
+#### about git.
+
 It's my git info in `.gitconfig`, so you should change it to your own.
 
 ```bash
 git config --global user.name {{your username}}
 git config --global user.email {{your email}}
 ```
+
+#### about mirror
+
+All mirrors for package manager is in China.
 
 ## How to install Arch Linux?
 
