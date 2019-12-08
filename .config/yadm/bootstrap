@@ -24,7 +24,7 @@ function install_on_common() {
     # Nodejs
     custom_sed -e "s#prefix=.*#prefix=$HOME/.node_modules#" $HOME/.npmrc
     # Aria2c
-    custom_sed -e "s#/Users/vast/#$HOME/#" $HOME/.aria2/aria2.conf
+    custom_sed -e "s#/Users/tinyRat/#$HOME/#" $HOME/.aria2/aria2.conf
 
     # NPM mirror
     if ! command -v cnpm > /dev/null 2>&1; then
