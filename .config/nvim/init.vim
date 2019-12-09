@@ -92,12 +92,6 @@ Plug 'lervag/vimtex'
     set conceallevel=1
     let g:tex_conceal='abdmg'
 
-Plug 'sirver/ultisnips'
-    let g:UltiSnipsExpandTrigger = '<tab>'
-    let g:UltiSnipsJumpForwardTrigger = '<tab>'
-    let g:UltiSnipsJumpBackwardTrigger = '<s-tab>'
-    let g:UltiSnipsSnippetDirectories=[$HOME.'/.config/nvim/UltiSnips']
-
 
 Plug 'editorconfig/editorconfig-vim'
 Plug 'jiangmiao/auto-pairs'
