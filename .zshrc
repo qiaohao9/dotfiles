@@ -110,6 +110,7 @@ alias l="ls -hlHG"
 alias la="ls -ahlHG"
 
 alias du="ncdu --color dark -rr -x --exclude .git"
+alias share="python3 -m http.server"
 alias baidupan="BaiduPCS-Go"
 
 
