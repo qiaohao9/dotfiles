@@ -44,9 +44,8 @@ function install_on_common() {
 
     # Installing Apps with cnpm
     awk '{ print }' $HOME/.Npmfile | xargs -I _ cnpm i -g _
-
-    # Installing Apps with Go
-    go get -u -v github.com/iikira/BaiduPCS-Go
+    # Installing Apps with go
+    awk '{ print }' $HOME/.Gofile | xargs -I _ go get -u -v _
 }
 
 
