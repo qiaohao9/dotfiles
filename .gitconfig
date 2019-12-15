@@ -12,6 +12,7 @@
     st         = status
     stnu       = status --untracked-files=no
     ci         = commit
+    rs         = restore
     br         = branch
     co         = checkout
     df         = diff
@@ -29,7 +30,7 @@
     new        = green bold
     whitespace = red reverse
 [gpg]
-	program = gpg
+    program    = gpg
 ; [https]
     ; proxy      = http://127.0.0.1:1087
 ; [http]
