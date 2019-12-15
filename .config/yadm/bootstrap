@@ -36,11 +36,6 @@ function install_on_common() {
         echo "Bootstrapingn Neovim..."
         nvim '+PlugInstall' '+PlugClean!' '+qall'
     fi
-    
-    # CTAN use tsinghua mirror
-    if command -v tlmgr > /dev/null 2>&1; then
-        tlmgr option repository https://mirrors.tuna.tsinghua.edu.cn/CTAN/systems/texlive/tlnet 
-    fi
 
     # Installing Apps with cnpm
     awk '{ print }' $HOME/.Npmfile | xargs -I _ cnpm i -g _
@@ -65,12 +60,6 @@ function install_on_macOS() {
     if [ -f "$HOME/.Brewfile" ]; then
         echo "Installing apps from Brewfile..."
         brew bundle -v --global
-    fi
-
-    if [ -d "$HOME/.config/iterm2" ]; then
-        echo "Setting iTerm2 preference..."
-        defaults write com.googlecode.iterm2 "PrefsCustomFolder" -string "$HOME/.config/iterm2"
-        defaults write com.googlecode.iterm2 "LoadPrefsFromCustomFolder" -bool true
     fi
 
     if [ -d "$HOME/.fonts" ]; then
