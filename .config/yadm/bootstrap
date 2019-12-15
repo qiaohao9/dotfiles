@@ -64,7 +64,7 @@ function install_on_macOS() {
 
     if [ -f "$HOME/.Brewfile" ]; then
         echo "Installing apps from Brewfile..."
-        brew bundle --global
+        brew bundle -v --global
     fi
 
     if [ -d "$HOME/.config/iterm2" ]; then
