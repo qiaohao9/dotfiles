@@ -76,7 +76,7 @@ export GOBIN=$GOPATH/bin
 if [[ $(command -v go) ]]; then
     export GOROOT=$(go env GOROOT)
 fi
-export PATH=$PATH:/usr/local/sbin:$HOME/.node_modules/bin:$GOPATH/bin:$HOME/.local/bin
+export PATH=$PATH:/usr/local/sbin:$HOME/.node_modules/bin:$GOPATH/bin:$HOME/.local/bin:/usr/local/miniconda2/bin
 
 # Mirrors
 export GOPROXY=https://goproxy.io
@@ -112,6 +112,11 @@ alias la="ls -ahlHG"
 alias du="ncdu --color dark -rr -x --exclude .git"
 alias share="python3 -m http.server"
 alias notebook="jupyter notebook"
+
+if type nvim > /dev/null 2>&1; then
+    alias vim='nvim'
+    alias vi='nvim'
+fi
 
 
 # ========================
