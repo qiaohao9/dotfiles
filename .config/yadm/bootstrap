@@ -38,9 +38,14 @@ function install_on_common() {
     fi
 
     # Installing Apps with cnpm
-    awk '{ print }' $HOME/.Npmfile | xargs -I _ cnpm i -g _
-    # Installing Apps with go
-    awk '{ print }' $HOME/.Gofile | xargs -I _ go get -u -v _
+    # awk '{ print }' $HOME/.Npmfile | xargs -I _ cnpm i -g _
+    cnpm i -g bash-language-server # install dependency on VSCode
+
+    # Installing Apps from Brewfile
+    if [ -f "$HOME/.Brewfile" ]; then
+        echo "Installing apps from Brewfile..."
+        brew bundle -v --file=~/.Brewfile
+    fi
 }
 
 
@@ -49,17 +54,6 @@ function install_on_macOS() {
     if ! command -v brew > /dev/null 2>&1; then
         echo "Installing HomeBrew..."
         /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
-    fi
-    
-    # Setting brew mirrors
-    git -C "$(brew --repo)" remote set-url origin https://mirrors.tuna.tsinghua.edu.cn/git/homebrew/brew.git
-    git -C "$(brew --repo homebrew/core)" remote set-url origin https://mirrors.tuna.tsinghua.edu.cn/git/homebrew/homebrew-core.git
-    git -C "$(brew --repo homebrew/cask)" remote set-url origin https://mirrors.tuna.tsinghua.edu.cn/git/homebrew/homebrew-cask.git
-    brew update
-
-    if [ -f "$HOME/.Brewfile" ]; then
-        echo "Installing apps from Brewfile..."
-        brew bundle -v --global
     fi
 
     if [ -d "$HOME/.fonts" ]; then
