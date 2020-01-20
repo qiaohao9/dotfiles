@@ -38,7 +38,7 @@ client.urgent           $darkred     $darkred $black   $darkred     $darkred
 client.background       $black
 
 bar {
-  font           pango:Consolas 10
+  font           pango:Consolas 15
   status_command i3blocks
   position       top
   mode           dock
@@ -129,7 +129,7 @@ bindsym $mod+Escape workspace prev
 bindsym $mod+Shift+r restart
 bindsym $mod+Shift+c reload
 bindsym $mod+Shift+e exec --no-startup-id "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -B 'Yes, exit i3' 'i3-msg exit'"
-exec_always --no-startup-id feh --bg-fill ~/Dropbox/Wallpaper/computer/Bicycle.jpg
+exec_always --no-startup-id feh --bg-fill ~/.wallpaper.jpeg
 
 # #--- Media Keys ---# #
 # For screenshots and recording ---# #
