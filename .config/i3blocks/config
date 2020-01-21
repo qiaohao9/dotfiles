@@ -11,6 +11,13 @@ separator=true
 separator_block_width=15
 align=center
 
+[battery]
+command=$HOME/.config/i3blocks/scripts/battery.py
+markup=pango
+interval=30
+align=center
+
+
 [ip]
 command=hostname -i
 interval=once
@@ -23,6 +30,6 @@ interval=1
 align=left
 
 [caps-lock]
-command=xset -q | grep Caps | awk '{ print $4 }'
+command=xset -q | grep Caps | awk '{ print "Caps: " $4 }'
 interval=once
 signal=10
