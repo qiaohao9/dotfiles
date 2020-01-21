@@ -19,7 +19,7 @@ align=center
 
 
 [ip]
-command=hostname -i
+command=hostname -i | awk {' print $1 '}
 interval=once
 color=#91E78B
 align=center
