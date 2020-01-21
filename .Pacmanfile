@@ -1,15 +1,18 @@
 acpi
 adobe-source-han-sans-cn-fonts
 adobe-source-han-serif-cn-fonts
+alsa-utils
+asoundconf
 base
-bc
+betterlockscreen
 bluez-libs
+clash-bin
 code
+container-diff
+docker
 electron
-fcitx-rime
 firefox
 fzf
-gnome-common
 go
 gobject-introspection
 grub
@@ -20,6 +23,7 @@ libnewt
 libnm
 libteam
 lsd
+lsof
 miniconda3
 mobile-broadband-provider-info
 ncdu
@@ -29,8 +33,8 @@ nerd-fonts-hack
 netctl
 notify-osd
 numlockx
-openssh
 privoxy
+python-pyalsa
 rofi
 shadowsocks-libev
 termite
@@ -41,6 +45,7 @@ ttf-font-awesome
 ttf-roboto
 upower
 vi
+xbindkeys
 xorg-server
 xorg-xinit
 xorg-xset
