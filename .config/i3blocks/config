@@ -30,7 +30,7 @@ color=#91E78B
 align=center
 
 [time]
-command=date '+%Y-%m-%d %H:%M'
+command=date '+%H:%M %A %m/%d'
 interval=1
 align=left
 
