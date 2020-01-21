@@ -76,7 +76,7 @@ export GOBIN=$GOPATH/bin
 if [[ $(command -v go) ]]; then
     export GOROOT=$(go env GOROOT)
 fi
-export PATH=$PATH:/usr/local/sbin:$HOME/.node_modules/bin:$GOPATH/bin:$HOME/.local/bin
+export PATH=$PATH:/usr/local/sbin:$HOME/.node_modules/bin:$GOPATH/bin:$HOME/.local/bin:/opt/miniconda3/bin
 
 # Mirrors
 export GOPROXY=https://goproxy.io
@@ -122,14 +122,14 @@ fi
 
 # >>> conda initialize >>>
 # !! Contents within this block are managed by 'conda init' !!
-__conda_setup="$('/usr/local/Caskroom/miniconda/base/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
+__conda_setup="$('/opt/miniconda3/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
 if [ $? -eq 0 ]; then
     eval "$__conda_setup"
 else
-    if [ -f "/usr/local/Caskroom/miniconda/base/etc/profile.d/conda.sh" ]; then
-        . "/usr/local/Caskroom/miniconda/base/etc/profile.d/conda.sh"
+    if [ -f "/opt/miniconda3/etc/profile.d/conda.sh" ]; then
+        . "/opt/miniconda3/etc/profile.d/conda.sh"
     else
-        export PATH="/usr/local/Caskroom/miniconda/base/bin:$PATH"
+        export PATH="/opt/miniconda3/bin:$PATH"
     fi
 fi
 unset __conda_setup
@@ -227,5 +227,10 @@ function fkill() {
 # Backup Arch_Linux System
 function backup_arch() {
     sudo rsync -aAXvP --delete --exclude=/dev/* --exclude=/proc/* --exclude=/sys/* --exclude=/tmp/* --exclude=/run/* --exclude=/mnt/* --exclude=/media/* --exclude=/lost+found --exclude=/home/.ecryptfs / /mnt/backupDestination/
+}
+
+# Generate .Pacmanfile
+function pacmanfile() {
+    comm -23 <(yay -Qqt | sort) <(yay -Sqg base base-devel | sort) > $HOME/.Pacmanfile
 }
 

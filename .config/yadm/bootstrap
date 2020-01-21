@@ -75,7 +75,6 @@ function install_on_ArchLinux() {
     fi
 
     echo "Installing from .Pacmanfile..."
-    # pacman -Qqen > $HOME/.Pacmanfile
     yay -S --needed --noconfirm - < $HOME/.Pacmanfile
 }
 
