@@ -17,6 +17,11 @@ markup=pango
 interval=30
 align=center
 
+[volume-pulseaudio]
+command=$HOME/.config/i3blocks/scripts/volume-pulseaudio
+interval=once
+signal=1
+
 
 [ip]
 command=hostname -i | awk {' print $1 '}
