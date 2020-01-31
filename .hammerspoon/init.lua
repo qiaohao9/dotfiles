@@ -2,7 +2,7 @@ require('config')
 require('Spoons.defaultInput')
 require('Spoons.clipboard')
 
-DEBUG = false
+DEBUG = true
 
 function showAppInfo()
     hs.alert.show("App path:     "

@@ -2,6 +2,7 @@
 appInputMethod = {
     {'/Applications/Xcode.app', 'English'},
     {'/Applications/Visual Studio Code.app', 'English'},
+    {'/Applications/Hyper.app', 'English'},
 }
 
 -- Clipboard --
