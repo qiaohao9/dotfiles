@@ -1,5 +1,6 @@
 require('config')
 require('Spoons.defaultInput')
+require('Spoons.caffeine')
 
 DEBUG = false
 
