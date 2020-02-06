@@ -6,3 +6,4 @@ appInputMethod = {
     {'/Applications/Hyper.app', 'English'},
 }
 
+batteryLow = 10.0
