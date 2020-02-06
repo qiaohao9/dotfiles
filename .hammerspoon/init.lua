@@ -2,6 +2,7 @@ require('config')
 require('Spoons.defaultInput')
 require('Spoons.caffeine')
 require('Spoons.batteryCheck')
+require('Spoons.speedMenu')
 
 DEBUG = false
 
