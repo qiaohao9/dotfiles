@@ -9,6 +9,7 @@ code
 container-diff
 docker
 firefox
+flameshot
 fzf
 grub
 htop
@@ -28,7 +29,6 @@ privoxy
 python-pyalsa
 ranger
 rofi
-scrot
 shadowsocks-libev
 termite
 tldr
