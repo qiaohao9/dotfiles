@@ -1,1 +1,5 @@
-{"registry-mirrors":["https://docker.mirrors.ustc.edu.cn","https://reg-mirror.qiniu.com"],"experimental":false}
+{
+  "debug" : false,
+  "experimental" : false,
+  "registry-mirrors": ["https://yr5by9uq.mirror.aliyuncs.com"]
+}
