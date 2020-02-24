@@ -1,10 +1,8 @@
 require('config')
 require('Spoons.defaultInput')
 require('Spoons.caffeine')
-require('Spoons.batteryCheck')
 require('Spoons.speedMenu')
 
-DEBUG = false
 
 function showAppInfo()
     hs.alert.show("App path:     "
@@ -17,6 +15,4 @@ function showAppInfo()
     ..hs.keycodes.currentSourceID())
 end
 
-if DEBUG then
-    hs.hotkey.bind({'ctrl', 'cmd'}, ".", showAppInfo)
-end
+hs.hotkey.bind({'ctrl', 'cmd'}, ".", showAppInfo)
