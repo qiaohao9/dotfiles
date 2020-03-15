@@ -123,6 +123,23 @@ fi
 # fzf custom-functions
 # ========================
 # brew management
+function cask() {
+    local token
+    token=$(brew search --casks | fzf-tmux --query="$1" +m --preview 'brew cask info {}')
+
+    if [ "x$token" != "x" ]
+    then
+        echo "(I)nstall or open the (h)omepage of $token"
+        read input
+        if [ $input = "i" ] || [ $input = "I" ]; then
+            brew cask install $token
+        fi
+        if [ $input = "h" ] || [ $input = "H" ]; then
+            brew cask home $token
+        fi
+    fi
+}
+
 function install() {
     local inst=$(brew search | fzf -m)
     if [[ $inst ]]; then
