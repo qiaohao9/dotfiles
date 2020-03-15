@@ -1,5 +1,1 @@
-{
-  "debug" : false,
-  "experimental" : false,
-  "registry-mirrors": ["https://yr5by9uq.mirror.aliyuncs.com"]
-}
+{"debug":false,"experimental":false,"registry-mirrors":["https://yr5by9uq.mirror.aliyuncs.com"]}
