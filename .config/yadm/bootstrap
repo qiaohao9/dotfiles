@@ -40,12 +40,6 @@ function install_on_common() {
     # Installing Apps with cnpm
     # awk '{ print }' $HOME/.Npmfile | xargs -I _ cnpm i -g _
     cnpm i -g bash-language-server # install dependency on VSCode
-
-    # Installing Apps from Brewfile
-    if [ -f "$HOME/.Brewfile" ]; then
-        echo "Installing apps from Brewfile..."
-        brew bundle -v --file=~/.Brewfile
-    fi
 }
 
 
