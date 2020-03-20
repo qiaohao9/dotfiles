@@ -12,7 +12,7 @@
     st         = status
     stnu       = status --untracked-files=no
     ci         = commit
-    rs         = restore --stagged
+    rs         = restore --staged
     br         = branch
     co         = checkout
     df         = diff
