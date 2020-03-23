@@ -14,7 +14,6 @@ fcitx-ui-light
 firefox
 fzf
 gconf
-gnome-common
 go
 gobject-introspection
 google-chrome
@@ -36,7 +35,6 @@ neofetch
 neovim
 nerd-fonts-hack
 netctl
-net-tools
 notify-osd
 numlockx
 privoxy
@@ -54,7 +52,6 @@ tldr
 tree
 ttf-consolas-powerline
 ttf-font-awesome
-ttf-roboto
 unzip
 upower
 vi
@@ -63,4 +60,3 @@ xorg-server
 xorg-xinit
 yadm-git
 yay
-zenity
