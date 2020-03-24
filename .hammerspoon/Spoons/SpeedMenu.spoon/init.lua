@@ -88,8 +88,8 @@ function obj:rescan()
             fn = function() hs.pasteboard.setContents(macaddr) end
         })
         -- Start watching the netspeed delta
-        obj.outstr = 'netstat -ibn | grep -e ' .. obj.interface .. ' -m 1 | awk \'{print $10}\''
         obj.instr = 'netstat -ibn | grep -e ' .. obj.interface .. ' -m 1 | awk \'{print $7}\''
+        obj.outstr = 'netstat -ibn | grep -e ' .. obj.interface .. ' -m 1 | awk \'{print $10}\''
 
         obj.inseq = hs.execute(obj.instr)
         obj.outseq = hs.execute(obj.outstr)
@@ -108,5 +108,4 @@ function obj:rescan()
     obj.menubar:setMenu(menuitems_table)
 end
 
-
-obj:init()
+return obj
