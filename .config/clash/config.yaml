@@ -120,6 +120,7 @@ Rule:
 
 # CDN
     - DOMAIN-KEYWORD,cdn,DIRECT
+    - DOMAIN-SUFFIX,phncdn.com,Proxy
 
 
     - GEOIP,CN,DIRECT
