@@ -65,62 +65,63 @@ Proxy Group:
   - { name: "Netflix", type: select, proxies: ["Proxy"]}
 
 Rule:
-    - DOMAIN-SUFFIX,local,DIRECT
-    - IP-CIDR,127.0.0.1/8,DIRECT
-    - IP-CIDR,172.16.0.0/12,DIRECT
-    - IP-CIDR,192.168.0.0/16,DIRECT
-    - IP-CIDR,10.0.0.0/8,DIRECT
-    - IP-CIDR,17.0.0.0/8,DIRECT
+    - DOMAIN-SUFFIX, local,          DIRECT
+    - IP-CIDR,       127.0.0.1/8,    DIRECT
+    - IP-CIDR,       172.16.0.0/12,  DIRECT
+    - IP-CIDR,       192.168.0.0/16, DIRECT
+    - IP-CIDR,       10.0.0.0/8,     DIRECT
+    - IP-CIDR,       17.0.0.0/8,     DIRECT
 
 # Apple
-    - DOMAIN-SUFFIX,apple.com,Apple
-    - DOMAIN-SUFFIX,apple.com.cn,Apple
-    - DOMAIN-SUFFIX,icloud.com,Apple
-    - DOMAIN-SUFFIX,icloud.com.cn,Apple
-    - IP-CIDR,17.0.0.0/8,Apple
+    - DOMAIN-SUFFIX, apple.com,     Apple
+    - DOMAIN-SUFFIX, apple.com.cn,  Apple
+    - DOMAIN-SUFFIX, icloud.com,    Apple
+    - DOMAIN-SUFFIX, icloud.com.cn, Apple
+    - IP-CIDR,       17.0.0.0/8,    Apple
 
 # YouTuBe
-    - DOMAIN-SUFFIX,googlevideo.com,YouTube
-    - DOMAIN-SUFFIX,youtube.com,YouTube
-    - DOMAIN,youtubei.googleapis.com,YouTube
+    - DOMAIN-SUFFIX, googlevideo.com,         YouTube
+    - DOMAIN-SUFFIX, youtube.com,             YouTube
+    - DOMAIN,        youtubei.googleapis.com, YouTube
 
 # Netflix
-    - DOMAIN-SUFFIX,fast.com,Netflix
-    - DOMAIN-SUFFIX,netflix.com,Netflix
-    - DOMAIN-SUFFIX,netflix.net,Netflix
-    - DOMAIN-SUFFIX,nflxext.com,Netflix
-    - DOMAIN-SUFFIX,nflximg.com,Netflix
-    - DOMAIN-SUFFIX,nflximg.net,Netflix
-    - DOMAIN-SUFFIX,nflxso.net,Netflix
-    - DOMAIN-SUFFIX,nflxvideo.net,Netflix
-    - DOMAIN-SUFFIX,netflixdnstest0.com,Netflix
-    - DOMAIN-SUFFIX,netflixdnstest1.com,Netflix
-    - DOMAIN-SUFFIX,netflixdnstest2.com,Netflix
-    - DOMAIN-SUFFIX,netflixdnstest3.com,Netflix
-    - DOMAIN-SUFFIX,netflixdnstest4.com,Netflix
-    - DOMAIN-SUFFIX,netflixdnstest5.com,Netflix
-    - DOMAIN-SUFFIX,netflixdnstest6.com,Netflix
-    - DOMAIN-SUFFIX,netflixdnstest7.com,Netflix
-    - DOMAIN-SUFFIX,netflixdnstest8.com,Netflix
-    - DOMAIN-SUFFIX,netflixdnstest9.com,Netflix
-    - IP-CIDR,23.246.0.0/18,Netflix
-    - IP-CIDR,37.77.184.0/21,Netflix
-    - IP-CIDR,45.57.0.0/17,Netflix
-    - IP-CIDR,64.120.128.0/17,Netflix
-    - IP-CIDR,66.197.128.0/17,Netflix
-    - IP-CIDR,108.175.32.0/20,Netflix
-    - IP-CIDR,192.173.64.0/18,Netflix
-    - IP-CIDR,198.38.96.0/19,Netflix
-    - IP-CIDR,198.45.48.0/20,Netflix
+    - DOMAIN-SUFFIX, fast.com,            Netflix
+    - DOMAIN-SUFFIX, netflix.com,         Netflix
+    - DOMAIN-SUFFIX, netflix.net,         Netflix
+    - DOMAIN-SUFFIX, nflxext.com,         Netflix
+    - DOMAIN-SUFFIX, nflximg.com,         Netflix
+    - DOMAIN-SUFFIX, nflximg.net,         Netflix
+    - DOMAIN-SUFFIX, nflxso.net,          Netflix
+    - DOMAIN-SUFFIX, nflxvideo.net,       Netflix
+    - DOMAIN-SUFFIX, netflixdnstest0.com, Netflix
+    - DOMAIN-SUFFIX, netflixdnstest1.com, Netflix
+    - DOMAIN-SUFFIX, netflixdnstest2.com, Netflix
+    - DOMAIN-SUFFIX, netflixdnstest3.com, Netflix
+    - DOMAIN-SUFFIX, netflixdnstest4.com, Netflix
+    - DOMAIN-SUFFIX, netflixdnstest5.com, Netflix
+    - DOMAIN-SUFFIX, netflixdnstest6.com, Netflix
+    - DOMAIN-SUFFIX, netflixdnstest7.com, Netflix
+    - DOMAIN-SUFFIX, netflixdnstest8.com, Netflix
+    - DOMAIN-SUFFIX, netflixdnstest9.com, Netflix
+    - IP-CIDR,       23.246.0.0/18,       Netflix
+    - IP-CIDR,       37.77.184.0/21,      Netflix
+    - IP-CIDR,       45.57.0.0/17,        Netflix
+    - IP-CIDR,       64.120.128.0/17,     Netflix
+    - IP-CIDR,       66.197.128.0/17,     Netflix
+    - IP-CIDR,       108.175.32.0/20,     Netflix
+    - IP-CIDR,       192.173.64.0/18,     Netflix
+    - IP-CIDR,       198.38.96.0/19,      Netflix
+    - IP-CIDR,       198.45.48.0/20,      Netflix
 
 # Micros
-    - DOMAIN-SUFFIX,bitwarden.com,DIRECT
-    - DOMAIN-SUFFIX,wiz.money,DIRECT
-    - DOMAIN-SUFFIX,syncbits.com,DIRECT
+    - DOMAIN-SUFFIX, bitwarden.com, DIRECT
+    - DOMAIN-SUFFIX, wiz.money,     DIRECT
+    - DOMAIN-SUFFIX, syncbits.com,  DIRECT
 
 # CDN
-    - DOMAIN-KEYWORD,cdn,DIRECT
-    - DOMAIN-SUFFIX,phncdn.com,Proxy
+    - DOMAIN-KEYWORD, cdn,            DIRECT
+    - DOMAIN-SUFFIX,  phncdn.com,     Proxy
+    - DOMAIN-SUFFIX,  contentabc.com, Proxy
 
 
     - GEOIP,CN,DIRECT
