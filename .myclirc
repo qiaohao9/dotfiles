@@ -21,7 +21,7 @@ log_file = ~/.mycli.log
 
 # Default log level. Possible values: "CRITICAL", "ERROR", "WARNING", "INFO"
 # and "DEBUG". "NONE" disables logging.
-log_level = ERROR
+log_level = WARNING
 
 # Log every query and its results to a file. Enable this by uncommenting the
 # line below.
