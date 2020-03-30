@@ -234,3 +234,7 @@ function pacmanfile() {
     comm -23 <(yay -Qqt | sort) <(yay -Sqg base base-devel | sort) > $HOME/.Pacmanfile
 }
 
+function brewfile() {
+    brew bundle dump --global -f
+}
+
