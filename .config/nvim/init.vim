@@ -85,6 +85,7 @@ Plug 'lervag/vimtex'
     set conceallevel=1
     let g:tex_conceal='abdmg'
 
+Plug 'arcticicestudio/nord-vim'
 Plug 'editorconfig/editorconfig-vim'
 Plug 'jiangmiao/auto-pairs'
 Plug 'junegunn/vim-easy-align'
@@ -96,6 +97,7 @@ call plug#end()
 
 filetype on
 syntax on
+colorscheme nord
 
 " ====================
 " Mapping keys binding
