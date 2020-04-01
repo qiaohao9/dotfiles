@@ -5,6 +5,7 @@ alsa-utils
 asoundconf
 base
 betterlockscreen
+clash
 code
 container-diff
 cups
@@ -12,6 +13,7 @@ docker-compose
 fcitx-rime
 fcitx-ui-light
 firefox
+fontforge
 fzf
 gconf
 go
@@ -37,14 +39,12 @@ nerd-fonts-hack
 netctl
 notify-osd
 numlockx
-privoxy
 python-pipenv
 python-poetry
 python-pyalsa
 ranger
 rofi
 scrot
-shadowsocks-libev
 supervisor
 termite
 tig
@@ -52,9 +52,11 @@ tldr
 tree
 ttf-consolas-powerline
 ttf-font-awesome
+ufw
 unzip
 upower
 vi
+wget
 xbindkeys
 xorg-server
 xorg-xinit
