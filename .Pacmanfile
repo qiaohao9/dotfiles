@@ -12,7 +12,9 @@ cups
 docker-compose
 fcitx-rime
 fcitx-ui-light
+fd
 firefox
+flameshot
 fontforge
 fzf
 gconf
@@ -23,9 +25,9 @@ gperf
 grub
 htop
 httpie
+hugo
 i3blocks
 intellij-idea-ultimate-edition
-jasper
 lib32-glibc
 lnav
 lsd
@@ -37,6 +39,7 @@ neofetch
 neovim
 nerd-fonts-hack
 netctl
+nginx
 notify-osd
 numlockx
 python-pipenv
@@ -44,8 +47,9 @@ python-poetry
 python-pyalsa
 ranger
 rofi
-scrot
+rsync
 supervisor
+telegram-desktop
 termite
 tig
 tldr
@@ -57,6 +61,7 @@ unzip
 upower
 vi
 wget
+wireless_tools
 xbindkeys
 xorg-server
 xorg-xinit
