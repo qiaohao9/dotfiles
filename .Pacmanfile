@@ -2,6 +2,7 @@ acpi
 adobe-source-han-sans-cn-fonts
 adobe-source-han-serif-cn-fonts
 alsa-utils
+aria2
 asoundconf
 base
 betterlockscreen
@@ -17,6 +18,7 @@ flameshot
 fzf
 gconf
 go
+google-chrome
 grub
 htop
 httpie
@@ -28,7 +30,6 @@ lnav
 lsd
 man-db
 miniconda3
-mycli
 ncdu
 neofetch
 neovim
@@ -58,7 +59,6 @@ vi
 wget
 wireless_tools
 xbindkeys
-xorg-server
 xorg-xinit
 yadm-git
 yay
