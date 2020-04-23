@@ -81,8 +81,7 @@ export PATH=$PATH:/usr/local/sbin:$HOME/.node_modules/bin:$GOPATH/bin:$HOME/.loc
 # Mirrors
 export GOPROXY=https://mirrors.aliyun.com/goproxy/
 export NODE_MIRROR=https://mirrors.tuna.tsinghua.edu.cn/nodejs-release/
-export PIPENV_PYPI_MIRROR="https://pypi.douban.com/simple"
-export HOMEBREW_BOTTLE_DOMAIN="https://mirrors.tuna.tsinghua.edu.cn/homebrew-bottles"
+export HOMEBREW_BOTTLE_DOMAIN=https://mirrors.ustc.edu.cn/homebrew-bottles
 
 
 # ========================
