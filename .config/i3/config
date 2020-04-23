@@ -1,14 +1,15 @@
 # #--- Basic Definitions ---# #
 font pango:Consolas 10
 # basic
-for_window [class="^.*"] border pixel 2
+for_window [class="^.*"] border pixel 3
 gaps inner 15
 gaps outer 15
 smart_borders on
-set $terminal  --no-startup-id i3-sensible-terminal
-set $shutdown  sudo -A shutdown -h now
-set $reboot    sudo -A reboot
-set $mod       Mod4
+hide_edge_borders smart_no_gaps
+set $terminal --no-startup-id i3-sensible-terminal
+set $shutdown sudo -A shutdown -h now
+set $reboot   sudo -A reboot
+set $mod      Mod4
 
 # #--- Starting External Scripts ---# #
 # Set colors:
@@ -76,10 +77,10 @@ bindsym $mod+k      focus up
 bindsym $mod+q      kill
 bindsym $mod+s      gaps inner current plus  5
 
-bindsym $mod+Shift+y    resize shrink width 10 px or 10 ppt
-bindsym $mod+Shift+u    resize grow height 10 px or 10 ppt
-bindsym $mod+Shift+i    resize shrink height 10 px or 10 ppt
-bindsym $mod+Shift+o    resize grow width 10 px or 10 ppt
+bindsym $mod+y    resize shrink width 10 px or 10 ppt
+bindsym $mod+u    resize grow height 10 px or 10 ppt
+bindsym $mod+i    resize shrink height 10 px or 10 ppt
+bindsym $mod+o    resize grow width 10 px or 10 ppt
 
 bindsym $mod+Shift+h    move left  30
 bindsym $mod+Shift+l    move right   30
@@ -117,8 +118,6 @@ bindsym $mod+Shift+1 move container to workspace $ws1
 bindsym $mod+Shift+2 move container to workspace $ws2
 bindsym $mod+Shift+3 move container to workspace $ws3
 bindsym $mod+Shift+4 move container to workspace $ws4
-bindsym $mod+Shift+5 move container to workspace $ws5
-bindsym $mod+Shift+6 move container to workspace $ws6
 bindsym $mod+Shift+7 move container to workspace $ws7
 bindsym $mod+Shift+8 move container to workspace $ws8
 bindsym $mod+Shift+9 move container to workspace $ws9
