@@ -14,14 +14,13 @@ align=center
 [battery]
 command=$HOME/.config/i3blocks/scripts/battery.py
 markup=pango
-interval=30
+interval=5
 align=center
 
 [volume-pulseaudio]
 command=$HOME/.config/i3blocks/scripts/volume-pulseaudio
 interval=once
 signal=1
-
 
 [ip]
 command=hostname -i | awk {' print $1 '}
