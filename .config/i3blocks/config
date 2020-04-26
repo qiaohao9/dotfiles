@@ -31,9 +31,5 @@ align=center
 [time]
 command=date '+%H:%M %A %m/%d'
 interval=1
-align=left
+align=center
 
-[caps-lock]
-command=xset -q | grep Caps | awk '{ print "Caps: " $4 }'
-interval=once
-signal=10
