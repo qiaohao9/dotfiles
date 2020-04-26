@@ -3,8 +3,6 @@ font pango:Consolas 10
 # basic
 for_window [class="^.*"] border pixel 1
 set $terminal --no-startup-id i3-sensible-terminal
-set $shutdown sudo -A shutdown -h now
-set $reboot   sudo -A reboot
 set $mod      Mod4
 
 # #--- Starting External Scripts ---# #
