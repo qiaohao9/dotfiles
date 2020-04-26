@@ -1,11 +1,7 @@
 # #--- Basic Definitions ---# #
 font pango:Consolas 10
 # basic
-for_window [class="^.*"] border pixel 3
-gaps inner 15
-gaps outer 15
-smart_borders on
-hide_edge_borders smart_no_gaps
+for_window [class="^.*"] border pixel 1
 set $terminal --no-startup-id i3-sensible-terminal
 set $shutdown sudo -A shutdown -h now
 set $reboot   sudo -A reboot
@@ -75,7 +71,6 @@ bindsym $mod+j      focus down
 bindsym $mod+k      focus up
 
 bindsym $mod+q      kill
-bindsym $mod+s      gaps inner current plus  5
 
 bindsym $mod+y    resize shrink width 10 px or 10 ppt
 bindsym $mod+u    resize grow height 10 px or 10 ppt
@@ -87,9 +82,6 @@ bindsym $mod+Shift+l    move right   30
 bindsym $mod+Shift+j    move down  30
 bindsym $mod+Shift+k    move up    30
 
-bindsym $mod+Shift+s         gaps inner current minus 5
-bindsym $mod+Shift+d         gaps inner current set 0; gaps outer current set 0
-bindsym $mod+Shift+BackSpace gaps inner current set 15; gaps outer current set 15
 
 # #--- Workspace ---# #
 set $ws1 "1"
@@ -140,6 +132,5 @@ bindsym $mod+Scroll_Lock exec --no-startup-id "killall screenkey || screenkey -s
 bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume 0 +5% && pkill -RTMIN+1 i3blocks
 bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume 0 -5% && pkill -RTMIN+1 i3blocks
 bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute 0 toggle && pkill -RTMIN+1 i3blocks
-# bindsym exec --no-startup-id pactl set-sink-mute 0 0 && pactl set-sink-mute 0 1
 
 bindsym --release Caps_Lock exec pkill -SIGRTMIN+10 i3blocks
