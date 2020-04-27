@@ -111,7 +111,6 @@ alias la="ls -ahl"
 
 alias du="ncdu --color dark -rr -x --exclude .git"
 alias share="python3 -m http.server"
-alias notebook="jupyter notebook"
 
 if type nvim > /dev/null 2>&1; then
     alias vim='nvim'
