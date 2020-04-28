@@ -1,9 +1,6 @@
 [user]
     name       = tinyRat
     email      = me@tinyrat.me
-    signingkey = 25F5D09C68CB6E97
-[commit]
-    gpgsign    = true
 [core]
     editor     = nvim
 [pull]
