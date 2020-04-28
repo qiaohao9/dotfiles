@@ -1,5 +1,21 @@
 ![Neofetch](https://cdn.jsdelivr.net/gh/tinyRatP/storage4images@master/uPic/Qdh313.png)
 
+
+## ⚠️⚠️ Warning ⚠️⚠️
+
+### About git info
+
+It's my personal git info in `.gitconfig`, so you must change it.
+
+```bash
+git config --global user.name {{your username}}
+git config --global user.email {{your email}}
+```
+
+### About mirrors
+
+All mirrors is in China.
+
 ## How to use dotfiles?
 
 1. Install [yadm](https://yadm.io/docs/install)
@@ -14,18 +30,3 @@ just following the guide.
 * [Grub](https://wiki.archlinux.org/index.php/GRUB)
 
 or, you can use the script [archlinux_install](https://github.com/vastpeng/archlinux_install).
-
-## Notice!!!
-
-#### about git.
-
-It's my git info in `.gitconfig`, so you should change it to your own.
-
-```bash
-git config --global user.name {{your username}}
-git config --global user.email {{your email}}
-```
-
-#### about mirror
-
-All mirrors for package manager is in China.
