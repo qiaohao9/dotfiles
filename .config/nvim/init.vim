@@ -99,6 +99,8 @@ filetype on
 syntax on
 colorscheme nord
 
+autocmd! BufNewFile,BufRead Dvcfile,*.dvc setfiletype yaml
+
 " ====================
 " Mapping keys binding
 " ====================
