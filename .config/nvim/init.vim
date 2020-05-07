@@ -48,6 +48,8 @@ set tabstop=4
 set shiftwidth=4
 set expandtab
 
+au BufRead,BufNewFile *.js,*.html,*.css,*.vue set tabstop=2 | set shiftwidth=2
+
 set fileformat=unix
 set fileencoding=utf-8
 set termencoding=utf-8
