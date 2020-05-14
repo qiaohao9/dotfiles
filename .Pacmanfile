@@ -9,6 +9,7 @@ betterlockscreen
 clash
 code
 container-diff
+ctop
 docker-compose
 fcitx-rime
 fcitx-ui-light
@@ -19,12 +20,12 @@ fzf
 gconf
 go
 google-chrome
+google-cloud-sdk
 grub
 htop
 httpie
 hugo
 i3blocks
-intellij-idea-ultimate-edition
 lib32-glibc
 lnav
 lsd
@@ -35,16 +36,14 @@ neofetch
 neovim
 nerd-fonts-hack
 netctl
-nginx
+nmap
 notify-osd
 numlockx
-python-pipenv
 python-poetry
 python-pyalsa
 ranger
 rofi
 rsync
-supervisor
 telegram-desktop
 termite
 tig
@@ -55,6 +54,7 @@ ttf-font-awesome
 ufw
 unzip
 upower
+ventoy
 vi
 wget
 wireless_tools
@@ -62,3 +62,4 @@ xbindkeys
 xorg-xinit
 yadm-git
 yay
+zip
