@@ -76,19 +76,14 @@ Rule:
     - IP-CIDR,       10.0.0.0/8,     DIRECT
     - IP-CIDR,       17.0.0.0/8,     DIRECT
 
-# Apple
+    # Apple
     - DOMAIN-SUFFIX, apple.com,     Apple
     - DOMAIN-SUFFIX, apple.com.cn,  Apple
     - DOMAIN-SUFFIX, icloud.com,    Apple
     - DOMAIN-SUFFIX, icloud.com.cn, Apple
     - IP-CIDR,       17.0.0.0/8,    Apple
 
-# YouTuBe
-    - DOMAIN-SUFFIX, googlevideo.com,         YouTube
-    - DOMAIN-SUFFIX, youtube.com,             YouTube
-    - DOMAIN,        youtubei.googleapis.com, YouTube
-
-# Netflix
+    # Netflix
     - DOMAIN-SUFFIX, fast.com,            Netflix
     - DOMAIN-SUFFIX, netflix.com,         Netflix
     - DOMAIN-SUFFIX, netflix.net,         Netflix
@@ -117,17 +112,37 @@ Rule:
     - IP-CIDR,       198.38.96.0/19,      Netflix
     - IP-CIDR,       198.45.48.0/20,      Netflix
 
-# Micros
+    # Microsoft
+    - DOMAIN-KEYWORD,onedrive,Microsoft
+    - DOMAIN-SUFFIX,azure.com,Microsoft
+    - DOMAIN-SUFFIX,fabric.io,Microsoft
+    - DOMAIN-SUFFIX,files.1drv.com,Microsoft
+    - DOMAIN-SUFFIX,hotmail.com,Microsoft
+    - DOMAIN-SUFFIX,live.com,Microsoft
+    - DOMAIN-SUFFIX,live.net,Microsoft
+    - DOMAIN-SUFFIX,livefilestore.com,Microsoft
+    - DOMAIN-SUFFIX,mesh.com,Microsoft
+    - DOMAIN-SUFFIX,microsoft.com,Microsoft
+    - DOMAIN-SUFFIX,microsoftonline.com,Microsoft
+    - DOMAIN-SUFFIX,microsoft-tst.com,Microsoft
+    - DOMAIN-SUFFIX,msn.com,Microsoft
+    - DOMAIN-SUFFIX,office.com,Microsoft
+    - DOMAIN-SUFFIX,office.net,Microsoft
+    - DOMAIN-SUFFIX,onedrive.com,Microsoft
+    - DOMAIN-SUFFIX,outlook.com,Microsoft
+    - DOMAIN-SUFFIX,p.sfx.ms,Microsoft
+    - DOMAIN-SUFFIX,sharepoint.com,Microsoft
+    - DOMAIN-SUFFIX,skype.com,Microsoft
+    - DOMAIN-SUFFIX,spoprod-a.akamaihd.net,Microsoft
+    - DOMAIN-SUFFIX,storage.msn.com,Microsoft
+    - DOMAIN-SUFFIX,windows.net,Microsoft
+    - DOMAIN-SUFFIX,xbox.com,Microsoft
+    - DOMAIN-SUFFIX,xboxlive.com,Microsoft
+
+    # Micros
     - DOMAIN-SUFFIX, bitwarden.com, DIRECT
     - DOMAIN-SUFFIX, wiz.money,     DIRECT
     - DOMAIN-SUFFIX, syncbits.com,  DIRECT
-
-# CDN
-    - DOMAIN-KEYWORD, cdn,            DIRECT
-
-# Media
-    - DOMAIN-SUFFIX, cdninstagram.com, UrlTest
-
 
     - GEOIP,CN,DIRECT
     - FINAL,UrlTest
