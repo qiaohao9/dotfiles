@@ -1,1 +1,3 @@
-{"debug":false,"experimental":false,"registry-mirrors":["https://yr5by9uq.mirror.aliyuncs.com"]}
+{
+  "registry-mirrors": ["https://docker.mirrors.ustc.edu.cn"]
+}
