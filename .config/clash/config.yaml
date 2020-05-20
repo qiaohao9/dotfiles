@@ -47,15 +47,6 @@ Rule:
     - DOMAIN-SUFFIX, me.com,                     Apple
     - DOMAIN-SUFFIX, mzstatic.com,               Apple
 
-    # Netflix
-    - DOMAIN-SUFFIX, netflix.com,   Netflix
-    - DOMAIN-SUFFIX, netflix.net,   Netflix
-    - DOMAIN-SUFFIX, nflxext.com,   Netflix
-    - DOMAIN-SUFFIX, nflximg.com,   Netflix
-    - DOMAIN-SUFFIX, nflximg.net,   Netflix
-    - DOMAIN-SUFFIX, nflxso.net,    Netflix
-    - DOMAIN-SUFFIX, nflxvideo.net, Netflix
-
     # Microsoft
     - DOMAIN-SUFFIX, live.com,                              DIRECT
     - DOMAIN-SUFFIX, msocdn.com,                            DIRECT
@@ -112,10 +103,17 @@ Rule:
     - IP-CIDR,       192.173.64.0/18,     Netflix, no-resolve
     - IP-CIDR,       198.38.96.0/19,      Netflix, no-resolve
 
+    # Twitter
+    - DOMAIN-SUFFIX, t.co,        Auto
+    - DOMAIN-SUFFIX, twimg.co,    Auto
+    - DOMAIN-SUFFIX, twimg.com,   Auto
+    - DOMAIN-SUFFIX, twitpic.com, Auto
+    - DOMAIN-SUFFIX, twitter.com, Auto
+
     # Micros
     - DOMAIN-SUFFIX, bitwarden.com, DIRECT
     - DOMAIN-SUFFIX, wiz.money,     DIRECT
     - DOMAIN-SUFFIX, syncbits.com,  DIRECT
 
-    - GEOIP,CN,DIRECT
-    - MATCH,Auto
+    - GEOIP, CN, DIRECT
+    - MATCH, Auto
