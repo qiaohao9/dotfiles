@@ -112,6 +112,7 @@ Rule:
 
     # Micros
     - DOMAIN-SUFFIX, bitwarden.com, DIRECT
+    - DOMAIN-SUFFIX, bitwarden.net, DIRECT
     - DOMAIN-SUFFIX, wiz.money,     DIRECT
     - DOMAIN-SUFFIX, syncbits.com,  DIRECT
 
