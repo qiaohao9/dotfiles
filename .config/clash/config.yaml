@@ -109,6 +109,9 @@ Rule:
     - DOMAIN-SUFFIX, twimg.com,   Auto
     - DOMAIN-SUFFIX, twitpic.com, Auto
     - DOMAIN-SUFFIX, twitter.com, Auto
+    
+    # China-Net
+    - DOMAIN-SUFFIX, qq.com, DIRECT
 
     # Micros
     - DOMAIN-SUFFIX, bitwarden.com, DIRECT
