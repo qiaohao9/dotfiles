@@ -4,9 +4,11 @@ adobe-source-han-serif-cn-fonts
 aria2
 base
 betterlockscreen
+bpython
 clash
 code
 container-diff
+dhcp
 docker-compose
 fd
 firefox
@@ -14,6 +16,7 @@ flameshot
 fzf
 gconf
 go
+gobject-introspection
 google-chrome
 google-cloud-sdk
 grub
@@ -21,6 +24,7 @@ htop
 httpie
 hugo
 i3blocks
+intel-ucode
 lib32-glibc
 lnav
 lsd
@@ -33,6 +37,7 @@ nerd-fonts-hack
 netctl
 nmap
 numlockx
+openssh
 python-poetry
 python-pyalsa
 ranger
@@ -48,11 +53,12 @@ ttf-font-awesome
 ufw
 unzip
 upower
-ventoy
+ventoy-bin
 vi
 wget
 wireless_tools
 xbindkeys
+xorg-server
 xorg-xinit
 yadm-git
 yay
