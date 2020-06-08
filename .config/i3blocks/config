@@ -17,12 +17,6 @@ markup=pango
 interval=5
 align=center
 
-[ip]
-command=ip route get 1 | awk '{ print $3 }'
-interval=10
-color=#91E78B
-align=center
-
 [time]
 command=date '+%H:%M %A %m/%d'
 interval=1
