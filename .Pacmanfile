@@ -1,18 +1,13 @@
 acpi
 adobe-source-han-sans-cn-fonts
 adobe-source-han-serif-cn-fonts
-alsa-utils
 aria2
-asoundconf
 base
 betterlockscreen
 clash
 code
 container-diff
-ctop
 docker-compose
-fcitx-rime
-fcitx-ui-light
 fd
 firefox
 flameshot
@@ -37,7 +32,6 @@ neovim
 nerd-fonts-hack
 netctl
 nmap
-notify-osd
 numlockx
 python-poetry
 python-pyalsa
