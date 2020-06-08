@@ -17,13 +17,8 @@ markup=pango
 interval=5
 align=center
 
-[volume-pulseaudio]
-command=$HOME/.config/i3blocks/scripts/volume-pulseaudio
-interval=once
-signal=1
-
 [ip]
-command=hostname -i | awk {' print $1 '}
+command=ip route get 1 | awk '{ print $3 }'
 interval=10
 color=#91E78B
 align=center
