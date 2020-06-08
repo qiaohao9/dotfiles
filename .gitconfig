@@ -16,7 +16,7 @@
     dc         = diff --cached
     lg         = log --all --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative
 [diff]
-	noprefix   = true
+    noprefix   = true
 [color]
     ui         = true
 [color "diff"]
