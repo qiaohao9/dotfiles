@@ -33,8 +33,12 @@ client.urgent           $darkred     $darkred $black   $darkred     $darkred
 client.background       $black
 
 bar {
-  font           pango:Consolas 15
-  status_command i3blocks
+  font           pango:Consolas 16
+  status_command bumblebee-status -m battery caffeine nic time \
+                    -p time.format="%H:%M %A %m/%d" \
+                    -p nic.format="{state} {ip}" \
+                    -p battery.decorate="false" \
+                    -t nord-powerline
   position       top
   mode           dock
   modifier       None
