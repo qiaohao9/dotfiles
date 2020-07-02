@@ -1,3 +1,2 @@
 .ssh/*
 .secret.gpg
-.config/rclone

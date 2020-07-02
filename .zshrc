@@ -76,7 +76,7 @@ export GOBIN=$GOPATH/bin
 if [[ $(command -v go) ]]; then
     export GOROOT=$(go env GOROOT)
 fi
-export PATH=$PATH:/usr/local/sbin:$HOME/.node_modules/bin:$GOPATH/bin:$HOME/.local/bin:/opt/miniconda3/bin
+export PATH=$PATH:/usr/local/sbin:$HOME/.node_modules/bin:$GOPATH/bin:$HOME/.local/bin
 
 # Mirrors
 export GOPROXY=https://mirrors.aliyun.com/goproxy/
