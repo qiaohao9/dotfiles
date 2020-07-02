@@ -7,7 +7,6 @@ tap "homebrew/cask-fonts", "https://mirrors.tuna.tsinghua.edu.cn/git/homebrew/ho
 tap "homebrew/cask-versions"
 tap "homebrew/core", "https://mirrors.ustc.edu.cn/homebrew-core.git"
 tap "homebrew/services"
-brew "aliyun-cli"
 brew "aria2"
 brew "asciinema"
 brew "autossh"
@@ -61,7 +60,6 @@ brew "yarn"
 brew "you-get"
 brew "zsh"
 cask "appcleaner"
-cask "clashx"
 cask "firefox"
 cask "font-hack-nerd-font"
 cask "google-chrome"
@@ -72,19 +70,15 @@ cask "itsycal"
 cask "java"
 cask "keycastr"
 cask "mactex-no-gui"
-cask "miniconda"
 cask "moneywiz"
 cask "numi"
 cask "onedrive"
 cask "telegram"
-cask "thunder"
 cask "ticktick"
 cask "upic"
 cask "visual-studio-code"
 mas "Bitwarden", id: 1352778147
-mas "iMovie", id: 408981434
 mas "Keynote", id: 409183694
 mas "Magnet", id: 441258766
-mas "Microsoft Excel", id: 462058435
 mas "Reeder", id: 880001334
 mas "Xcode", id: 497799835
