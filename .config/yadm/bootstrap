@@ -65,7 +65,7 @@ function install_on_ArchLinux() {
     if ! command -v yay > /dev/null 2>&1; then
         # Installing yay
         echo "Install Yay..."
-        rm -rf /tmp/yay && git clone https://aur.archlinux.org/yay.git /tmp/yay && cd /tmp/yay && makepkg -si --noconfirm
+        rm -rf /tmp/yay && git clone --depth 1 https://aur.archlinux.org/yay.git /tmp/yay && cd /tmp/yay && makepkg -si --noconfirm
     fi
 
     echo "Installing from .Pacmanfile..."
