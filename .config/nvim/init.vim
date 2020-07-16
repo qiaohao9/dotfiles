@@ -107,13 +107,23 @@ autocmd! BufNewFile, BufRead Dvcfile, *.dvc setfiletype yaml
 let mapleader = ' '
 map <c-n> :NERDTreeToggle<CR>
 
-" Move between windows
+map <leader>1 :b 1<CR>
+map <leader>2 :b 2<CR>
+map <leader>3 :b 3<CR>
+map <leader>4 :b 4<CR>
+map <leader>5 :b 5<CR>
+map <leader>6 :b 6<CR>
+map <leader>7 :b 7<CR>
+map <leader>8 :b 8<CR>
+map <leader>9 :b 9<CR>
+
 nnoremap H <C-w>h
 nnoremap J <C-w>j
 nnoremap K <C-w>k
 nnoremap L <C-w>l
+nnoremap [b :bp<CR>
+nnoremap ]b :bn<CR>
 
 " Auto Align
 xmap ga <Plug>(EasyAlign)
 nmap ga <Plug>(EasyAlign)
-
