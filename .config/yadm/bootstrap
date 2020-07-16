@@ -36,10 +36,6 @@ function install_on_common() {
         echo "Bootstrapingn Neovim..."
         nvim '+PlugInstall' '+PlugClean!' '+qall'
     fi
-
-    # Installing Apps with cnpm
-    # awk '{ print }' $HOME/.Npmfile | xargs -I _ cnpm i -g _
-    cnpm i -g bash-language-server # install dependency on VSCode
 }
 
 
@@ -53,6 +49,9 @@ function install_on_macOS() {
     if [ -d "$HOME/.fonts" ]; then
         cp $HOME/.fonts/* $HOME/Library/Fonts
     fi
+
+    # install apps from Brewfile
+    brew bundle -v -g
 }
 
 
