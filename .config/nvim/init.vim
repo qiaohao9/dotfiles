@@ -25,6 +25,7 @@ set title
 set number
 set cursorline
 set termguicolors
+set t_Co=256
 set mouse=a
 
 set incsearch
@@ -48,7 +49,7 @@ set tabstop=4
 set shiftwidth=4
 set expandtab
 
-au BufRead,BufNewFile *.js,*.html,*.css,*.vue set tabstop=2 | set shiftwidth=2
+au BufRead, BufNewFile *.yaml, *.yml, *.js, *.html, *.css set tabstop=2 | set shiftwidth=2
 
 set fileformat=unix
 set fileencoding=utf-8
@@ -67,11 +68,14 @@ Plug 'scrooloose/nerdtree'
     autocmd VimEnter * if argc() == 0 && !exists('s:std_in') | NERDTree | endif
     autocmd VimEnter * if argc() == 1 && isdirectory(argv()[0]) && !exists('s:std_in') | exe 'NERDTree' argv()[0] | wincmd p | ene | exe 'cd '.argv()[0] | endif
     autocmd bufenter * if (winnr('$') == 1 && exists('b:NERDTree') && b:NERDTree.isTabTree()) | q | endif
+
 Plug 'vim-airline/vim-airline'                   " Nvim status line
     let g:airline#extensions#tabline#enabled = 1 " Show tab
+
 Plug 'yggdroot/indentline'
     let g:indentLine_conceallevel = 1
     let g:indentLine_char_list    = ['|', '¦', '┆', '┊']
+
 Plug 'scrooloose/nerdcommenter'
     let g:NERDSpaceDelims = 1
     let g:NERDCompactSexyComs = 1
@@ -80,12 +84,6 @@ Plug 'scrooloose/nerdcommenter'
     let g:NERDCommentEmptyLines = 1
     let g:NERDTrimTrailingWhitespace = 1
     let g:NERDToggleCheckAllLines = 1
-Plug 'lervag/vimtex'
-    let g:tex_flavor='latex'
-    let g:vimtex_view_method='zathura'
-    let g:vimtex_quickfix_mode=0
-    set conceallevel=1
-    let g:tex_conceal='abdmg'
 
 Plug 'arcticicestudio/nord-vim'
 Plug 'editorconfig/editorconfig-vim'
@@ -97,11 +95,11 @@ Plug 'stephpy/vim-yaml'
 
 call plug#end()
 
-filetype on
-syntax on
+filetype    on
+syntax      on
 colorscheme nord
 
-autocmd! BufNewFile,BufRead Dvcfile,*.dvc setfiletype yaml
+autocmd! BufNewFile, BufRead Dvcfile, *.dvc setfiletype yaml
 
 " ====================
 " Mapping keys binding
