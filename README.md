@@ -1,7 +1,6 @@
-![Neofetch](https://cdn.jsdelivr.net/gh/tinyRatP/storage4images@master/uPic/Qdh313.png)
+![neofetch](./neofetch.png)
 
-
-## ⚠️⚠️ Warning ⚠️⚠️
+## ![Warning](https://api.iconify.design/mdi:alert-decagram.svg)
 
 ### About git info
 
