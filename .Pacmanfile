@@ -8,10 +8,10 @@ betterlockscreen
 bpython
 bumblebee-status
 clash
+cmake
 code
 container-diff
 dhcp
-docker-compose
 fcitx-rime
 fd
 firefox
@@ -40,12 +40,11 @@ netctl
 nmap
 notify-send.sh
 numlockx
-openssh
-python-poetry
+pycharm-professional
+python-pipenv
 python-pyalsa
 ranger
 rofi
-rsync
 supervisor
 telegram-desktop
 termite
@@ -54,7 +53,9 @@ tldr
 tree
 ttf-consolas-powerline
 ttf-font-awesome
+typora
 ufw
+unicode-emoji
 unzip
 upower
 ventoy-bin
