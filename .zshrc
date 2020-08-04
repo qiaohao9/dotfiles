@@ -78,6 +78,10 @@ if [[ $(command -v go) ]]; then
 fi
 export PATH=$PATH:/usr/local/sbin:$HOME/.node_modules/bin:$GOPATH/bin:$HOME/.local/bin
 
+export PIPENV_IGNORE_VIRTUALENVS=1
+export PIPENV_PYPI_MIRROR=https://pypi.douban.com/simple
+export DOCKER_BUILDKIT=1
+
 # Mirrors
 export GOPROXY=https://mirrors.aliyun.com/goproxy/
 export NODE_MIRROR=https://mirrors.tuna.tsinghua.edu.cn/nodejs-release/
