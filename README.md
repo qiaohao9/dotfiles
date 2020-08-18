@@ -1,12 +1,6 @@
 ![neofetch](./neofetch.png)
 
-<<<<<<< HEAD
-## ![Warning](https://api.iconify.design/mdi:alert-decagram.svg)
-=======
-## !!!Warning!!!
-
 ### Change the git info.
->>>>>>> a59f4c5... update README.md
 
 It's my git info in `.gitconfig`, you must change it.
 
