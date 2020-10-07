@@ -1,3 +1,5 @@
+export http_proxy=http://127.0.0.1:7890
+export https_proxy=$http_proxy
 # Variable behaviors
 setopt NO_ALL_EXPORT  # Don't export all variables to environment
 
@@ -70,7 +72,7 @@ export HOMEBREW_NO_ANALYTICS=1
 export HOMEBREW_NO_AUTO_UPDATE=true
 export HOMEBREW_EDITOR=nvim
 
-export GO111MODULE=on
+export GO111MODULE=auto
 export GOPATH=$HOME/.go
 export GOBIN=$GOPATH/bin
 if [[ $(command -v go) ]]; then
@@ -92,24 +94,24 @@ export HOMEBREW_BOTTLE_DOMAIN=https://mirrors.ustc.edu.cn/homebrew-bottles
 # Zplug
 # ========================
 # Check if zplug is installed
-if [[ ! -d ~/.zplug ]]; then
-  git clone https://github.com/zplug/zplug ~/.zplug
+if [[ ! -d ~/.zinit/bin ]]; then
+  git clone --depth 1 https://github.com/zdharma/zinit.git ~/.zinit/bin
 fi
-source $HOME/.zplug/init.zsh
-zplug "zdharma/fast-syntax-highlighting"
-zplug "zsh-users/zsh-autosuggestions"
-zplug "tinyRatP/ys", as:theme
-if ! zplug check; then
-    zplug install
-fi
-zplug load
+source $HOME/.zinit/bin/zinit.zsh
+autoload -Uz _zinit
+(( ${+_comps} )) && _comps[zinit]=_zinit
+
+zinit light "zdharma/fast-syntax-highlighting"
+zinit light "zsh-users/zsh-autosuggestions"
+zinit ice compile'(pure|async).zsh' pick'async.zsh' src'pure.zsh'
+zinit light sindresorhus/pure
 
 # ========================
 # Alias
 # ========================
 alias zshconfig="source ~/.zshrc"
 
-alias ls="lsd"
+alias ls="exa -s type --group-directories-first"
 alias l="ls -hl"
 alias la="ls -ahl"
 
