@@ -1,0 +1,19 @@
+{
+    "themes": {
+        "ocean": {
+            "commandName": "bold, cyan",
+            "mainDescription": "",
+            "exampleDescription": "green",
+            "exampleCode": "cyan",
+            "exampleToken": "dim"
+        },
+        "sun": {
+            "commandName": "bold, cyan",
+            "mainDescription": "",
+            "exampleDescription": "green",
+            "exampleCode": "bold, red",
+            "exampleToken": "bold, dim"
+        }
+    },
+    "theme": "ocean"
+}
