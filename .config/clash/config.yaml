@@ -1,0 +1,107 @@
+port: 7890
+socks-port: 7891
+redir-port: 7892
+
+# Set to true to allow connections to the local-end server from
+# other LAN IP addresses
+allow-lan: true
+
+# This is only applicable when `allow-lan` is `true`
+# '*': bind all IP addresses
+# 192.168.122.11: bind a single IPv4 address
+# "[aaaa::a8aa:ff:fe09:57d8]": bind a single IPv6 address
+bind-address: '*'
+
+# Clash router working mode
+# rule: rule-based packet routing
+# global: all packets will be forwarded to a single endpoint
+# direct: directly forward the packets to the Internet
+mode: rule
+
+# Clash by default prints logs to STDOUT
+# info / warning / error / debug / silent
+log-level: info
+
+# When set to false, resolver won't translate hostnames to IPv6 addresses
+ipv6: false
+
+# RESTful web API listening address
+external-controller: 127.0.0.1:9090
+
+
+dns:
+  enable: true
+  listen: 0.0.0.0:53
+
+  nameserver:
+    - 1.1.1.1
+    - 8.8.8.8
+    - 119.29.29.29
+
+proxy-groups:
+  - name: Proxy
+    type: select
+    use:
+      - dler
+    url: 'http://www.gstatic.com/generate_204'
+    interval: 300
+
+  - name: Apple
+    type: select
+    use:
+      - dler
+    proxies:
+      - DIRECT
+
+proxy-providers:
+  dler:
+    type: http
+    url: '{{ your_proxy_url }}'
+    interval: 3600
+    path: ./proxies/dler.yaml
+    health-check:
+      enable: true
+      interval: 600
+      url: http://www.gstatic.com/generate_204
+
+rules:
+  - DOMAIN-SUFFIX, local,                      DIRECT
+  - DOMAIN-SUFFIX, localhost,                  DIRECT
+  - IP-CIDR,       10.0.0.0/8,                 DIRECT
+  - IP-CIDR,       17.0.0.0/8,                 DIRECT
+  - IP-CIDR,       100.64.0.0/10,              DIRECT
+  - IP-CIDR,       127.0.0.0/8,                DIRECT
+  - IP-CIDR,       172.16.0.0/12,              DIRECT
+  - IP-CIDR,       192.168.0.0/16,             DIRECT
+
+  # Apple
+  - DOMAIN,        audio-ssl.itunes.apple.com, Apple
+  - DOMAIN,        gspe1-ssl.ls.apple.com,     Apple
+  - DOMAIN,        itunes.apple.com,           Apple
+  - DOMAIN-SUFFIX, aaplimg.com,                Apple
+  - DOMAIN-SUFFIX, apple.co,                   Apple
+  - DOMAIN-SUFFIX, apple.com,                  Apple
+  - DOMAIN-SUFFIX, appstore.com,               Apple
+  - DOMAIN-SUFFIX, cdn-apple.com,              Apple
+  - DOMAIN-SUFFIX, crashlytics.com,            Apple
+  - DOMAIN-SUFFIX, icloud-content.com,         Apple
+  - DOMAIN-SUFFIX, icloud.com,                 Apple
+  - DOMAIN-SUFFIX, itunes.apple.com,           Apple
+  - DOMAIN-SUFFIX, me.com,                     Apple
+  - DOMAIN-SUFFIX, mzstatic.com,               Apple
+  - DOMAIN-SUFFIX, icloud.com.cn,              Apple
+  - DOMAIN-SUFFIX, apple.cn,                   Apple
+
+  # Twitter
+  - DOMAIN-SUFFIX, t.co,                       Proxy
+  - DOMAIN-SUFFIX, twimg.co,                   Proxy
+  - DOMAIN-SUFFIX, twimg.com,                  Proxy
+  - DOMAIN-SUFFIX, twitpic.com,                Proxy
+  - DOMAIN-SUFFIX, twitter.com,                Proxy
+
+  # Mirrors
+  - DOMAIN-SUFFIX, dytt8.net,   DIRECT
+  - DOMAIN-SUFFIX, ipstack.com, DIRECT
+
+  - GEOIP,         CN,                         DIRECT
+  - MATCH,         Proxy
