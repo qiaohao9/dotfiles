@@ -1,0 +1,6 @@
+set adjust-open "width"
+set guioptions ""
+set window-title-basename true
+set incremental-search true
+set show-v-scrollerbar true
+set selection-clipboard clipboard
