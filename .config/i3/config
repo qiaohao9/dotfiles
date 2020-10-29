@@ -1,0 +1,137 @@
+# #--- Basic Definitions ---# #
+font pango:Consolas 10
+# basic
+for_window [class="^.*"] border pixel 1
+set $terminal --no-startup-id i3-sensible-terminal
+set $mod      Mod4
+
+# #--- Starting External Scripts ---# #
+# Set colors:
+set $darkblack   #1d2021
+set $transparent #000000
+set $black       #928374
+set $darkred     #cc241d
+set $red         #fb4934
+set $darkgreen   #98971a
+set $green       #b8bb26
+set $darkyellow  #d79921
+set $yellow      #fabd2f
+set $darkblue    #458588
+set $blue        #83a598
+set $darkmagenta #b16286
+set $magenta     #d3869b
+set $darkcyan    #689d6a
+set $cyan        #8ec07c
+set $darkwhite   #a89984
+set $white       #ebdbb2
+
+#                       BORDER    BACKGROUND  TEXT    INDICATOR       CHILD_BORDER
+client.focused          $red         $red     $magenta $darkmagenta $darkblue
+client.unfocused        $transparent $blue    $white   $darkblue    $darkblack
+client.focused_inactive $transparent $blue    $white   $darkblue    $darkblack
+client.urgent           $darkred     $darkred $black   $darkred     $darkred
+client.background       $black
+
+bar {
+  font           pango:Consolas 16
+  status_command bumblebee-status -m battery nic time \
+                    -p time.format="%H:%M %A %m/%d" \
+                    -p nic.format="{state} {ip}" \
+                    -p battery.decorate="false" \
+                    -t nord-powerline
+  position       top
+  mode           dock
+  modifier       None
+  colors  {
+    background         $darkblack
+    statusline         $darkwhite
+    separator          $cyan
+    focused_workspace  $blue $darkblue $darkblack
+    active_workspace   $blue $blue $darkwhite
+    inactive_workspace $darkblack $darkblack $white
+    urgent_workspace   $darkblack $darkblack $white
+  }
+}
+
+# #--- Basic Exec ---# #
+bindsym $mod+Return exec $terminal
+bindsym $mod+d      exec --no-startup-id rofi -show run -theme solarized
+bindsym $mod+x      exec --no-startup-id betterlockscreen -t "Have a nice day!" --lock blur
+
+# #--- Toggle ---# #
+bindsym $mod+e           layout     toggle split
+bindsym $mod+f           fullscreen toggle
+bindsym $mod+space       focus      mode_toggle
+bindsym $mod+Shift+space floating   toggle
+bindsym $mod+v           split      v
+bindsym $mod+Shift+v     split      h
+
+# #--- Arrow Keys ---# #
+bindsym $mod+h      focus left
+bindsym $mod+l      focus right
+bindsym $mod+j      focus down
+bindsym $mod+k      focus up
+
+bindsym $mod+q      kill
+
+bindsym $mod+y    resize shrink width 10 px or 10 ppt
+bindsym $mod+u    resize grow height 10 px or 10 ppt
+bindsym $mod+i    resize shrink height 10 px or 10 ppt
+bindsym $mod+o    resize grow width 10 px or 10 ppt
+
+bindsym $mod+Shift+h    move left  30
+bindsym $mod+Shift+l    move right   30
+bindsym $mod+Shift+j    move down  30
+bindsym $mod+Shift+k    move up    30
+
+
+# #--- Workspace ---# #
+set $ws1 "1"
+set $ws2 "2"
+set $ws3 "3"
+set $ws4 "4"
+set $ws5 "5"
+set $ws6 "6"
+set $ws7 "7"
+set $ws8 "8"
+set $ws9 "9"
+set $ws10 "10"
+# Seclect the workspace
+bindsym $mod+1 workspace $ws1
+bindsym $mod+2 workspace $ws2
+bindsym $mod+3 workspace $ws3
+bindsym $mod+4 workspace $ws4
+bindsym $mod+5 workspace $ws5
+bindsym $mod+6 workspace $ws6
+bindsym $mod+7 workspace $ws7
+bindsym $mod+8 workspace $ws8
+bindsym $mod+9 workspace $ws9
+bindsym $mod+0 workspace $ws10
+# move focused container to workspace
+bindsym $mod+Shift+1 move container to workspace $ws1
+bindsym $mod+Shift+2 move container to workspace $ws2
+bindsym $mod+Shift+3 move container to workspace $ws3
+bindsym $mod+Shift+4 move container to workspace $ws4
+bindsym $mod+Shift+7 move container to workspace $ws7
+bindsym $mod+Shift+8 move container to workspace $ws8
+bindsym $mod+Shift+9 move container to workspace $ws9
+bindsym $mod+Shift+0 move container to workspace $ws10
+bindsym $mod+Escape workspace prev
+
+# # --- Some About System ---# #
+bindsym $mod+Shift+r restart
+bindsym $mod+Shift+c reload
+bindsym $mod+Shift+e exec --no-startup-id "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -B 'Yes, exit i3' 'i3-msg exit'"
+exec_always --no-startup-id feh --bg-fill ~/.wallpaper.jpg
+
+# #--- Media Keys ---# #
+# For screenshots and recording ---# #
+bindsym Print            exec --no-startup-id flameshot full -c -p ~/Downloads/captures
+bindsym Shift+Print      exec --no-startup-id flameshot gui -p ~/Downloads/captures
+bindsym $mod+Scroll_Lock exec --no-startup-id "killall screenkey || screenkey -s normal -p bottom --no-whitespace -f Cscadia"
+
+# ---- Sound System --- #
+bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume 0 +5% && pkill -RTMIN+1 i3blocks
+bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume 0 -5% && pkill -RTMIN+1 i3blocks
+bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute 0 toggle && pkill -RTMIN+1 i3blocks
+
