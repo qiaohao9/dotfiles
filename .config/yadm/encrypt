@@ -1,0 +1,3 @@
+.ssh/config
+.ssh/*.key
+.ssh/id_rsa*
