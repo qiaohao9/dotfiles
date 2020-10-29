@@ -12,7 +12,7 @@ function custom_sed() {
             sed -i "" -E $@
             ;;
         "Linux")
-            sed -r $@
+            sed -i -r $@
             ;;
         *)
             echo "Cannot detect the system ..."
