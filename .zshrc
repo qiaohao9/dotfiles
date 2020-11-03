@@ -66,7 +66,6 @@ else
     export EDITOR=vi
 fi
 
-export PATH=$PATH:/usr/local/sbin:$HOME/.node_modules/bin:$GOPATH/bin:$HOME/.local/bin
 
 export HOMEBREW_NO_ANALYTICS=1
 export HOMEBREW_NO_AUTO_UPDATE=true
@@ -77,11 +76,11 @@ export DOCKER_BUILDKIT=1
 
 export GO111MODULE=auto
 export GOPATH=$HOME/.go
-export GOBIN=$GOPATH/bin
 if [[ $(command -v go) ]]; then
     export GOROOT=$(go env GOROOT)
 fi
 
+export PATH=$PATH:/usr/local/sbin:$HOME/.node_modules/bin:$GOPATH/bin:$HOME/.local/bin
 
 # China mirrors
 export GOPROXY=https://mirrors.aliyun.com/goproxy/
