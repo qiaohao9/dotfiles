@@ -37,6 +37,7 @@ inetutils
 intellij-idea-ultimate-edition
 intellij-idea-ultimate-edition-jre
 intel-ucode
+keybase
 lib32-glibc
 libreoffice-fresh
 linux
@@ -48,6 +49,7 @@ mirrorlist-rankmirrors-hook
 ncdu
 neofetch
 neovim
+nerd-fonts-fira-code
 netctl
 net-tools
 networkmanager
@@ -57,7 +59,6 @@ noto-fonts-cjk
 npm
 ntfs-3g
 numlockx
-nvm
 openssh
 os-prober
 otf-cascadia-code
@@ -67,6 +68,7 @@ ranger
 rime-double-pinyin
 rofi
 rsync
+supervisor
 telegram-desktop
 termite
 tig
@@ -90,5 +92,7 @@ xorg-server
 xorg-xinit
 xorg-xrandr
 yay
+zathura
+zathura-pdf-poppler
 zip
 zsh
