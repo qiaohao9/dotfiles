@@ -29,6 +29,7 @@ fzf
 git
 gobject-introspection
 google-chrome
+graphviz
 grub
 htop
 httpie
@@ -47,7 +48,6 @@ lsof
 man-db
 mirrorlist-rankmirrors-hook
 ncdu
-neofetch
 neovim
 nerd-fonts-fira-code
 netctl
@@ -55,7 +55,9 @@ net-tools
 networkmanager
 nginx
 nmap
+noto-fonts
 noto-fonts-cjk
+noto-fonts-emoji
 npm
 ntfs-3g
 numlockx
@@ -77,7 +79,9 @@ tmux
 traceroute
 tree
 ttf-font-awesome
+ttf-jetbrains-mono
 typora
+ufetch-git
 ufw
 unicode-emoji
 unzip
