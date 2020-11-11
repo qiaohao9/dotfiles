@@ -83,6 +83,8 @@ fi
 export PATH=$PATH:/usr/local/sbin:$HOME/.node_modules/bin:$GOPATH/bin:$HOME/.local/bin
 
 # mirrors
+export GO111MODULE=on
+export GOPROXY=https://goproxy.cn,direct
 export PIPENV_PYPI_MIRROR=https://pypi.douban.com/simple
 export NODE_MIRROR=https://mirrors.tuna.tsinghua.edu.cn/nodejs-release/
 export HOMEBREW_BOTTLE_DOMAIN=https://mirrors.ustc.edu.cn/homebrew-bottles
