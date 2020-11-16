@@ -104,8 +104,6 @@ zinit light "zsh-users/zsh-autosuggestions"
 zinit snippet OMZ::lib/git.zsh
 zinit snippet OMZ::lib/theme-and-appearance.zsh
 zinit light "tinyRatP/ys"
-# ice compile'(pure|async).zsh' pick'async.zsh' src'pure.zsh'
-# light sindresorhus/pure
 
 # ------------
 #    Alias
