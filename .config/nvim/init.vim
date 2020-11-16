@@ -85,6 +85,7 @@ Plug 'scrooloose/nerdcommenter'
     let g:NERDTrimTrailingWhitespace = 1
     let g:NERDToggleCheckAllLines = 1
 
+Plug 'psliwka/vim-smoothie'
 Plug 'arcticicestudio/nord-vim'
 Plug 'editorconfig/editorconfig-vim'
 Plug 'jiangmiao/auto-pairs'
