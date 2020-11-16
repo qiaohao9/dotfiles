@@ -36,6 +36,12 @@ function install_on_common() {
         echo "Bootstrapingn Neovim..."
         nvim '+PlugInstall' '+PlugClean!' '+qall'
     fi
+
+    # Export luarocks path
+    if command -v luarocks > /dev/null 2>&1; then
+        echo "Write Luarocks path to ~/.zshrc..."
+        luarocks path >> ~/.zshrc
+    fi
 }
 
 
