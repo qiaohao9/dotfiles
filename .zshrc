@@ -59,7 +59,6 @@ export LC_ALL='en_US.UTF-8'
 export CLICOLOR=1
 export GPG_TTY=$(tty)
 
-
 if [[ $(command -v nvim) ]]; then
     export EDITOR=nvim
 else

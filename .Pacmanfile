@@ -1,6 +1,7 @@
 acpi
 ansible
 aria2
+asciinema
 base
 betterlockscreen
 bpython
@@ -19,8 +20,12 @@ efibootmgr
 etcd
 exa
 expac
-fcitx-configtool
-fcitx-rime
+fcitx5
+fcitx5-configtool
+fcitx5-gtk
+fcitx5-material-color
+fcitx5-qt
+fcitx5-rime
 fd
 feh
 firefox
@@ -38,6 +43,7 @@ inetutils
 intellij-idea-ultimate-edition
 intellij-idea-ultimate-edition-jre
 intel-ucode
+jsonnet
 keybase
 lib32-glibc
 libreoffice-fresh
@@ -45,6 +51,7 @@ linux
 linux-firmware
 lnav
 lsof
+luarocks
 man-db
 mirrorlist-rankmirrors-hook
 ncdu
@@ -61,6 +68,7 @@ noto-fonts-emoji
 npm
 ntfs-3g
 numlockx
+openresty
 openssh
 os-prober
 otf-cascadia-code
@@ -70,6 +78,7 @@ ranger
 rime-double-pinyin
 rofi
 rsync
+subversion
 supervisor
 telegram-desktop
 termite
