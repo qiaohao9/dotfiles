@@ -1,7 +1,7 @@
 [user]
-    name          = tinyRatP
-    email         = me@tinyrat.me
-    ; signingkey = 25F5D09C68CB6E97
+    name          = tekzv
+    email         = qiaohao.peng@outlook.com
+    signingkey    = 492F016392F227E8
 [commit]
     ; gpgsign = true
 [gpg]
