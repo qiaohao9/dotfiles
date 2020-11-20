@@ -1,3 +1,4 @@
 .ssh/config
 .ssh/*.key
+.ssh/*.pem
 .ssh/id_rsa*
