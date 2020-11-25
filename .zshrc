@@ -220,3 +220,10 @@ function fkill() {
     fi
 }
 
+function wttr() {
+    curl 'wttr.in/chengdu?format=3'
+}
+
+export LUA_PATH='/usr/share/lua/5.4/?.lua;/usr/share/lua/5.4/?/init.lua;/usr/lib/lua/5.4/?.lua;/usr/lib/lua/5.4/?/init.lua;./?.lua;./?/init.lua;/home/tekzv/.luarocks/share/lua/5.4/?.lua;/home/tekzv/.luarocks/share/lua/5.4/?/init.lua'
+export LUA_CPATH='/usr/lib/lua/5.4/?.so;/usr/lib/lua/5.4/loadall.so;./?.so;/home/tekzv/.luarocks/lib/lua/5.4/?.so'
+export PATH='/home/tekzv/.luarocks/bin:/home/tekzv/.zinit/polaris/sbin:/home/tekzv/.zinit/polaris/bin:/usr/local/sbin:/usr/local/bin:/usr/bin:/usr/lib/jvm/default/bin:/opt/openresty/bin:/opt/openresty/nginx/sbin:/usr/bin/site_perl:/usr/bin/vendor_perl:/usr/bin/core_perl:/home/tekzv/.node_modules/bin:/home/tekzv/.go/bin:/home/tekzv/.local/bin'
