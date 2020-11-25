@@ -49,8 +49,6 @@ set tabstop=4
 set shiftwidth=4
 set expandtab
 
-au BufRead, BufNewFile *.yaml, *.yml, *.js, *.html, *.css set tabstop=2 | set shiftwidth=2
-
 set fileformat=unix
 set fileencoding=utf-8
 set termencoding=utf-8
@@ -101,6 +99,7 @@ syntax      on
 colorscheme nord
 
 autocmd! BufNewFile, BufRead Dvcfile, *.dvc setfiletype yaml
+au BufRead, BufNewFile *.yaml, *.json, *.yml, *.js, *.html, *.css set tabstop=2 | set shiftwidth=2
 
 " ====================
 " Mapping keys binding
