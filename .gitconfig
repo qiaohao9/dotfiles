@@ -2,6 +2,8 @@
     name          = tekzv
     email         = qiaohao.peng@outlook.com
     signingkey    = 492F016392F227E8
+[branch "master"]
+    mergeoptions = --no-ff
 [commit]
     ; gpgsign = true
 [gpg]
