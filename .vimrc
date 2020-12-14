@@ -41,6 +41,6 @@ set nowrap
 filetype    on
 syntax      on
 
-
 autocmd! BufNewFile, BufRead Dvcfile, *.dvc setfiletype yaml
 au BufRead, BufNewFile *.yaml, *.json, *.yml, *.js, *.html, *.css set tabstop=2 | set shiftwidth=2
+au BufRead, BufNewFile *.go,Makefile set noexpandtab
