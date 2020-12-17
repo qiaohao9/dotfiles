@@ -3,7 +3,10 @@ font pango:Cascadia Code PL 10
 # basic
 for_window [class="^.*"] border pixel 1
 set $terminal --no-startup-id i3-sensible-terminal
-set $mod      Mod4
+set $mod Mod4
+
+gaps inner 15
+gaps outer 10
 
 # #--- Starting External Scripts ---# #
 # Set colors:
@@ -33,21 +36,21 @@ client.urgent           $darkred     $darkred $black   $darkred     $darkred
 client.background       $black
 
 bar {
-  font           pango:Cascadia Code PL 16
+  font pango:Cascadia Code PL 16
   status_command bumblebee-status -m battery nic time \
-                    -p time.format="%H:%M %A %m/%d" \
-                    -p nic.format="{state} {ip}" \
-                    -p battery.decorate="false" \
+                    -p time.format="%H:%M %A %m/%d"   \
+                    -p nic.format="{state} {ip}"      \
+                    -p battery.decorate="false"       \
                     -t nord-powerline
-  position       top
-  mode           dock
-  modifier       None
-  colors  {
+  position top
+  mode     dock
+  modifier None
+  colors               {
     background         $darkblack
     statusline         $darkwhite
     separator          $cyan
-    focused_workspace  $blue $darkblue $darkblack
-    active_workspace   $blue $blue $darkwhite
+    focused_workspace  $blue      $darkblue  $darkblack
+    active_workspace   $blue      $blue      $darkwhite
     inactive_workspace $darkblack $darkblack $white
     urgent_workspace   $darkblack $darkblack $white
   }
@@ -55,7 +58,7 @@ bar {
 
 # #--- Basic Exec ---# #
 bindsym $mod+Return exec $terminal
-bindsym $mod+d      exec --no-startup-id rofi -show run -theme solarized
+bindsym $mod+d      exec --no-startup-id rofi -show run
 bindsym $mod+x      exec --no-startup-id betterlockscreen -t "Have a nice day!" --lock blur
 
 # #--- Toggle ---# #
@@ -67,22 +70,22 @@ bindsym $mod+v           split      v
 bindsym $mod+Shift+v     split      h
 
 # #--- Arrow Keys ---# #
-bindsym $mod+h      focus left
-bindsym $mod+l      focus right
-bindsym $mod+j      focus down
-bindsym $mod+k      focus up
+bindsym $mod+h focus left
+bindsym $mod+l focus right
+bindsym $mod+j focus down
+bindsym $mod+k focus up
 
 bindsym $mod+q      kill
 
-bindsym $mod+y    resize shrink width 10 px or 10 ppt
-bindsym $mod+u    resize grow height 10 px or 10 ppt
-bindsym $mod+i    resize shrink height 10 px or 10 ppt
-bindsym $mod+o    resize grow width 10 px or 10 ppt
+bindsym $mod+y resize shrink width  10 px or 10 ppt
+bindsym $mod+u resize grow   height 10 px or 10 ppt
+bindsym $mod+i resize shrink height 10 px or 10 ppt
+bindsym $mod+o resize grow   width  10 px or 10 ppt
 
-bindsym $mod+Shift+h    move left  30
-bindsym $mod+Shift+l    move right   30
-bindsym $mod+Shift+j    move down  30
-bindsym $mod+Shift+k    move up    30
+bindsym $mod+Shift+h move left  30
+bindsym $mod+Shift+l move right 30
+bindsym $mod+Shift+j move down  30
+bindsym $mod+Shift+k move up    30
 
 
 # #--- Workspace ---# #
@@ -116,22 +119,17 @@ bindsym $mod+Shift+7 move container to workspace $ws7
 bindsym $mod+Shift+8 move container to workspace $ws8
 bindsym $mod+Shift+9 move container to workspace $ws9
 bindsym $mod+Shift+0 move container to workspace $ws10
-bindsym $mod+Escape workspace prev
 
 # # --- Some About System ---# #
 bindsym $mod+Shift+r restart
 bindsym $mod+Shift+c reload
 bindsym $mod+Shift+e exec --no-startup-id "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -B 'Yes, exit i3' 'i3-msg exit'"
+
 exec_always --no-startup-id feh --bg-fill ~/.wallpaper.jpg
 
 # #--- Media Keys ---# #
 # For screenshots and recording ---# #
-bindsym Print            exec --no-startup-id flameshot full -c -p ~/Downloads/captures
-bindsym Shift+Print      exec --no-startup-id flameshot gui -p ~/Downloads/captures
-bindsym $mod+Scroll_Lock exec --no-startup-id "killall screenkey || screenkey -s normal -p bottom --no-whitespace -f Cscadia"
-
-# ---- Sound System --- #
-bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume 0 +5% && pkill -RTMIN+1 i3blocks
-bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume 0 -5% && pkill -RTMIN+1 i3blocks
-bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute 0 toggle && pkill -RTMIN+1 i3blocks
+bindsym Print       exec --no-startup-id flameshot full -c -p ~/Downloads/captures
+bindsym Shift+Print exec --no-startup-id flameshot gui -p ~/Downloads/captures
+bindsym $mod+N      exec --no-startup-id killall screenkey || screenkey -s small -p bottom --no-whitespace -f "Cascadia Code PL" --bak-mode normal
 
