@@ -1,5 +1,5 @@
 # #--- Basic Definitions ---# #
-font pango:Cascadia Code PL 10
+font pango:Cascadia Code 10
 # basic
 for_window [class="^.*"] border pixel 1
 set $terminal --no-startup-id i3-sensible-terminal
@@ -36,7 +36,7 @@ client.urgent           $darkred     $darkred $black   $darkred     $darkred
 client.background       $black
 
 bar {
-  font pango:Cascadia Code PL 16
+  font pango:Cascadia Code 16
   status_command bumblebee-status -m battery nic time \
                     -p time.format="%H:%M %A %m/%d"   \
                     -p nic.format="{state} {ip}"      \
