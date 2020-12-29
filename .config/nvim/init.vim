@@ -53,6 +53,7 @@ Plug 'junegunn/vim-easy-align'
 Plug 'thirtythreeforty/lessspace.vim'
 Plug 'machakann/vim-highlightedyank'
 Plug 'stephpy/vim-yaml'
+Plug 'dag/vim-fish'
 
 call plug#end()
 
