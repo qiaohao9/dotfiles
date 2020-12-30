@@ -1,4 +1,4 @@
 configuration {
     theme: "nord";
-    font: "Cascadia Code PL 16";
+    font: "Cascadia Code 16";
 }

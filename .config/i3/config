@@ -129,7 +129,7 @@ exec_always --no-startup-id feh --bg-fill ~/.wallpaper.png
 
 # #--- Media Keys ---# #
 # For screenshots and recording ---# #
-bindsym Print       exec --no-startup-id flameshot full -c -p ~/Downloads/captures
-bindsym Shift+Print exec --no-startup-id flameshot gui -p ~/Downloads/captures
+bindsym Print       exec --no-startup-id flameshot full -c -p ~/Downloads/
+bindsym Shift+Print exec --no-startup-id flameshot gui -p ~/Downloads/
 bindsym $mod+N      exec --no-startup-id killall screenkey || screenkey -s small -p bottom --no-whitespace -f "Cascadia Code PL" --bak-mode normal
 
