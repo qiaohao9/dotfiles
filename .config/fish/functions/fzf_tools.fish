@@ -3,11 +3,7 @@ function fssh -d "Fuzzy-find ssh host via ag and ssh into it."
 end
 
 function ftmux -d "Fuzzy-switch tmux session."
-    if test -n $TMUX
-        set -x change switch-client
-        echo "hello"
-    end
-
+    set -q TMUX; and set -l change switch-client; or set -l change attach-session
     tmux list-sessions -F "#{session_name}" | fzf +m --height 20% | read -l session; and tmux $change -t $session
 end
 

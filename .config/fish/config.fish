@@ -35,7 +35,7 @@ test $TERM = "xterm-termite"; and set -gx TERM xterm-256color
 
 switch (uname)
 case "Linux"
-    test {$XDG_VTNR} -eq 1; and ! test {$DISPLAY}; and exec startx 2>&1 > /dev/null  # startx in i3wm
+    set -q XDG_VTNR; and test {$XDG_VTNR} -eq 1; and ! test {$DISPLAY}; and exec startx 2>&1 > /dev/null  # startx in i3wm
 case "*"
 end
 
@@ -50,7 +50,7 @@ add_path $HOME/.local/bin
 
 
 function load_fish
-    set -x file_path $HOME/.config/fish/functions/$argv
+    set -l file_path $HOME/.config/fish/functions/$argv
     test -e $file_path; and source $file_path
 end
 
