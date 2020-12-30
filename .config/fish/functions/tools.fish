@@ -7,3 +7,6 @@ function proxy -d "You know what the GFW is."
     set -gx https_proxy http://127.0.0.1:7890
 end
 
+function geoip -d "Update the Country.mmdb"
+    curl -o $HOME/.config/clash/Country.mmdb -L "https://github.com/Hackl0us/GeoIP2-CN/raw/release/Country.mmdb"
+end
