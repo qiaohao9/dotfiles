@@ -45,7 +45,7 @@ function add_path
 end
 
 add_path $HOME/.node_modules/bin
-add_path $HOME/bin
+add_path $GOPATH/bin
 add_path $HOME/.local/bin
 
 
