@@ -68,7 +68,7 @@ fi
 
 export HOMEBREW_NO_ANALYTICS=1
 export HOMEBREW_NO_AUTO_UPDATE=true
-export HOMEBREW_EDITOR=nvim
+export HOMEBREW_EDITOR=${EDITOR}
 
 export PIPENV_IGNORE_VIRTUALENVS=1
 export DOCKER_BUILDKIT=1
@@ -79,7 +79,7 @@ if [[ $(command -v go) ]]; then
     export GOROOT=$(go env GOROOT)
 fi
 
-export PATH=$PATH:/usr/local/sbin:$HOME/.node_modules/bin:$GOPATH/bin:$HOME/.local/bin
+export PATH=$PATH:$HOME/.node_modules/bin:$GOPATH/bin:$HOME/.local/bin
 
 # mirrors
 export GO111MODULE=on
@@ -174,7 +174,7 @@ function fh() {
 }
 
 function fssh() {
-    local ssh_name=$(awk '/Host / { for(i=2;i<=NF;i++) printf "%s\n", $i }' $HOME/.ssh/config | fzf -m --height 20%)
+    local ssh_name=$(awk '/^Host [a-zA-Z0-9-]+$/ { for(i=2;i<=NF;i++) printf "%s\n", $i }' $HOME/.ssh/config | fzf -m --height 20%)
 
     if [[ $ssh_name ]]; then
         ssh $ssh_name
