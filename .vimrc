@@ -6,7 +6,7 @@ set title
 set number
 set cursorline
 set termguicolors
-set t_Co=256
+" set t_Co=256
 " set mouse=a
 
 set incsearch
@@ -42,5 +42,5 @@ filetype    on
 syntax      on
 
 autocmd! BufNewFile, BufRead Dvcfile, *.dvc setfiletype yaml
-au BufRead, BufNewFile *.yaml, *.json, *.yml, *.js, *.html, *.css set tabstop=2 | set shiftwidth=2
+au BufRead, BufNewFile *.yaml, *.jsonnet, *.json, *.yml, *.js, *.html, *.css set tabstop=2 | set shiftwidth=2
 au BufRead, BufNewFile *.go,Makefile set noexpandtab
