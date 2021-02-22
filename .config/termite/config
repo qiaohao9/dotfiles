@@ -1,13 +1,13 @@
 [options]
 allow_bold = true
 #audible_bell = false
-clickable_url = true
+clickable_url = false
 dynamic_title = true
 # font = Cascadia Code PL 18
-font = Cascadia Code 20
+font = Cascadia Code 22
 fullscreen = true
 #geometry = 640x480
-#icon_name = terminal
+# icon_name = terminal
 mouse_autohide = true
 scroll_on_output = true
 scroll_on_keystroke = true

@@ -1,5 +1,5 @@
 # #--- Basic Definitions ---# #
-font pango:Cascadia Code 10
+font pango:Cascadia Code 12
 # basic
 for_window [class="^.*"] border pixel 1
 set $terminal --no-startup-id i3-sensible-terminal
@@ -58,7 +58,7 @@ bar {
 
 # #--- Basic Exec ---# #
 bindsym $mod+Return exec $terminal
-bindsym $mod+d      exec --no-startup-id rofi -show run
+bindsym $mod+d      exec --no-startup-id rofi -font "Cascadia Code 18" -show run
 bindsym $mod+x      exec --no-startup-id betterlockscreen -t "Have a nice day!" --lock blur
 
 # #--- Toggle ---# #
