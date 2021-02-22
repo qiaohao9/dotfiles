@@ -2,3 +2,4 @@
 .ssh/*.key
 .ssh/*.pem
 .ssh/id_rsa*
+.config/rclone/rclone.conf
