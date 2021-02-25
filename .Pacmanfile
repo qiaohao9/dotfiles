@@ -34,6 +34,7 @@ feh
 firefox
 fish
 flameshot
+fortune-mod
 fzf
 gdb
 gist
@@ -42,9 +43,6 @@ git-filter-repo
 gitflow-avh
 go
 gobject-introspection
-goland
-goland-jre
-google-chrome
 graphviz
 grub
 helm
@@ -56,6 +54,7 @@ inetutils
 intellij-idea-ultimate-edition
 intellij-idea-ultimate-edition-jre
 intel-ucode
+jre-openjdk
 jsonnet
 jsonnet-bundler-bin
 kubectl
@@ -68,7 +67,6 @@ lnav
 lsof
 luarocks
 man-db
-mirrorlist-rankmirrors-hook
 ncdu
 neovim
 netctl
@@ -87,10 +85,12 @@ openssh
 os-prober
 otf-cascadia-code
 otf-fira-mono
+postman
 protobuf
 python-pip
 python-poetry
 ranger
+rclone
 rime-double-pinyin
 rofi
 rsync
@@ -98,7 +98,6 @@ rust
 screenkey
 supervisor
 tanka
-taskbook
 tcpdump
 telegram-desktop
 termite
