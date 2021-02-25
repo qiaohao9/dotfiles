@@ -18,7 +18,7 @@ set -gx GO111MODULE auto
 set -gx GOPATH      {$HOME}/.go
 
 # Mirrors
-set -gx GOPROXY                https://goproxy.cn,direct
+# set -gx GOPROXY                https://goproxy.cn,direct
 set -gx PIPENV_PYPI_MIRROR     https://pypi.douban.com/simple
 set -gx HOMEBREW_BOTTLE_DOMAIN https://mirrors.ustc.edu.cn/homebrew-bottles
 
@@ -57,3 +57,7 @@ end
 load_fish fzf_tools.fish
 load_fish tools.fish
 
+function fish_greeting
+    fortune -a
+end
+funcsave fish_greeting
