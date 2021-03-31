@@ -46,6 +46,7 @@ Plug 'scrooloose/nerdcommenter'
     let g:NERDToggleCheckAllLines = 1
 
 Plug 'psliwka/vim-smoothie'
+Plug 'farmergreg/vim-lastplace'
 Plug 'arcticicestudio/nord-vim'
 Plug 'editorconfig/editorconfig-vim'
 Plug 'jiangmiao/auto-pairs'
@@ -55,6 +56,7 @@ Plug 'machakann/vim-highlightedyank'
 Plug 'stephpy/vim-yaml'
 Plug 'google/vim-jsonnet'
 Plug 'dag/vim-fish'
+Plug 'nathangrigg/vim-beancount'
 
 call plug#end()
 
