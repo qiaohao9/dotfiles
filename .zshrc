@@ -161,7 +161,7 @@ function rmtree() {
 }
 
 function zap() {
-    local uninstall=$(brew cask list | fzf -m)
+    local uninstall=$(brew list --cask -1 | fzf -m)
     if [[ $uninstall ]]; then
         for prog in $(echo $uninstall); do
             brew cask zap $prog
