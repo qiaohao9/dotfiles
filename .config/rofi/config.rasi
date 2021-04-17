@@ -1,4 +1,6 @@
 configuration {
+    modi: "run,ssh,window,combi";
     theme: "nord";
-    font: "Cascadia Code 16";
+    font: "Cascadia Code 18";
+    combi-modi: "window,run";
 }
