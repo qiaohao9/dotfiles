@@ -28,15 +28,24 @@ ipv6: false
 # RESTful web API listening address
 external-controller: 127.0.0.1:9090
 
+profile:
+  # store the `select` results in $HOME/.config/clash/.cache
+  # when two different configurations have groups with the same name, the selected values are shared
+  # set false if you don't want this behavior
+  store-selected: true
+
 
 dns:
   enable: true
   listen: 0.0.0.0:53
 
-  nameserver:
+  default-nameserver:
+    - 114.114.114.114
     - 1.1.1.1
-    - 8.8.8.8
-    - 119.29.29.29
+
+  nameserver:
+    - 114.114.114.114
+    - 1.1.1.1
 
 proxy-groups:
   - name: Proxy
@@ -100,8 +109,15 @@ rules:
   - DOMAIN-SUFFIX, twitter.com,                Proxy
 
   # Mirrors
-  - DOMAIN-SUFFIX, dytt8.net,   DIRECT
-  - DOMAIN-SUFFIX, ipstack.com, DIRECT
+  - DOMAIN-SUFFIX, dytt8.net,     DIRECT
+  - DOMAIN-SUFFIX, ipstack.com,   DIRECT
+  - DOMAIN-SUFFIX, qq.com,        DIRECT
+  - DOMAIN-SUFFIX, dingtalk.com,  DIRECT
+  - DOMAIN-SUFFIX, bitwarden.com, DIRECT
+  - DOMAIN-SUFFIX, bitwarden.net, DIRECT
+
+  # AdBlocks
+  - DOMAIN-SUFFIX, rayjump.com, REJECT
 
   - GEOIP,         CN,                         DIRECT
   - MATCH,         Proxy
