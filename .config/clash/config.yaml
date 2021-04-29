@@ -115,6 +115,7 @@ rules:
   - DOMAIN-SUFFIX, dingtalk.com,  DIRECT
   - DOMAIN-SUFFIX, bitwarden.com, DIRECT
   - DOMAIN-SUFFIX, bitwarden.net, DIRECT
+  - DOMAIN-SUFFIX, autonavi.com,  DIRECT
 
   # AdBlocks
   - DOMAIN-SUFFIX, rayjump.com, REJECT
