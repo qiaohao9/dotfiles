@@ -74,14 +74,14 @@ proxy-providers:
       url: http://www.gstatic.com/generate_204
 
 rules:
-  - DOMAIN-SUFFIX, local,                      DIRECT
-  - DOMAIN-SUFFIX, localhost,                  DIRECT
-  - IP-CIDR,       10.0.0.0/8,                 DIRECT
-  - IP-CIDR,       17.0.0.0/8,                 DIRECT
-  - IP-CIDR,       100.64.0.0/10,              DIRECT
-  - IP-CIDR,       127.0.0.0/8,                DIRECT
-  - IP-CIDR,       172.16.0.0/12,              DIRECT
-  - IP-CIDR,       192.168.0.0/16,             DIRECT
+  - IP-CIDR,       10.0.0.0/8,     DIRECT
+  - IP-CIDR,       17.0.0.0/8,     DIRECT
+  - IP-CIDR,       100.64.0.0/10,  DIRECT
+  - IP-CIDR,       127.0.0.0/8,    DIRECT
+  - IP-CIDR,       172.16.0.0/12,  DIRECT
+  - IP-CIDR,       192.168.0.0/16, DIRECT
+  - DOMAIN-SUFFIX, local,          DIRECT
+  - DOMAIN-SUFFIX, localhost,      DIRECT
 
   # Apple
   - DOMAIN,        audio-ssl.itunes.apple.com, Apple
@@ -102,11 +102,24 @@ rules:
   - DOMAIN-SUFFIX, apple.cn,                   Apple
 
   # Twitter
-  - DOMAIN-SUFFIX, t.co,                       Proxy
-  - DOMAIN-SUFFIX, twimg.co,                   Proxy
-  - DOMAIN-SUFFIX, twimg.com,                  Proxy
-  - DOMAIN-SUFFIX, twitpic.com,                Proxy
-  - DOMAIN-SUFFIX, twitter.com,                Proxy
+  - DOMAIN-SUFFIX, t.co,        Proxy
+  - DOMAIN-SUFFIX, twimg.co,    Proxy
+  - DOMAIN-SUFFIX, twimg.com,   Proxy
+  - DOMAIN-SUFFIX, twitpic.com, Proxy
+  - DOMAIN-SUFFIX, twitter.com, Proxy
+
+  # Telegram
+  - IP-CIDR,       67.198.55.0/24,   Proxy
+  - IP-CIDR,       91.108.0.0/16,    Proxy
+  - IP-CIDR,       109.239.140.0/24, Proxy
+  - IP-CIDR,       149.154.160.0/20, Proxy
+  - IP-CIDR,       205.172.60.0/22,  Proxy
+  - DOMAIN-SUFFIX, t.me,             Proxy
+  - DOMAIN-SUFFIX, tdesktop.com,     Proxy
+  - DOMAIN-SUFFIX, telegra.ph,       Proxy
+  - DOMAIN-SUFFIX, telegram.me,      Proxy
+  - DOMAIN-SUFFIX, telegram.org,     Proxy
+  - DOMAIN-SUFFIX, telesco.pe,       Proxy
 
   # Mirrors
   - DOMAIN-SUFFIX, dytt8.net,     DIRECT
@@ -120,5 +133,5 @@ rules:
   # AdBlocks
   - DOMAIN-SUFFIX, rayjump.com, REJECT
 
-  - GEOIP,         CN,                         DIRECT
-  - MATCH,         Proxy
+  - GEOIP, CN, DIRECT
+  - MATCH, Proxy
