@@ -122,12 +122,14 @@ rules:
   - DOMAIN-SUFFIX, telesco.pe,       Proxy
 
   # Mirrors
+  #
+  - DOMAIN-SUFFIX, bitwarden.com, Proxy
+  - DOMAIN-SUFFIX, bitwarden.net, Proxy
+
   - DOMAIN-SUFFIX, dytt8.net,     DIRECT
   - DOMAIN-SUFFIX, ipstack.com,   DIRECT
   - DOMAIN-SUFFIX, qq.com,        DIRECT
   - DOMAIN-SUFFIX, dingtalk.com,  DIRECT
-  - DOMAIN-SUFFIX, bitwarden.com, DIRECT
-  - DOMAIN-SUFFIX, bitwarden.net, DIRECT
   - DOMAIN-SUFFIX, autonavi.com,  DIRECT
 
   # AdBlocks
