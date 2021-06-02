@@ -58,6 +58,6 @@ load_fish fzf_tools.fish
 load_fish tools.fish
 
 function fish_greeting
-    fortune
+    echo "Have a nice day!!!"
 end
 funcsave fish_greeting
