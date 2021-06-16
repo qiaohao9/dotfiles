@@ -1,6 +1,22 @@
+# Port of HTTP(S) proxy server on the local end
 port: 7890
-socks-port: 7891
-redir-port: 7892
+
+# Port of SOCKS5 proxy server on the local end
+# socks-port: 7891
+
+# Transparent proxy server port for Linux and macOS (Redirect TCP and TProxy UDP)
+# redir-port: 7892
+
+# Transparent proxy server port for Linux (TProxy TCP and TProxy UDP)
+# tproxy-port: 7893
+
+# HTTP(S) and SOCKS5 server on the same port
+# mixed-port: 7890
+
+# authentication of local SOCKS5/HTTP(S) server
+# authentication:
+#  - "user1:pass1"
+#  - "user2:pass2"
 
 # Set to true to allow connections to the local-end server from
 # other LAN IP addresses
@@ -26,14 +42,34 @@ log-level: info
 ipv6: false
 
 # RESTful web API listening address
-external-controller: 127.0.0.1:9090
+external-controller: 0.0.0.0:9090
+
+# A relative path to the configuration directory or an absolute path to a
+# directory in which you put some static web resource. Clash core will then
+# serve it at `http://{{external-controller}}/ui`.
+external-ui: yacd
+
+# Secret for the RESTful API (optional)
+# Authenticate by spedifying HTTP header `Authorization: Bearer ${secret}`
+# ALWAYS set a secret if RESTful API is listening on 0.0.0.0
+# secret: ""
+
+# Static hosts for DNS server and connection establishment (like /etc/hosts)
+#
+# Wildcard hostnames are supported (e.g. *.clash.dev, *.foo.*.example.com)
+# Non-wildcard domain names have a higher priority than wildcard domain names
+# e.g. foo.example.com > *.example.com > .example.com
+# P.S. +.foo.com equals to .foo.com and foo.com
+hosts:
+  # '*.clash.dev': 127.0.0.1
+  # '.dev': 127.0.0.1
+  # 'alpha.clash.dev': '::1'
 
 profile:
   # store the `select` results in $HOME/.config/clash/.cache
   # when two different configurations have groups with the same name, the selected values are shared
   # set false if you don't want this behavior
   store-selected: true
-
 
 dns:
   enable: true
@@ -51,23 +87,23 @@ proxy-groups:
   - name: Proxy
     type: select
     use:
-      - dler
+      - linkhub
     url: 'http://www.gstatic.com/generate_204'
     interval: 300
 
   - name: Apple
     type: select
     use:
-      - dler
+      - linkhub
     proxies:
       - DIRECT
 
 proxy-providers:
-  dler:
+  linkhub:
     type: http
     url: '{{ your_proxy_url }}'
     interval: 3600
-    path: ./proxies/dler.yaml
+    path: ./proxies/linkhub.yaml
     health-check:
       enable: true
       interval: 600
@@ -126,11 +162,12 @@ rules:
   - DOMAIN-SUFFIX, bitwarden.com, Proxy
   - DOMAIN-SUFFIX, bitwarden.net, Proxy
 
-  - DOMAIN-SUFFIX, dytt8.net,     DIRECT
-  - DOMAIN-SUFFIX, ipstack.com,   DIRECT
-  - DOMAIN-SUFFIX, qq.com,        DIRECT
-  - DOMAIN-SUFFIX, dingtalk.com,  DIRECT
-  - DOMAIN-SUFFIX, autonavi.com,  DIRECT
+  - DOMAIN-SUFFIX, dytt8.net,    DIRECT
+  - DOMAIN-SUFFIX, ipstack.com,  DIRECT
+  - DOMAIN-SUFFIX, qq.com,       DIRECT
+  - DOMAIN-SUFFIX, dingtalk.com, DIRECT
+  - DOMAIN-SUFFIX, autonavi.com, DIRECT
+  - DOMAIN-SUFFIX, amap.com,     DIRECT
 
   # AdBlocks
   - DOMAIN-SUFFIX, rayjump.com, REJECT
