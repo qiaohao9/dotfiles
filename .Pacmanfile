@@ -1,8 +1,10 @@
 acpi
+aliyun-cli
 ansible
 archlinuxcn-keyring
 aria2
 asciinema
+assh-git
 base
 betterlockscreen
 bind
@@ -10,9 +12,10 @@ bumblebee-status
 cifs-utils
 ckermit
 clash
+clion
+clion-jre
 cloc
 cmake
-code
 container-diff
 dhcp
 dhcpcd
@@ -41,6 +44,7 @@ gdb
 git
 gitflow-avh
 github-cli
+gitlab-glab
 go
 gobject-introspection
 google-chrome
@@ -65,6 +69,7 @@ lnav
 lsof
 luarocks
 man-db
+mirrorlist-rankmirrors-hook
 ncdu
 neofetch
 neovim
@@ -91,6 +96,7 @@ python-pip
 ranger
 rclone
 rime-double-pinyin
+ripgrep
 rofi
 rsync
 screenkey
@@ -114,6 +120,7 @@ unzip
 upower
 vi
 vim
+visual-studio-code-insiders-bin
 w3m
 wget
 wireless_tools
