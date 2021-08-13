@@ -10,6 +10,7 @@
     program       = gpg
 [core]
     editor        = nvim
+    autocrlf      = false
 [pull]
     rebase        = true
 [alias]
