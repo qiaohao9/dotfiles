@@ -1,4 +1,6 @@
-set -gx LANG     en_US.UTF-8
+command -v nvim 2>&1 > /dev/null; and set -gx EDITOR nvim; or set -gx EDITOR vi
+command -v go 2>&1 > /dev/null; and set -gx GOROOT (go env GOROOT)set -gx LANG     en_US.UTF-8
+
 set -gx LC_ALL   en_US.UTF-8
 set -gx CLICOLOR 1
 set -gx GPG_TTY  (tty)
@@ -18,7 +20,6 @@ set -gx GO111MODULE auto
 set -gx GOPATH      {$HOME}/.go
 
 # Mirrors
-# set -gx GOPROXY                https://goproxy.cn,direct
 set -gx PIPENV_PYPI_MIRROR     https://pypi.douban.com/simple
 set -gx HOMEBREW_BOTTLE_DOMAIN https://mirrors.ustc.edu.cn/homebrew-bottles
 
@@ -28,14 +29,11 @@ alias l="ls -hl"
 alias la="ls -ahl"
 alias du="ncdu --color dark -rr -x --exclude .git"
 
-command -v nvim 2>&1 > /dev/null; and set -gx EDITOR nvim; or set -gx EDITOR vi
-command -v go 2>&1 > /dev/null; and set -gx GOROOT (go env GOROOT)
-
 test $TERM = "xterm-termite"; and set -gx TERM xterm-256color
 
 switch (uname)
 case "Linux"
-    set -q XDG_VTNR; and test {$XDG_VTNR} -eq 1; and ! test {$DISPLAY}; and exec startx 2>&1 > /dev/null  # startx in i3wm
+    set -q XDG_VTNR; and test {$XDG_VTNR} -eq 1; and ! test {$DISPLAY}; and exec startx 2>&1 > /dev/null
 case "*"
 end
 
@@ -43,21 +41,36 @@ end
 function add_path
     set -gx PATH $PATH $argv
 end
-
 add_path $HOME/.node_modules/bin
 add_path $GOPATH/bin
 add_path $HOME/.local/bin
 
-
-function load_fish
-    set -l file_path $HOME/.config/fish/functions/$argv
-    test -e $file_path; and source $file_path
+function proxy -d "You know what the GFW is."
+    set -gx http_proxy  http://(ip -o route get to 8.8.8.8 | sed -n 's/.*src \([0-9.]\+\).*/\1/p'):7890
+    set -gx https_proxy http://(ip -o route get to 8.8.8.8 | sed -n 's/.*src \([0-9.]\+\).*/\1/p'):7890
 end
 
-load_fish fzf_tools.fish
-load_fish tools.fish
-
-function fish_greeting
-    echo "Have a nice day!!!"
+# Download the GeoIP2-CN for clash.
+function geoip -d "Update the Country.mmdb."
+    curl -o $HOME/.config/clash/Country.mmdb -L "https://github.com/Hackl0us/GeoIP2-CN/raw/release/Country.mmdb"
 end
-funcsave fish_greeting
+
+function brewfile -d "Backup applications installed by HomeBrew."
+    brew bundle dump --global -f
+end
+
+function wttr -d "Just show the weather."
+    curl -L "https://wttr.in/chengdu?format=3"
+end
+
+# -------------------------------
+#           fzf tools
+# -------------------------------
+function fssh -d "Fuzzy-find ssh host via ag and ssh into it."
+    awk '/^Host [a-zA-Z0-9\-_]+$/ { for(i=2; i<=NF; i++) printf "%s\n", $i }' $HOME/.ssh/config | fzf +m --height 20% | read -l ssh_target; and ssh "$ssh_target"
+end
+
+function ftmux -d "Fuzzy-switch tmux session."
+    set -q TMUX; and set -l change switch-client; or set -l change attach-session
+    tmux list-sessions -F "#{session_name}" | fzf +m --height 20% | read -l session; and tmux $change -t $session
+end

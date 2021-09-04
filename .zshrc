@@ -124,7 +124,8 @@ fi
 
 function proxy() {
     if [[ ! ${http_proxy} ]]; then
-        export http_proxy=http://127.0.0.1:7890
+        local_ip=$(ip -o route get to 8.8.8.8 | sed -n 's/.*src \([0-9.]\+\).*/\1/p')
+        export http_proxy="http://${local_ip}:7890"
         export https_proxy=$http_proxy
     fi
 }
