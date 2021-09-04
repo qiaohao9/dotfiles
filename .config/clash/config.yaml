@@ -158,7 +158,6 @@ rules:
   - DOMAIN-SUFFIX, telesco.pe,       Proxy
 
   # Mirrors
-  #
   - DOMAIN-SUFFIX, bitwarden.com, Proxy
   - DOMAIN-SUFFIX, bitwarden.net, Proxy
 
@@ -171,6 +170,7 @@ rules:
 
   # AdBlocks
   - DOMAIN-SUFFIX, rayjump.com, REJECT
+  - DOMAIN-SUFFIX, wwads.cn,    REJECT
 
   - GEOIP, CN, DIRECT
   - MATCH, Proxy
