@@ -1,5 +1,5 @@
 # Port of HTTP(S) proxy server on the local end
-port: 7890
+# port: 7890
 
 # Port of SOCKS5 proxy server on the local end
 # socks-port: 7891
@@ -11,7 +11,7 @@ port: 7890
 # tproxy-port: 7893
 
 # HTTP(S) and SOCKS5 server on the same port
-# mixed-port: 7890
+mixed-port: 7890
 
 # authentication of local SOCKS5/HTTP(S) server
 # authentication:
