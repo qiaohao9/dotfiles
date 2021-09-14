@@ -46,8 +46,8 @@ add_path $GOPATH/bin
 add_path $HOME/.local/bin
 
 function proxy -d "You know what the GFW is."
-    set -gx http_proxy  http://(ip -o route get to 8.8.8.8 | sed -n 's/.*src \([0-9.]\+\).*/\1/p'):7890
-    set -gx https_proxy http://(ip -o route get to 8.8.8.8 | sed -n 's/.*src \([0-9.]\+\).*/\1/p'):7890
+    set -gx http_proxy  http://( ifconfig eth0| grep "inet[ ]" | awk '{print $2}' ):7890
+    set -gx https_proxy {$http_proxy}
 end
 
 # Download the GeoIP2-CN for clash.
