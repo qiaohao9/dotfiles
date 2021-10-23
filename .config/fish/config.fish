@@ -1,6 +1,7 @@
 command -v nvim 2>&1 > /dev/null; and set -gx EDITOR nvim; or set -gx EDITOR vi
-command -v go 2>&1 > /dev/null; and set -gx GOROOT (go env GOROOT)set -gx LANG     en_US.UTF-8
+command -v go 2>&1 > /dev/null; and set -gx GOROOT (go env GOROOT)
 
+set -gx LANG     en_US.UTF-8
 set -gx LC_ALL   en_US.UTF-8
 set -gx CLICOLOR 1
 set -gx GPG_TTY  (tty)
@@ -46,7 +47,7 @@ add_path $GOPATH/bin
 add_path $HOME/.local/bin
 
 function proxy -d "You know what the GFW is."
-    set -gx http_proxy  http://( ifconfig eth0| grep "inet[ ]" | awk '{print $2}' ):7890
+    set -gx http_proxy  http://( ifconfig en0| grep "inet[ ]" | awk '{print $2}' ):7890
     set -gx https_proxy {$http_proxy}
 end
 
