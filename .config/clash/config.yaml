@@ -1,8 +1,8 @@
 # Port of HTTP(S) proxy server on the local end
-# port: 7890
+port: 7890
 
 # Port of SOCKS5 proxy server on the local end
-# socks-port: 7891
+socks-port: 7891
 
 # Transparent proxy server port for Linux and macOS (Redirect TCP and TProxy UDP)
 # redir-port: 7892
