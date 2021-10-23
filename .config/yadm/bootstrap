@@ -7,26 +7,10 @@ cd $HOME
 echo "init submodules..."
 yadm submodule update --recursive --init
 
-
-function custom_sed() {
-    case "$system_type" in
-        "Darwin")
-            sed -i "" -E $@
-            ;;
-        "Linux")
-            sed -i -r $@
-            ;;
-        *)
-            echo "Cannot detect the system ..."
-    esac
-}
-
-
 function install_on_common() {
-    custom_sed "s#prefix=.*#prefix=${HOME}/.node_modules#g" ${HOME}/.npmrc   # npm
-    custom_sed "s#^dir.*#dir=${HOME}/Downloads/#g" ${HOME}/.aria2/aria2.conf # aria2
+    npm config set prefix "${HOME}/.node_modules"
+    npm config set registry "https://registry.npmmirror.com"
 
-    # npm mirror
     if ! command -v cnpm > /dev/null 2>&1; then
         npm install -g cnpm --registry=https://registry.npm.taobao.org
     fi
