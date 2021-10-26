@@ -32,6 +32,7 @@ brew "lua"
 brew "highlight"
 brew "htop"
 brew "httpie"
+brew "hugo"
 brew "hyperkit"
 brew "iperf"
 brew "lnav"
@@ -77,11 +78,12 @@ cask "mactex-no-gui"
 cask "microsoft-auto-update"
 cask "snipaste"
 cask "telegram"
+cask "thunder"
 cask "ticktick"
+cask "typora"
 cask "visual-studio-code"
 cask "wechat"
 mas "Bitwarden", id: 1352778147
 mas "Magnet", id: 441258766
-mas "Microsoft Outlook", id: 985367838
 mas "OneDrive", id: 823766827
 mas "Xcode", id: 497799835
