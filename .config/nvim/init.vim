@@ -45,6 +45,7 @@ Plug 'scrooloose/nerdcommenter'
     let g:NERDTrimTrailingWhitespace = 1
     let g:NERDToggleCheckAllLines = 1
 
+Plug 'justinmk/sneak'
 Plug 'psliwka/vim-smoothie'
 Plug 'farmergreg/vim-lastplace'
 Plug 'arcticicestudio/nord-vim'
