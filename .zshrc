@@ -165,7 +165,7 @@ function zap() {
     local uninstall=$(brew list --cask -1 | fzf -m)
     if [[ $uninstall ]]; then
         for prog in $(echo $uninstall); do
-            brew cask zap $prog
+            brew uninstall --zap $prog
         done
     fi
 }

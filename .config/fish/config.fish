@@ -75,3 +75,10 @@ function ftmux -d "Fuzzy-switch tmux session."
     set -q TMUX; and set -l change switch-client; or set -l change attach-session
     tmux list-sessions -F "#{session_name}" | fzf +m --height 20% | read -l session; and tmux $change -t $session
 end
+
+function fzap -d "uninstall brew-cask apps."
+    set -l zap_apps (brew list --cask -1 | fzf -m)
+    for zap_app in {$zap_apps}
+        brew uninstall --zap {$zap_app}
+    end
+end
