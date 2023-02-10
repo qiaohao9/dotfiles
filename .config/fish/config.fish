@@ -13,16 +13,17 @@ set -gx XDG_CACHE_HOME  $HOME/.cache
 set -gx HOMEBREW_NO_ANALYTICS   1
 set -gx HOMEBREW_NO_AUTO_UPDATE true
 set -gx HOMEBREW_EDITOR         {$EDITOR}
+set -gx HOMEBREW_BOTTLE_DOMAIN  https://mirrors.ustc.edu.cn/homebrew-bottles
 
 set -gx PIPENV_IGNORE_VIRTUALENVS 1
 set -gx DOCKER_BUILDKIT           1
 
 set -gx GO111MODULE auto
 set -gx GOPATH      {$HOME}/.go
+set -gx GOPROXY     https://goproxy.cn,direct
 
 # Mirrors
-set -gx PIPENV_PYPI_MIRROR     https://pypi.douban.com/simple
-set -gx HOMEBREW_BOTTLE_DOMAIN https://mirrors.ustc.edu.cn/homebrew-bottles
+set -gx PIPENV_PYPI_MIRROR https://pypi.douban.com/simple
 
 alias fishconfig="source $HOME/.config/fish/config.fish"
 alias ls="exa -s type --group-directories-first"
@@ -47,7 +48,7 @@ add_path $GOPATH/bin
 add_path $HOME/.local/bin
 
 function proxy -d "You know what the GFW is."
-    set -gx http_proxy  http://( ifconfig en0| grep "inet[ ]" | awk '{print $2}' ):7890
+    set -gx http_proxy  http://127.0.0.1:7890
     set -gx https_proxy {$http_proxy}
 end
 
