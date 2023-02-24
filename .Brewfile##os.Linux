@@ -1,0 +1,5 @@
+tap "homebrew/bundle"
+brew "fzf"
+brew "gcc"
+brew "go"
+brew "neovim"
