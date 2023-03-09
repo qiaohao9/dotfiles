@@ -5,7 +5,7 @@
 # If not running interactively, don't do anything
 [[ $- != *i* ]] && return
 
-PS1='[\u@\h \W]\$ '
+PS1='[\u@\h at \W]\$ '
 
 [[ ${TERM} == "xterm-termite" ]] && export TERM=xterm-256color
 

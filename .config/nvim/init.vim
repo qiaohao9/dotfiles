@@ -1,11 +1,9 @@
-source ~/.vimrc
-
 " ======================
 " Auto download vim-plug
 " ======================
 if empty(glob('~/.local/share/nvim/site/autoload/plug.vim'))
   silent !curl -fLo ~/.local/share/nvim/site/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
-  autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
+  autocmd VimEnter * PlugInstall --sync
 endif
 
 " ========================
@@ -22,9 +20,6 @@ endif
 
 let mapleader = ' '
 
-set nobackup
-set nowritebackup
-
 " ================
 " Vim-plug plugins
 " ================
@@ -40,8 +35,8 @@ Plug 'scrooloose/nerdcommenter'
     let g:NERDTrimTrailingWhitespace = 1
     let g:NERDToggleCheckAllLines = 1
 
-    let s:uname = system('uname -s')
-    if s:uname == 'Linux'
+    let g:uname = substitute(system('uname -s'), '\n', '', '')
+    if g:uname == 'Linux'
         nnoremap <silent> <c-_> <Plug>NERDCommenterToggle<CR>
         vnoremap <silent> <c-_> <Plug>NERDCommenterToggle<CR>gv
     else
@@ -86,7 +81,11 @@ Plug 'yggdroot/indentline'
 
 
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
-    let g:coc_global_extensions = ['coc-go', 'coc-pyright', 'coc-rust-analyzer', 'coc-git']
+    let g:coc_global_extensions = ['coc-go', 'coc-pyright', 'coc-rust-analyzer', 'coc-git', 'coc-sh']
+    autocmd BufNewfile,BufRead *.go setlocal noexpandtab tabstop=4 shiftwidth=4 softtabstop=4
+    autocmd BufNewfile,BufRead *.yml,*.yaml setlocal expandtab tabstop=2 shiftwidth=2 softtabstop=2
+    autocmd BufWritePre *.go,*.py :silent call CocAction('runCommand', 'editor.action.organizeImport')
+
     nmap <silent> <leader>gd <Plug>(coc-definition)
     nmap <silent> <leader>gi <Plug>(coc-implementation)
     nmap <silent> <leader>gr <Plug>(coc-references)
@@ -168,6 +167,45 @@ call plug#end()
 
 colorscheme nord
 
+set hidden
+set title
+set number
+set cursorline
+set termguicolors
+set t_Co=256
+" set mouse=a
+
+set incsearch
+set smartcase
+set ignorecase
+set showmatch
+
+set list listchars=extends:❯,precedes:❮,tab:▸\ ,trail:˽
+
+set noundofile
+set noswapfile
+set nobackup
+set nowritebackup
+
+set breakindent
+set smartindent
+set autoindent
+set autowrite
+
+set tabstop=4
+set shiftwidth=4
+set expandtab
+
+set fileformat=unix
+set fileencoding=utf-8
+set termencoding=utf-8
+
+set shortmess+=c
+set signcolumn=yes
+set nowrap
+
+filetype    on
+syntax      on
 
 nmap <leader>1 :b 1<CR>
 nmap <leader>2 :b 2<CR>
