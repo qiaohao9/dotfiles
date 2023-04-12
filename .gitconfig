@@ -1,46 +1,40 @@
 [user]
-    name         = QiaoHao
-    email        = qiaohao.peng@outlook.com
-    signingkey   = 492F016392F227E8
+	name         = qiaohao
+	email        = qiaohao.peng@outlook.com
+	signingkey   = 492F016392F227E8
 [branch "master"]
-    mergeoptions = --no-ff
+	mergeoptions = --no-ff
 [commit]
-    ; gpgsign = true
+	; gpgsign = true
 [gpg]
-    program      = gpg
+	program      = gpg
 [core]
-    editor       = nvim
-    autocrlf     = false
-    eol          = lf
-    excludesfile = ~/.gitignore
+	editor       = nvim
+	autocrlf     = false
+	eol          = lf
+	excludesfile = ~/.gitignore
 [pull]
-    rebase       = true
+	rebase       = true
 [alias]
-    st           = status
-    stnu         = status --untracked-files=no
-    ci           = commit
-    rs           = restore --staged
-    br           = branch
-    co           = checkout
-    df           = diff
-    dc           = diff --cached
-    lg           = log --all --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative
+	st           = status
+	stnu         = status --untracked-files=no
+	ci           = commit
+	rs           = restore --staged
+	br           = branch
+	co           = checkout
+	df           = diff
+	dc           = diff --cached
+	lg           = log --all --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative
 [diff]
-    noprefix     = true
+	noprefix     = true
 [color]
-    ui           = true
+	ui           = true
 [color "diff"]
-    meta         = yellow
-    frag         = magenta bold
-    commit       = yellow bold
-    old          = red bold
-    new          = green bold
-    whitespace   = red reverse
-; [https]
-    ; proxy         = http://127.0.0.1:7890
-    ; lowSpeedLimit = 0
-    ; lowSpeedTime  = 999999
-; [http]
-    ; proxy         = http://127.0.0.1:7890
-    ; lowSpeedLimit = 0
-    ; lowSpeedTime  = 999999
+	meta         = yellow
+	frag         = magenta bold
+	commit       = yellow bold
+	old          = red bold
+	new          = green bold
+	whitespace   = red reverse
+[push]
+	autoSetupRemote = true

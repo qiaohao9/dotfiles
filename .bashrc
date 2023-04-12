@@ -2,6 +2,8 @@
 # ~/.bashrc
 #
 
+PS1='[\u@\h \W]\$ '
+
 # If not running interactively, don't do anything
 [[ $- != *i* ]] && return
 
@@ -9,7 +11,8 @@ PS1='[\u@\h at \W]\$ '
 
 [[ ${TERM} == "xterm-termite" ]] && export TERM=xterm-256color
 
-if command -v nvim 2>&1 > /dev/null;  then export EDITOR=nvim; else export EDITOR=vi; fi
+command -v nvim &> /dev/null && export EDITOR=nvim
+command -v exa &> /dev/null && alias ls="exa --header"
 
 export LANG=en_US.UTF-8
 export LC_ALL=en_US.UTF-8
@@ -23,11 +26,10 @@ export HOMEBREW_EDITOR=${EDITOR}
 export HOMEBREW_NO_ANALYTICS=1
 export HOMEBREW_NO_AUTO_UPDATE=1
 export HOMEBREW_INSTALL_FROM_API=1
-export HOMEBREW_PIP_INDEX_URL="https://pypi.tuna.tsinghua.edu.cn/simple"
-export HOMEBREW_BOTTLE_DOMAIN="https://mirrors.tuna.tsinghua.edu.cn/homebrew-bottles"
-export HOMEBREW_API_DOMAIN="https://mirrors.tuna.tsinghua.edu.cn/homebrew-bottles/api"
-export HOMEBREW_BREW_GIT_REMOTE="https://mirrors.tuna.tsinghua.edu.cn/git/homebrew/brew.git"
-export HOMEBREW_CORE_GIT_REMOTE="https://mirrors.tuna.tsinghua.edu.cn/git/homebrew/homebrew-core.git"
+export HOMEBREW_BREW_GIT_REMOTE="https://mirrors.ustc.edu.cn/brew.git"
+export HOMEBREW_CORE_GIT_REMOTE="https://mirrors.ustc.edu.cn/homebrew-core.git"
+export HOMEBREW_BOTTLE_DOMAIN="https://mirrors.ustc.edu.cn/homebrew-bottles"
+export HOMEBREW_API_DOMAIN="https://mirrors.ustc.edu.cn/homebrew-bottles/api"
 
 export GO11MODULE=on
 export GOPATH=${HOME}/.go
@@ -58,6 +60,7 @@ __fzf_history ()
         READLINE_LINE_NEW="$(
             HISTTIMEFORMAT= builtin history |
             command fzf --prompt 'history > ' +s --tac +m -n2..,.. --tiebreak=index --toggle-sort=ctrl-r |
+            [[ $(uname -s) == "Darwin" ]] && alias sed=gsed |
             command sed '
                 /^ *[0-9]/ {
                     s/ *\([0-9]*\) .*/!\1/;
@@ -98,7 +101,7 @@ function fbr() {
 }
 
 alias bashconfig="source ${HOME}/.bashrc"
-alias ll="ls -lh --color --group-directories-first"
-alias la="ls -lah --color --group-directories-first"
+alias ll="ls -lh"
+alias la="ll -a"
 alias brewfile="brew bundle dump --global -f"
 
