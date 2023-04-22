@@ -147,7 +147,7 @@ Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
     map <leader>f :Files<CR>
     map <leader>b :Buffers<CR>
-    map <leader>r :Ag<CR>
+    map <leader>r :Rg<CR>
     let g:fzf_action = { 'ctrl-e': 'edit' }
 
 Plug 'junegunn/vim-easy-align'
