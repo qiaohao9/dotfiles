@@ -21,6 +21,7 @@ export XDG_CACHE_HOME=${HOME}/.cache
 export HISTTIMEFORMAT="%F %T "
 export HISTSIZE=11000
 export HISTFILESIZE=11000
+export HISTCONTROL=ignoredups:erasedups
 
 export HOMEBREW_EDITOR=${EDITOR}
 export HOMEBREW_NO_ANALYTICS=1
@@ -61,4 +62,9 @@ alias bashconfig="source ${HOME}/.bashrc"
 alias ll="ls -lh"
 alias la="ll -a"
 alias brewfile="brew bundle dump --global -f"
+
+if [[ $(uname -o) == "Darwin" ]]; then
+    alias docker='lima nerdctl'
+    alias docker-compose='lima nerdctl compose'
+fi
 
