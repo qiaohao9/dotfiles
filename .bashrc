@@ -2,12 +2,14 @@
 # ~/.bashrc
 #
 
-PS1='[\u@\h \W]\$ '
-
 # If not running interactively, don't do anything
 [[ $- != *i* ]] && return
 
-PS1='[\u@\h at \W]\$ '
+function parse_git_branch() {
+    git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/(\1) /'
+}
+
+PS1='\u@\h at \[\e[32m\]\w \[\e[91m\]$(parse_git_branch)\[\e[00m\]\$ '
 
 [[ ${TERM} == "xterm-termite" ]] && export TERM=xterm-256color
 
