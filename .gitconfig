@@ -1,40 +1,49 @@
-[user]
-	name         = qiaohao
-	email        = qiaohao.peng@outlook.com
-	signingkey   = 492F016392F227E8
-[branch "master"]
-	mergeoptions = --no-ff
-[commit]
-	; gpgsign = true
-[gpg]
-	program      = gpg
-[core]
-	editor       = nvim
-	autocrlf     = false
-	eol          = lf
-	excludesfile = ~/.gitignore
-[pull]
-	rebase       = true
-[alias]
-	st           = status
-	stnu         = status --untracked-files=no
-	ci           = commit
-	rs           = restore --staged
-	br           = branch
-	co           = checkout
-	df           = diff
-	dc           = diff --cached
-	lg           = log --all --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative
-[diff]
-	noprefix     = true
-[color]
-	ui           = true
-[color "diff"]
-	meta         = yellow
-	frag         = magenta bold
-	commit       = yellow bold
-	old          = red bold
-	new          = green bold
-	whitespace   = red reverse
 [push]
-	autoSetupRemote = true
+	autosetupremote = true
+	default = current
+[init]
+	defaultBranch = main
+[pull]
+	rebase = true
+[merge]
+	conflictstyle = diff3
+[commit]
+	verbose = true
+[user]
+	email = qiaohao.peng@outlook.com
+	name = qiaohao
+	signingkey = 492F016392F227E8
+[rerere]
+	enabled = true
+[diff]
+	algorithm = histogram
+	submodule = log
+	noprefix = true
+[core]
+	excludesfile = ~/.config/git/ignore
+	autocrlf = false
+	editor = nvim
+[status]
+	submoduleSummary = true
+[submodule]
+	recurse = true
+[log]
+	date = iso
+[color "diff"]
+	meta = yellow
+	whitespace = red reverse
+	new = green bold
+	old = red bold
+	frag = magenta bold
+	commit = yellow bold
+[color]
+	ui = true
+[alias]
+	st = status
+	stnu = status --untracked-files=no
+	ci = commit
+	co = checkout
+	df = diff
+	dc = diff --cached
+	rs = restore
+	lg = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%ci) %C(bold blue)<%an %ae>%Creset' --abbrev-commit --date=format:'%Y-%m-%d %H:%M:%S'
