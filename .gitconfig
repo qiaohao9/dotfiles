@@ -6,7 +6,7 @@
 [pull]
 	rebase = true
 [merge]
-	conflictstyle = diff3
+	conflictstyle = zdiff3 ; or diff3 for lower version
 [commit]
 	verbose = true
 [user]
