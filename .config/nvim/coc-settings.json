@@ -9,6 +9,8 @@
     "python.linting.mypyEnabled": true,
     "python.analysis.diagnosticMode": "workspace",
 
+    "go.golsOptions": {"completeUnimported": true },
+
     "rust-analyzer.hover.documentation.enable": true,
 
     "git.addGBlameToBufferVar": true,
@@ -18,5 +20,18 @@
     "coc.preferneces.hoverTarget": "float",
     "coc.preferences.formatOnType": true,
     "coc.preferences.diagnostic.displayByAle": true,
-    "coc.preferences.formatOnSaveFiletypes": ["python", "go"]
+    "coc.preferences.formatOnSaveFiletypes": ["python", "go"],
+
+    "languageserver": {
+        "go": {
+            "command": "gopls",
+            "rootPatterns": ["go.work", "go.mod", ".vim/", ".git", ".hg/"],
+            "fileTypes": ["go"],
+            "initializationOptions": {
+                "usePlaceholders": true
+            }
+        }
+    }
+
+
 }
