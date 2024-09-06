@@ -1,13 +1,13 @@
 #!/bin/bash
 set -ex
 
-system_type=$(uname -s)
-
 cd $HOME
 echo "init submodules..."
 yadm submodule update --recursive --init
 
 function install_on_common() {
+    brew bundle -v -g
+
     npm config set prefix "${HOME}/.node_modules"
     npm config set registry "https://registry.npmmirror.com"
 
@@ -29,9 +29,13 @@ function install_on_macOS() {
         echo "Installing HomeBrew..."
         /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
     fi
+}
 
-    # install apps from Brewfile
-    brew bundle -v -g
+function install_on_linux() {
+    # install Homebrew
+    test -d ~/.linuxbrew && eval "$(~/.linuxbrew/bin/brew shellenv)"
+    test -d /home/linuxbrew/.linuxbrew && eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
+    echo "eval \"\$($(brew --prefix)/bin/brew shellenv)\"" >> ~/.bashrc
 }
 
 
@@ -52,11 +56,11 @@ function install_on_ArchLinux() {
 }
 
 
-case "$system_type" in
+case $(uname -s) in
     "Darwin")
         install_on_macOS;;
-    "Linux")
-        install_on_ArchLinux;;
+    #"Linux")
+        #install_on_ArchLinux;;
     *)
         echo "Cannot detect the system...";;
 esac
