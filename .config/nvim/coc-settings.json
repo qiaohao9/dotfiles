@@ -20,18 +20,5 @@
     "coc.preferneces.hoverTarget": "float",
     "coc.preferences.formatOnType": true,
     "coc.preferences.diagnostic.displayByAle": true,
-    "coc.preferences.formatOnSaveFiletypes": ["python", "go"],
-
-    "languageserver": {
-        "go": {
-            "command": "gopls",
-            "rootPatterns": ["go.work", "go.mod", ".vim/", ".git", ".hg/"],
-            "fileTypes": ["go"],
-            "initializationOptions": {
-                "usePlaceholders": true
-            }
-        }
-    }
-
-
+    "coc.preferences.formatOnSaveFiletypes": ["python", "go"]
 }
