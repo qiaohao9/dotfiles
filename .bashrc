@@ -14,7 +14,7 @@ PS1='\u@\h at \[\e[32m\]\w \[\e[91m\]$(parse_git_branch)\[\e[00m\]\$ '
 [[ ${TERM} == "xterm-termite" ]] && export TERM=xterm-256color
 
 command -v nvim &> /dev/null && export EDITOR=nvim
-command -v exa &> /dev/null && alias ls="exa --header"
+command -v lsd &> /dev/null && alias ls="lsd --header"
 
 export LANG=en_US.UTF-8
 export LC_ALL=en_US.UTF-8
