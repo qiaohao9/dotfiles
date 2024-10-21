@@ -1,24 +1,4 @@
 {
-    "suggest.noselect": true,
-    "suggest.floatEnable": true,
-
-    "python.pythonPath": "python3",
-    "python.formatting.provider": "black",
-    "python.formatting.blackArgs": ["-l 999"],
-    "python.linting.enabled": true,
-    "python.linting.mypyEnabled": true,
-    "python.analysis.diagnosticMode": "workspace",
-
-    "go.golsOptions": {"completeUnimported": true },
-
-    "rust-analyzer.hover.documentation.enable": true,
-
-    "git.addGBlameToBufferVar": true,
-    "git.addGBlameToVirtualText": true,
-
-
-    "coc.preferneces.hoverTarget": "float",
-    "coc.preferences.formatOnType": true,
-    "coc.preferences.diagnostic.displayByAle": true,
-    "coc.preferences.formatOnSaveFiletypes": ["python", "go"]
+  "semanticTokens.enable": true,
+  "coc.preferences.formatOnSaveFiletypes": ["cpp", "c", "go"]
 }
