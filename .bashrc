@@ -39,6 +39,7 @@ export GOPATH=${HOME}/.go
 export GOPROXY=https://goproxy.cn,direct
 
 export FZF_DEFAULT_OPTS="--height=20% --reverse"
+export FZF_DEFAULT_COMMAND="fd --type f --strip-cwd-prefix --exclude={.git,build,thirdparty,vendor}"
 
 function add_path() {
     export PATH=${PATH}:$1
@@ -65,8 +66,8 @@ alias ll="ls -lh"
 alias la="ll -a"
 alias brewfile="brew bundle dump --global -f"
 
+# only for macos java installed by brew
 if [[ $(uname -o) == "Darwin" ]]; then
-    alias docker='lima nerdctl'
-    alias docker-compose='lima nerdctl compose'
+    export PATH="/usr/local/opt/openjdk/bin:$PATH"
+    export CPPFLAGS="-I/usr/local/opt/openjdk/include"
 fi
-

@@ -6,7 +6,7 @@
 [pull]
 	rebase = true
 [merge]
-	conflictstyle = zdiff3 ; or diff3 for lower version
+	conflictstyle = diff3
 [commit]
 	verbose = true
     ; gpgsign = true
@@ -24,6 +24,7 @@
 	excludesfile = ~/.config/git/ignore
 	autocrlf = false
 	editor = nvim
+	pager = delta
 [status]
 	submoduleSummary = true
 [submodule]
@@ -48,3 +49,8 @@
 	dc = diff --cached
 	rs = restore
 	lg = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%ci) %C(bold blue)<%an %ae>%Creset' --abbrev-commit --date=format:'%Y-%m-%d %H:%M:%S'
+[interactive]
+	diffFilter = delta --color-only
+[delta]
+	navigate = true
+	line-numbers = true
