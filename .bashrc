@@ -1,6 +1,4 @@
-#
-# ~/.bashrc
-#
+#!/usr/bin/env bash
 
 # If not running interactively, don't do anything
 [[ $- != *i* ]] && return
@@ -34,8 +32,6 @@ export HOMEBREW_BREW_GIT_REMOTE="https://mirrors.aliyun.com/homebrew/brew.git"
 export HOMEBREW_CORE_GIT_REMOTE="https://mirrors.aliyun.com/homebrew/homebrew-core.git"
 export HOMEBREW_BOTTLE_DOMAIN="https://mirrors.aliyun.com/homebrew/homebrew-bottles"
 
-
-
 export GO11MODULE=on
 export GOPATH=${HOME}/.go
 export GOPROXY=https://goproxy.cn,direct
@@ -46,9 +42,10 @@ export FZF_DEFAULT_COMMAND="fd --type f --strip-cwd-prefix --exclude={.git,build
 function add_path() {
     export PATH=${PATH}:$1
 }
-add_path ${GOPATH}/bin
-add_path ${HOME}/.local/bin
-add_path ${HOME}/.node_modules/bin
+add_path "${GOPATH}/bin"
+add_path "${HOME}/.local/bin"
+add_path "${HOME}/.node_modules/bin"
+add_path /usr/local/sbin # for homebrew bin
 
 # copied from https://bit.ly/3ZhgVjz
 function fssh() {
